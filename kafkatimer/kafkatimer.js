@@ -76,7 +76,7 @@ const round = (num, places) => {
 
 const getcolorbydays = (days) => {
 	if (days < 7){
-		color = "purple";
+		color = "white";
 	}else if (days < 30){
     	color = "yellow";
     }else if(days < 60){
