@@ -96,11 +96,17 @@ const main = () => {
 	let start_date = new Date(2022, 05, 13);
 	let totaldays = getDifferenceInDays(today, start_date);	
 	let thedistribution = new ExponentialDistriubtion(300);
+	let m = 1; // Counter for the number of dates
 
 	let qlist = [];
-	for (let i = 0.1; i <= 0.99; i += 0.0025){
+	for (let i = 0.1; i <= 0.99; i += 0.0010){
 		qlist.push(i);
 	}
+
+	addDiv(`Today is ${today}`, "#aabbff");
+	addDiv(`Total days elapsed: ${totaldays}`, "#aabbff");
+	addDiv(`Prob(x < ${totaldays}) = ${thedistribution.getprobability(totaldays)}`, "#aabbff");
+
 	for (let i = 0; i < qlist.length; i++){
 		let q = qlist[i];
 		let n = thedistribution.getinversecdf(q);
@@ -109,7 +115,8 @@ const main = () => {
 		let color = "#000000";
 		if (d > today && diffdays < 150){
 			color = getcolorbydays(diffdays);
-			addDiv(`Q: ${round(q, 3)}, n: ${round(n, 0)}, d: ${d.toDateString()}, diff: ${diffdays}`, color);
+			addDiv(`${m}  -  Q: ${round(q, 3)}, n: ${round(n, 0)}, d: ${d.toDateString()}, diff: ${diffdays}`, color);
+			m++;
 		}
 	}
 }
