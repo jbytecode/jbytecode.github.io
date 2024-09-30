@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>postfix</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <input type="text" id="code" placeholder="Enter a postfix expression" value="2 3 + 5 * 2 ^">
+    <div id="band">Remaining: </div>
+    <div id="output">Stack: </div>
+    <div id="infix">Infix: </div>
+    <button onclick="onestep()">One Step Calculation</button>
+    <button onclick="reset()">Reset Stack</button>
+</body>
+
+<script type="text/javascript">
+    let txtcode = document.getElementById("code").value;
+    let code = new Code(txtcode);
+    const onestep = () => {
+        code.onestep();
+        document.getElementById("output").innerHTML = "Stack: " + code.stack;
+        document.getElementById("band").innerHTML = "Remaining: " + code.codetokens.slice(code.codepoint)
+        document.getElementById("infix").innerHTML = "Infix: " + code.infixstack;
+        console.log(code.stack);
+    }
+    const reset = () => {
+        txtcode = document.getElementById("code").value;
+        code = new Code(txtcode);
+        document.getElementById("output").innerHTML = "Stack: " + code.stack;
+        document.getElementById("band").innerHTML = "Remaining: " + code.codetokens.slice(code.codepoint)
+        document.getElementById("infix").innerHTML = "Infix: " + code.infixstack;
+    }
+</script>
+</html>
