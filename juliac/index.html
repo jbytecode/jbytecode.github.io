@@ -71,7 +71,7 @@ wget https://raw.githubusercontent.com/JuliaLang/julia/refs/heads/master/contrib
 <p>
 Since the feature is not well-integrated into the compiler, we need to manually
 install the newest Julia, that is, we need a nightly build or a custom compiled instance from source.
-Juliup is the best tool for this purpose. We can add the nightly build of Julia to our system
+Juliaup is the best tool for this purpose. We can add the nightly build of Julia to our system
 by running the following command:
 </p>
 
@@ -85,7 +85,7 @@ Here is the list of the installed Julia versions on my system:
 </p>
 
 <pre>
-hako@hako-school ~/c/j/j/code (main)> juliaup status
+#> juliaup status
 Default  Channel  Version                              Update 
 --------------------------------------------------------------
          alpha    1.11.0-rc4+0.x64.linux.gnu                  
@@ -152,20 +152,20 @@ the non-trimmed version of the file is much larger (about 150 mbs). That's a hug
 </p>
 
 <pre>
-hako@hako-school ~/c/j/j/code (main)> file hello
+#> file hello
 hello: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), 
 dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, 
 BuildID[sha1]=c6748be5508f17a4163a6e0ddcfc345c80eddf8d, 
 for GNU/Linux 3.2.0, with debug_info, not stripped
 
-hako@hako-school ~/c/j/j/code (main)> ls -al hello
+#> ls -al hello
 -rwxrwxr-x 1 hako hako 1652184 Oct  2 10:02 hello*
 </pre>
 
 
 <h3>Running the file</h3>
 <p>
-Here is the time it takes to execute the file. The total time is 34.03 milliseconds 
+Here is the time it takes to execute the file. The total time is 34.03 milliseconds. 
 Yes, it's a subjective measurement. But we can use this number to compare it to more complex ones.
 </p>
 
@@ -214,10 +214,10 @@ will show and show must go on.
 
 <h2>Let's get it more complex</h2>
 <p>
-Here is a more complex examples, but not that much. We are going to integrate the standard 
+Here is a more complex example, but not that much. We are going to integrate the standard 
 normal distribution function from -1.96 to 1.96. The result is nearly 0.95. The code is
 wrapped in a module and the main function is annotated with the @ccallable macro again. 
-The other things are the same for a regular Julia user. The import thing here is the 
+The other things are the same for a regular Julia user. The important thing here is the 
 code should be type-safe. It's guaranteed by the Julia compiler that the normal function 
 take a Float64 as an argument and returns a Float64, like we do in other type-safe languages.
 
@@ -288,6 +288,19 @@ Executed in   34.88 millis    fish           external
    usr time   23.67 millis    0.00 micros   23.67 millis
    sys time   13.57 millis  903.00 micros   12.66 millis
 </pre>
+
+<p>
+Yes, I think that's all for now. I hope you enjoyed the article. I will be back with more
+interesting topics. Stay tuned and take care of yourself. Bye for now.
+
+Sorry for the style of this web page, by the way, I am not a React developer :)
+</p>
+
+<p>
+<a href="https://x.com/mhsatman">- jbytecode</a>
+</p>
+
+<hr>
 
 </body>
 </html>
