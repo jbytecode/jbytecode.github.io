@@ -1,12 +1,29 @@
 body {
     background-color: #181818;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    margin-left: 5%;
-    margin-right: 40%;
     color: bisque;
 }
 
+h1{
+    margin-left: 5%;
+    margin-right: 40%;
+    color: white;
+}
+
+h2{
+    margin-left: 5%;
+    margin-right: 40%;
+    color: white;
+}
+
+h3{
+    margin-left: 5%;
+    margin-right: 40%;
+    color: white;
+}
 p {
+    margin-left: 5%;
+    margin-right: 40%;
     font-size: 20px;
     line-height: 1.5em;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -15,11 +32,26 @@ p {
 a {
     color: orangered;
     text-decoration: none;
+    margin-left: 5%;
+    margin-right: 40%;
 }
 
 li {
     font-size: 20px;
     line-height: 1.5em;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    color: blue;
+    color: rgb(196, 114, 21);
+    margin-left: 5%;
+    margin-right: 40%;
+}
+
+pre {
+    font-size: 16px;
+    background-color: #303030;
+    font-family: monospace;
+    color: greenyellow;
+    margin-right: 0;
+    padding: 10px;
+    margin-left: 5%;
+    margin-right: 10%;
 }

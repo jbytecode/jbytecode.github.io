@@ -18,7 +18,8 @@
 
 <p>
     Here is the link for the pull request:
-    <a href="https://github.com/JuliaLang/julia/commit/97ecdb8595c4a1fbe68ba6f39b3244e8cdabc2c6">PR: add --trim option for generation smaller binaries</a>
+    <br>
+    <a href="https://github.com/JuliaLang/julia/commit/97ecdb8595c4a1fbe68ba6f39b3244e8cdabc2c6">add --trim option for generation smaller binaries</a>
 </p>
 
 <p>
@@ -54,6 +55,239 @@ the Julia code. The juliac-buildscript.jl is a helper script that is used to com
 juliac.jl script. The julia-config.jl script is used to configure the Julia compiler.
 </p>
 
+<h3>download-script.sh</H3>
+<pre>
+!#/bin/bash
+rm -f juliac-buildscript.jl
+rm -r juliac.jl
+rm -r julia-config.jl
+
+wget https://raw.githubusercontent.com/JuliaLang/julia/refs/heads/master/contrib/juliac-buildscript.jl
+wget https://raw.githubusercontent.com/JuliaLang/julia/refs/heads/master/contrib/juliac.jl
+wget https://raw.githubusercontent.com/JuliaLang/julia/refs/heads/master/contrib/julia-config.jl
+</pre>
+
+<h3>The Early Bird</h3>
+<p>
+Since the feature is not well-integrated into the compiler, we need to manually
+install the newest Julia, that is, we need a nightly build or a custom compiled instance from source.
+Juliup is the best tool for this purpose. We can add the nightly build of Julia to our system
+by running the following command:
+</p>
+
+<pre>
+#> juliaup add nightly
+</pre>
+
+<p>
+I always have an instance of the latest mainstream, the alpha channel, and the nigtly build of Julia.
+Here is the list of the installed Julia versions on my system:
+</p>
+
+<pre>
+hako@hako-school ~/c/j/j/code (main)> juliaup status
+Default  Channel  Version                              Update 
+--------------------------------------------------------------
+         alpha    1.11.0-rc4+0.x64.linux.gnu                  
+         nightly  Development version 1.12.0-DEV.1282         
+      *  release  1.10.5+0.x64.linux.gnu        
+</pre>
+
+<p>
+We can always switch between the installed versions by running the following command:
+</p>
+
+<pre>
+#> julia +nightly --version
+julia version 1.12.0-DEV
+
+#> julia +alpha --version
+julia version 1.11.0-rc4
+
+#> julia --version
+julia version 1.10.5
+</pre>
+
+
+<h3>helloworld.jl</h3>
+<p>
+Let's get started and <b>dive into</b> it :) Wait, I don't use chatGPT here, just kidding.
+Here is the simplest Julia code that prints "Hello, World!" to the console.
+Note that the code is wrapped in a module. This is important for the compiler to
+generate a binary file. The main function is annotated with the @ccallable macro.
+The main function returns an integer, but not in type of Int, it's Cint which is 
+native integer type of C language. The function returns 0, which is the exit code,
+indicating that the program has been executed successfully.
+
+</p>
+<pre>
+module HelloWorld
+
+Base.@ccallable function main()::Cint
+    println(Core.stdout, "Hello, World!")
+    return 0
+end
+
+end # End of module HelloWorld 
+</pre>
+
+<h3>Compiling in terminal</h3>
+<p>
+The --trim option is mandatory for generating smaller binaries. If you don't use it
+the compiler will generate a binary file that is not trimmed. The --output-exe option
+is used to specify the name of the output file. This option can take 3 arguments. An 
+exe (--output-exe), a dynmaic link library (--output-lib), or a system image (--output-sysimage).
+We choose the exe option here. The last argument is the name of the source file.
+</p>
+
+<pre>
+#> julia +nightly juliac.jl --output-exe hello --trim helloworld.jl 
+</pre>
+
+<h3>Compiled file</h3>
+<p>
+In my Linux machine, the output is an ELF 64-bit executable file. The file size is 1652184 bytes 
+which is considerably large for a simple "Hello, World!" program. But remember 
+the non-trimmed version of the file is much larger (about 150 mbs). That's a huge difference.
+</p>
+
+<pre>
+hako@hako-school ~/c/j/j/code (main)> file hello
+hello: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), 
+dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, 
+BuildID[sha1]=c6748be5508f17a4163a6e0ddcfc345c80eddf8d, 
+for GNU/Linux 3.2.0, with debug_info, not stripped
+
+hako@hako-school ~/c/j/j/code (main)> ls -al hello
+-rwxrwxr-x 1 hako hako 1652184 Oct  2 10:02 hello*
+</pre>
+
+
+<h3>Running the file</h3>
+<p>
+Here is the time it takes to execute the file. The total time is 34.03 milliseconds 
+Yes, it's a subjective measurement. But we can use this number to compare it to more complex ones.
+</p>
+
+<pre>
+#> time ./hello
+Hello, World!
+
+________________________________________________________
+Executed in   34.03 millis    fish           external
+   usr time   27.45 millis    0.00 micros   27.45 millis
+   sys time    7.15 millis  603.00 micros    6.55 millis    
+</pre>
+
+<p>
+Let's take a look at the linked shared libraries of the executable file.
+</p>
+
+<pre>
+#> ldd ./hello
+linux-vdso.so.1 (0x00007ffe954ff000)
+libjulia.so.1.12 => .../lib/libjulia.so.1.12 (0x0000724c69598000)
+libjulia-internal.so.1.12 => .../lib/julia/libjulia-internal.so.1.12 (0x0000724c68e00000)
+libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x0000724c68a00000)
+libdl.so.2 => /lib/x86_64-linux-gnu/libdl.so.2 (0x0000724c69575000)
+libpthread.so.0 => /lib/x86_64-linux-gnu/libpthread.so.0 (0x0000724c69570000)
+libunwind.so.8 => .../julia/libunwind.so.8 (0x0000724c68400000)
+librt.so.1 => /lib/x86_64-linux-gnu/librt.so.1 (0x0000724c69569000)
+libz.so.1 => .../lib/julia/libz.so.1 (0x0000724c67e00000)
+libatomic.so.1 => .../julia/libatomic.so.1 (0x0000724c6955f000)
+libstdc++.so.6 => .../julia/libstdc++.so.6 (0x0000724c67a00000)
+libm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x0000724c69474000)
+libgcc_s.so.1 => .../julia/libgcc_s.so.1 (0x0000724c6944f000)
+/lib64/ld-linux-x86-64.so.2 (0x0000724c696ae000)
+</pre>
+
+<p>
+It seems the executable file is linked to the Julia shared libraries, which are libjulia.so 
+and libjulia-internal.so. That means the executable file is not standalone. It needs the
+Julia shared libraries to run. 
+
+When the compiler gets the ability of generating statically linked binaries, we can
+expect the executable file to be standalone. That means the file will not need any shared
+libraries to run. Yes, like we do it in Rust. This would be huge step for Julia, I think. Time 
+will show and show must go on.
+</p>
+
+<h2>Let's get it more complex</h2>
+<p>
+Here is a more complex examples, but not that much. We are going to integrate the standard 
+normal distribution function from -1.96 to 1.96. The result is nearly 0.95. The code is
+wrapped in a module and the main function is annotated with the @ccallable macro again. 
+The other things are the same for a regular Julia user. The import thing here is the 
+code should be type-safe. It's guaranteed by the Julia compiler that the normal function 
+take a Float64 as an argument and returns a Float64, like we do in other type-safe languages.
+
+The method used for numerical integration is the simplest one, the rectangle rule, a.k.a 
+Riemann sums. The code is not optimized for performance. It's just for demonstration purposes.
+Smaller eps values will give more accurate results. But it will take more time to compute.
+</p>
+
+<pre>
+module NumericalIntegration
+
+    function normal(x::Float64)::Float64
+      return (1 / sqrt(2 * pi)) * exp(-0.5 * x * x)
+    end
+
+    function integrate(f::Function, a::Float64, b::Float64, eps::Float64)::Float64
+      total = 0.0
+      x = a
+      while x <= b
+        total += f(x) * eps
+        x += eps
+      end
+      return total
+    end
+
+    Base.@ccallable function main()::Cint
+      result = integrate(normal, -1.96, 1.96, 0.0001)
+      println(Core.stdout, result)
+      return 0
+    end
+
+end # End of module NumericalIntegration    
+</pre>
+
+<p>
+Let's compile the code and see the results.
+</p>
+<pre>
+#> julia +nightly juliac.jl --output-exe integrate --trim integrate.jl 
+</pre>
+
+<p>
+The file is a 64-bit ELF executable again. But this time the file size is 1756192 bytes.
+It's larger than the previous one. But remember the previous one was a simple "Hello, World!" program.
+</p>
+
+<pre>
+#> file integrate
+integrate: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), 
+dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, 
+BuildID[sha1]=c430370463ca9af258eccc17657d8e1ef2861a30, 
+for GNU/Linux 3.2.0, with debug_info, not stripped
+
+#> ls -al integrate
+-rwxrwxr-x 1 hako hako 1756192 Oct  2 10:08 integrate*
+</pre>
+
+<p>
+The time it takes to execute the file is 34.88 milliseconds. It's nearly the same as the previous one.
+</p>
+
+<pre>
+#> time ./integrate
+0.9500100536071496
+
+________________________________________________________
+Executed in   34.88 millis    fish           external
+   usr time   23.67 millis    0.00 micros   23.67 millis
+   sys time   13.57 millis  903.00 micros   12.66 millis
+</pre>
 
 </body>
 </html>
