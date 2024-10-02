@@ -6,24 +6,24 @@ body {
 
 h1{
     margin-left: 5%;
-    margin-right: 40%;
+    margin-right: 10%;
     color: white;
 }
 
 h2{
     margin-left: 5%;
-    margin-right: 40%;
+    margin-right: 10%;
     color: white;
 }
 
 h3{
     margin-left: 5%;
-    margin-right: 40%;
+    margin-right: 10%;
     color: white;
 }
 p {
     margin-left: 5%;
-    margin-right: 40%;
+    margin-right: 10%;
     font-size: 20px;
     line-height: 1.5em;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -33,7 +33,7 @@ a {
     color: orangered;
     text-decoration: none;
     margin-left: 5%;
-    margin-right: 40%;
+    margin-right: 10%;
 }
 
 li {
@@ -42,7 +42,7 @@ li {
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: rgb(196, 114, 21);
     margin-left: 5%;
-    margin-right: 40%;
+    margin-right: 10%;
 }
 
 pre {
