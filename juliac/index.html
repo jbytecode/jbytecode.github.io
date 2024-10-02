@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <title>juliac</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>    
+
+<body>
+<h1>
+    add --trim option for generating smaller binaries
+</h1>
+
+<p>
+    In 2024, September 29th, I got up early and turned my computer on. 
+    I was excited to see that the legendery pull request was merged.
+</p>
+
+<p>
+    Here is the link for the pull request:
+    <a href="https://github.com/JuliaLang/julia/commit/97ecdb8595c4a1fbe68ba6f39b3244e8cdabc2c6">PR: add --trim option for generation smaller binaries</a>
+</p>
+
+<p>
+    This pull request introduces a new feature of trimming binary size of the compiled 
+    Julia code. Note the the feaure is not enabled by default or well-integrated into 
+    the compiler. We have now three Julia scripts in the contrib folder of the source code:
+</p>
+
+<p>
+<ul>
+    <li>
+<a href="https://github.com/JuliaLang/julia/blob/master/contrib/juliac-buildscript.jl">
+    juliac-buildscript.jl
+</a>
+</li>
+    <li>
+<a href="https://github.com/JuliaLang/julia/blob/master/contrib/juliac.jl">
+    juliac.jl
+</a>
+</li>
+    <li>
+<a href="https://github.com/JuliaLang/julia/blob/master/contrib/julia-config.jl">
+    julia-config.jl
+</a>
+</li>
+</p>
+</ul>
+
+<p>
+These files can be manually downloaded if your are not compiling your own Julia instance 
+from the source code. The juliac.jl script is the main script that is used to compile
+the Julia code. The juliac-buildscript.jl is a helper script that is used to compile the
+juliac.jl script. The julia-config.jl script is used to configure the Julia compiler.
+</p>
+
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+body {
+    background-color: #181818;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-left: 5%;
+    margin-right: 40%;
+    color: bisque;
+}
+
+p {
+    font-size: 20px;
+    line-height: 1.5em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+a {
+    color: orangered;
+    text-decoration: none;
+}
+
+li {
+    font-size: 20px;
+    line-height: 1.5em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: blue;
+}
