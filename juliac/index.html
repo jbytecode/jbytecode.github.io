@@ -213,7 +213,7 @@ libgcc_s.so.1 => .../julia/libgcc_s.so.1 (0x0000724c6944f000)
 
 <p>
 It seems the executable file is linked to the Julia shared libraries, which are libjulia.so 
-and libjulia-internal.so. That means the executable file is not standalone. It needs the
+and libjulia-internal.so (among others). That means the executable file is not standalone. It needs the
 Julia shared libraries to run. 
 
 When the compiler gets the ability of generating statically linked binaries, we can
