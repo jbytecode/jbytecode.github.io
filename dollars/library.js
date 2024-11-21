@@ -38,6 +38,7 @@ const drawDollars = () => {
     for (let i = 0; i < width; i+=step) {
         let x = i;
         let y = height - dollars[dollarindex];
+        ctx.strokeStyle = "#ff0000";
         ctx.beginPath();
         ctx.rect(x, y, step, dollars[dollarindex]);
         ctx.closePath();

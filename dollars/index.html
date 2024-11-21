@@ -3,12 +3,12 @@
 
 <head>
     <title>Dollars Example</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="../style.css">
     <script src="library.js" defer></script>
 </head>
 
 <body onload="init()">
-    <table>
+    <table style="margin: 0 auto; width: 50%;">
         <tr>
             <td>
                 <input id="txtStep" type="text" placeholder="Enter step" value="1000">
@@ -17,13 +17,13 @@
             </td>
         </tr>
         <tr>
-            <td>
-                <canvas id="dollarsCanvas" width="600" height="400"></canvas>
+            <td align="center">
+                <canvas id="dollarsCanvas" width="600" height="400" style="margin: 0 auto;"></canvas>
             </td>
         </tr>
         <tr>
             <td>
-                <textarea id="txtOutput" rows="10" cols="50"></textarea>
+                <textarea id="txtOutput" rows="10" cols="50" style="margin: 0 auto; width: 100%;"></textarea>
             </td>
     </table>
 </body>
