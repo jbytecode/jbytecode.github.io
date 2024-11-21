@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Excellang</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <table style="margin: 0 auto; width: 50%;">
+        <tr>
+            <td>
+                <input type="radio" name="language" id="language-en" value="en" checked>
+                <label for="language-en">English</label>
+            </td>
+            <td>
+                <input type="radio" name="language" id="language-tr" value="tr">
+                <label for="language-tr">Türkçe</label>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="text" id="txtInput" placeholder="Start typing a function name" oninput="findword();">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <ol id="txtOutput"><li>Results</li></ol>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
+
+
+<script type="text/javascript">
+
+    const findword = () => {
+        const input = document.getElementById("txtInput").value;
+        const language = document.querySelector('input[name="language"]:checked').value;
+        const output = document.getElementById("txtOutput");
+        const upperinput = input.toUpperCase();
+
+        output.innerHTML = "";
+
+        if (language == "en") {
+            for (let i = 0; i < window.wordpairs.length; i++) {
+                if (window.wordpairs[i].word1.indexOf(upperinput) > -1) {
+                    output.innerHTML += window.wordpairs[i].makereport(true) + "<br>";
+                }
+            }
+        } else if (language == "tr") {
+            for (let i = 0; i < window.wordpairs.length; i++) {
+                if (window.wordpairs[i].word2.indexOf(upperinput) > -1) {
+                    output.innerHTML += window.wordpairs[i].makereport(false) + "<br>";
+                }
+            }
+        }
+    }
+
+    class WordPairs {
+        constructor(word1, word2) {
+            this.word1 = word1;
+            this.word2 = word2;
+        }
+
+        makereport(order) {
+            let first = this.word1;
+            let second = this.word2;
+
+            if (!order) {
+                first = this.word2;
+                second = this.word1;   
+            }
+            return ("<li>" + first + " - " + second + "</li>");
+        }
+    }
+
+
+    fetch("data.txt")
+        .then(response => response.text())
+        .then(data => {
+            const lines = data.split("\n");
+            const wordpairs = [];
+            for (let i = 0; i < lines.length; i++) {
+                const line = lines[i].trim();
+                if (line !== "") {
+                    const words = line.split(";");
+                    const word1 = words[0];
+                    const word2 = words[1];
+                    const wordPair = new WordPairs(word1, word2);
+                    wordpairs.push(wordPair);
+                    console.log(wordPair);
+                }
+                window.wordpairs = wordpairs;
+            }
+        })
+</script>

@@ -57,3 +57,14 @@ pre {
     margin-left: 5%;
     margin-right: 5%;
 }
+
+input[type="text"]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 20px;
+    font-family: monospace;
+    background-color: darkseagreen;
+}
