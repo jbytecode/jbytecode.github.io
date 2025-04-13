@@ -7,6 +7,9 @@
 
 <body>
 
+<h2>Easy Online MCDM</h2>
+
+<h3>Enter your data and go on!</h3>
 
 <dialog id="dialog_messenger">
     <div id = "dialog_div_content">
@@ -22,8 +25,14 @@
         Step 1 - Generate the decision matrix content
     </legend>
     <div id="div_step1">
-    <p>Please copy and paste your data. The first row includes criteria names. The first column
+    <p>Please enter manually or copy & paste your data. 
+        The first row includes criteria names. The first column
         includes the names of the alternatives. You can separate values using commas or semicolons.
+        The initial content represents a decision matrix with 5 criteria and 3 alternatives. Number of 
+        spaces is not important, but values should be separated by the selected separator. If the 
+        values are consistent then a decision matrix will be generated. The default directions 
+        will set to max for all criteria. The default weights will be equal weights. The decimal 
+        separator is a dot (.) for numbers.
     </p>
     <textarea id="textarea_strdecmat" 
     placeholder="Enter and copy & paste the decision matrix content here"
@@ -48,13 +57,15 @@ A3,0.1, 0.2, 0.3, 0.4, 0.5
         <button class="toggle-button" id="button_showhide_step2">-</button>
         Step 2 - Enter directions of optimization for each criterion
     </legend>
+    <p>
+        Direction of optimization for each criterion. Use comma between directions.
+        Use "max" for maximization and "min" for minimization. Spaces can be used 
+        before and after a comma but they are not necessary.
+    </p>
     <div id="div_step2">
     <input type = "text" id = "input_criteria_directions" value = "max,max,min,max,min" />
     <hr/>
     <button id="button_generate_directions">Generate Directions</button>
-    <p>
-        Directions of optimization for each criterion. Use comma between directions.
-    </p>
     </div>
 </fieldset>
 
@@ -65,6 +76,10 @@ A3,0.1, 0.2, 0.3, 0.4, 0.5
         <button class="toggle-button" id="button_showhide_step3">-</button>
         Step 3 - Enter weights
     </legend>
+    <p>
+        Please select a weighting method. Custom weights is not implemented yet but 
+        all of the automatic methods are implemented. The default method is equal weights.
+    </p>
     <div id="div_step3">
     <label for="select_weight_method">Select weighting method:</label>
     <select id="select_weight_method">
@@ -89,6 +104,10 @@ A3,0.1, 0.2, 0.3, 0.4, 0.5
         <button class="toggle-button" id="button_showhide_step4">-</button>
         Step 4 - Select MCDM methods
     </legend>
+    <p>
+        Please select the MCDM methods to be applied. If more than one method is selected 
+        the results will be listed in the same order as the methods are selected.
+    </p>
     <div id="div_step4">
     <table>
         <tr>
