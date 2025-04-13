@@ -7,234 +7,233 @@
 
 <body>
 
-<h2>Easy Online MCDM</h2>
+    <h2>Easy Online MCDM</h2>
 
-<h3>Enter your data and go on!</h3>
+    <h3>Enter your data and go on!</h3>
 
-<dialog id="dialog_messenger">
-    <div id = "dialog_div_content">
-        Message Content
-    </div>
-    <hr/>
-    <button id="dialog_button_ok">OK</button>
-</dialog>
+    <dialog id="dialog_messenger">
+        <div id="dialog_div_content">
+            Message Content
+        </div>
+        <hr />
+        <button id="dialog_button_ok">OK</button>
+    </dialog>
 
-<fieldset>
-    <legend>
-        <button class="toggle-button" id="button_showhide_step1">-</button>
-        Step 1 - Generate the decision matrix content
-    </legend>
-    <div id="div_step1">
-    <p>Please enter manually or copy & paste your data. 
-        The first row includes criteria names. The first column
-        includes the names of the alternatives. You can separate values using commas or semicolons.
-        The initial content represents a decision matrix with 5 criteria and 3 alternatives. Number of 
-        spaces is not important, but values should be separated by the selected separator. If the 
-        values are consistent then a decision matrix will be generated. The default directions 
-        will set to max for all criteria. The default weights will be equal weights. The decimal 
-        separator is a dot (.) for numbers.
-    </p>
-    <textarea id="textarea_strdecmat" 
-    placeholder="Enter and copy & paste the decision matrix content here"
-    rows="6" cols="40">
+    <fieldset>
+        <legend>
+            <button class="toggle-button" id="button_showhide_step1">-</button>
+            Step 1 - Generate the decision matrix content
+        </legend>
+        <div id="div_step1">
+            <p>Please enter manually or copy & paste your data.
+                The first row includes criteria names. The first column
+                includes the names of the alternatives. You can separate values using commas or semicolons.
+                The initial content represents a decision matrix with 5 criteria and 3 alternatives. Number of
+                spaces is not important, but values should be separated by the selected separator. If the
+                values are consistent then a decision matrix will be generated. The default directions
+                will set to max for all criteria. The default weights will be equal weights. The decimal
+                separator is a dot (.) for numbers.
+            </p>
+            <textarea id="textarea_strdecmat" placeholder="Enter and copy & paste the decision matrix content here"
+                rows="6" cols="40">
   C1 , C2 , C3 , C4 , C5
 A1,0.3, 0.4, 0.5, 0.6, 0.7
 A2,0.2, 0.3, 0.4, 0.5, 0.6
 A3,0.1, 0.2, 0.3, 0.4, 0.5
 </textarea>
-<label for="select_separator">Select the value separator</label>
-<select id="select_separator">
-    <option value=",">Comma (,)</option>
-    <option value=";">Semicolon (;)</option>
-</select>
-<button id="button_generate_decmat">Generate Decision Matrix</button>
-</div>
-</fieldset>
+            <label for="select_separator">Select the value separator</label>
+            <select id="select_separator">
+                <option value=",">Comma (,)</option>
+                <option value=";">Semicolon (;)</option>
+            </select>
+            <button id="button_generate_decmat">Generate Decision Matrix</button>
+        </div>
+    </fieldset>
 
 
-<fieldset>
-    <legend>
-        <button class="toggle-button" id="button_showhide_step2">-</button>
-        Step 2 - Enter directions of optimization for each criterion
-    </legend>
-    <div id="div_step2">
-        <p>
-            Direction of optimization for each criterion. Use comma between directions.
-            Use "max" for maximization and "min" for minimization. Spaces can be used 
-            before and after a comma but they are not necessary.
-        </p>
-    <input type = "text" id = "input_criteria_directions" value = "max,max,min,max,min" />
-    <hr/>
-    <button id="button_generate_directions">Generate Directions</button>
-    </div>
-</fieldset>
-
-
-
-<fieldset>
-    <legend>
-        <button class="toggle-button" id="button_showhide_step3">-</button>
-        Step 3 - Enter weights
-    </legend>
-    <div id="div_step3">
-        <p>
-            Please select a weighting method. Custom weights is not implemented yet but 
-            all of the automatic methods are implemented. The default method is equal weights.
-        </p>
-    <label for="select_weight_method">Select weighting method:</label>
-    <select id="select_weight_method">
-        <option value="0">Equal weights</option>
-        <option value="1">Entropy method</option>
-        <option value="2">Critic method</option>
-        <option value="3">Standard deviation method (SD)</option>
-        <option value="4">Merec method</option>
-        <option value="5">Cilos method</option>
-        <option value="6">Idocriw method</option>
-        <option value="7">Lopcow method</option>
-        <option value="8">Custom weights</option>
-    </select>
-    <button id="button_generate_weights">Generate Weights</button>
-    </div>
-</fieldset>
-
-
-
-<fieldset>
-    <legend>
-        <button class="toggle-button" id="button_showhide_step4">-</button>
-        Step 4 - Select MCDM methods
-    </legend>
-
-    <div id="div_step4">
-        <p>
-            Please select the MCDM methods to be applied. If more than one method is selected 
-            the results will be listed in the same order as the methods are selected.
-        </p>
-    <table>
-        <tr>
-            <td>
-                <label for="check_aras">Aras</label>
-                <input type="checkbox" id="check_aras" checked></input>
-            </td>
-            <td>
-                <label for="check_cocoso">Cocoso</label>
-                <input type="checkbox" id="check_cocoso"></input>
-            </td>
-            <td>
-                <label for="check_codas">Codas</label>
-                <input type="checkbox" id="check_codas" checked></input>
-            </td>
-            <td>
-                <label for="check_copras">Copras</label>
-                <input type="checkbox" id="check_copras" checked></input>
-            </td>
-            <td>
-                <label for="check_edas">Edas</label>
-                <input type="checkbox" id="check_edas"></input>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label for="check_lmaw">Lmaw</label>
-                <input type="checkbox" id="check_lmaw" checked></input>
-            </td>
-            <td>
-                <label for="check_mabac">Mabac</label>
-                <input type="checkbox" id="check_mabac" checked></input>
-            </td>
-            <td>
-                <label for="check_mairca">Mairca</label>
-                <input type="checkbox" id="check_mairca"></input>
-            </td>
-            <td>
-                <label for="check_marcos">Marcos</label>
-                <input type="checkbox" id="check_marcos"></input>
-            </td>
-            <td>
-                <label for="check_moosra">Moosra</label>
-                <input type="checkbox" id="check_moosra"></input>
-            </td>
-        </tr>
-        <tr>    
-            <td>
-                <label for="check_ocra">Ocra</label>
-                <input type="checkbox" id="check_ocra"></input>
-            </td>
-            <td>
-                <label for="check_piv">Piv</label>
-                <input type="checkbox" id="check_piv"></input>
-            </td>
-            <td>
-                <label for="check_psi">Psi</label>
-                <input type="checkbox" id="check_psi"></input>
-            </td>
-            <td>
-                <label for="check_ram">Ram</label>
-                <input type="checkbox" id="check_ram"></input>
-            </td>
-            <td>
-                <label for="check_row">Rov</label>
-                <input type="checkbox" id="check_rov"></input>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label for="check_saw">Saw</label>
-                <input type="checkbox" id="check_saw"></input>
-            </td>
-            <td>
-                <label for="check_topsis">Topsis</label>
-                <input type="checkbox" id="check_topsis"></input>
-            </td>
-            <td>
-                <label for="check_waspas">Waspas</label>
-                <input type="checkbox" id="check_waspas"></input>
-            </td>
-            <td>
-                <label for="check_wpm">Wpm</label>
-                <input type="checkbox" id="check_wpm"></input>
-            </td>
-            <td></td>
-        </tr>
-    </table>
-
-
-    <button id="button_evaluate">Generate output</button>
-    </div>
-</fieldset>
-
-<fieldset>
-    <legend>
-        <button class="toggle-button" id="button_showhide_finaldecmat">-</button>
-        The final decision matrix
-    </legend>
-    <div id="div_final_decmat">
-        The decision matrix is empty. Please 
-        <ol>
-            <li>Generate the content in Step 1</li>
-            <li>Generate the directions in Step 2</li>
-            <li>Generate the weights in Step 3</li>
-            <li>Select the methods to apply in Step 4</li>
-        </ol>
-    </div>
-</fieldset>
-
-<fieldset>
-    <legend>MCDM Methods' Output</legend>
     <fieldset>
-        <legend>Scores</legend>
-        <div id="div_output_scores">
-            
-        </div>    
+        <legend>
+            <button class="toggle-button" id="button_showhide_step2">-</button>
+            Step 2 - Enter directions of optimization for each criterion
+        </legend>
+        <div id="div_step2">
+            <p>
+                Direction of optimization for each criterion. Use comma between directions.
+                Use "max" for maximization and "min" for minimization. Spaces can be used
+                before and after a comma but they are not necessary.
+            </p>
+            <input type="text" id="input_criteria_directions" value="max,max,min,max,min" />
+            <hr />
+            <button id="button_generate_directions">Generate Directions</button>
+        </div>
+    </fieldset>
+
+
+
+    <fieldset>
+        <legend>
+            <button class="toggle-button" id="button_showhide_step3">-</button>
+            Step 3 - Enter weights
+        </legend>
+        <div id="div_step3">
+            <p>
+                Please select a weighting method. Custom weights is not implemented yet but
+                all of the automatic methods are implemented. The default method is equal weights.
+            </p>
+            <label for="select_weight_method">Select weighting method:</label>
+            <select id="select_weight_method">
+                <option value="0">Equal weights</option>
+                <option value="1">Entropy method</option>
+                <option value="2">Critic method</option>
+                <option value="3">Standard deviation method (SD)</option>
+                <option value="4">Merec method</option>
+                <option value="5">Cilos method</option>
+                <option value="6">Idocriw method</option>
+                <option value="7">Lopcow method</option>
+                <option value="8">Custom weights</option>
+            </select>
+            <button id="button_generate_weights">Generate Weights</button>
+        </div>
+    </fieldset>
+
+
+
+    <fieldset>
+        <legend>
+            <button class="toggle-button" id="button_showhide_step4">-</button>
+            Step 4 - Select MCDM methods
+        </legend>
+
+        <div id="div_step4">
+            <p>
+                Please select the MCDM methods to be applied. If more than one method is selected
+                the results will be listed in the same order as the methods are selected.
+            </p>
+            <table>
+                <tr>
+                    <td>
+                        <label for="check_aras">Aras</label>
+                        <input type="checkbox" id="check_aras" checked></input>
+                    </td>
+                    <td>
+                        <label for="check_cocoso">Cocoso</label>
+                        <input type="checkbox" id="check_cocoso"></input>
+                    </td>
+                    <td>
+                        <label for="check_codas">Codas</label>
+                        <input type="checkbox" id="check_codas" checked></input>
+                    </td>
+                    <td>
+                        <label for="check_copras">Copras</label>
+                        <input type="checkbox" id="check_copras" checked></input>
+                    </td>
+                    <td>
+                        <label for="check_edas">Edas</label>
+                        <input type="checkbox" id="check_edas"></input>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="check_lmaw">Lmaw</label>
+                        <input type="checkbox" id="check_lmaw" checked></input>
+                    </td>
+                    <td>
+                        <label for="check_mabac">Mabac</label>
+                        <input type="checkbox" id="check_mabac" checked></input>
+                    </td>
+                    <td>
+                        <label for="check_mairca">Mairca</label>
+                        <input type="checkbox" id="check_mairca"></input>
+                    </td>
+                    <td>
+                        <label for="check_marcos">Marcos</label>
+                        <input type="checkbox" id="check_marcos"></input>
+                    </td>
+                    <td>
+                        <label for="check_moosra">Moosra</label>
+                        <input type="checkbox" id="check_moosra"></input>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="check_ocra">Ocra</label>
+                        <input type="checkbox" id="check_ocra"></input>
+                    </td>
+                    <td>
+                        <label for="check_piv">Piv</label>
+                        <input type="checkbox" id="check_piv"></input>
+                    </td>
+                    <td>
+                        <label for="check_psi">Psi</label>
+                        <input type="checkbox" id="check_psi"></input>
+                    </td>
+                    <td>
+                        <label for="check_ram">Ram</label>
+                        <input type="checkbox" id="check_ram"></input>
+                    </td>
+                    <td>
+                        <label for="check_row">Rov</label>
+                        <input type="checkbox" id="check_rov"></input>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="check_saw">Saw</label>
+                        <input type="checkbox" id="check_saw"></input>
+                    </td>
+                    <td>
+                        <label for="check_topsis">Topsis</label>
+                        <input type="checkbox" id="check_topsis"></input>
+                    </td>
+                    <td>
+                        <label for="check_waspas">Waspas</label>
+                        <input type="checkbox" id="check_waspas"></input>
+                    </td>
+                    <td>
+                        <label for="check_wpm">Wpm</label>
+                        <input type="checkbox" id="check_wpm"></input>
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+
+
+            <button id="button_evaluate">Generate output</button>
+        </div>
     </fieldset>
 
     <fieldset>
-        <legend>Ranks</legend>
-        <div id="div_output_ranks">
-            
-        </div>    
+        <legend>
+            <button class="toggle-button" id="button_showhide_finaldecmat">-</button>
+            The final decision matrix
+        </legend>
+        <div id="div_final_decmat">
+            The decision matrix is empty. Please
+            <ol>
+                <li>Generate the content in Step 1</li>
+                <li>Generate the directions in Step 2</li>
+                <li>Generate the weights in Step 3</li>
+                <li>Select the methods to apply in Step 4</li>
+            </ol>
+        </div>
     </fieldset>
-</fieldset>
+
+    <fieldset>
+        <legend>MCDM Methods' Output</legend>
+        <fieldset>
+            <legend>Scores</legend>
+            <div id="div_output_scores">
+
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Ranks</legend>
+            <div id="div_output_ranks">
+
+            </div>
+        </fieldset>
+    </fieldset>
 
 
 
