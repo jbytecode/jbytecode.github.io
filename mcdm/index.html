@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>Scala.js</title>
+    <title>Easy Online MCDM</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -18,8 +18,10 @@
 
 <fieldset>
     <legend>
+        <button class="toggle-button" id="button_showhide_step1">-</button>
         Step 1 - Generate the decision matrix content
     </legend>
+    <div id="div_step1">
     <p>Please copy and paste your data. The first row includes criteria names. The first column
         includes the names of the alternatives. You can separate values using commas or semicolons.
     </p>
@@ -37,27 +39,33 @@ A3,0.1, 0.2, 0.3, 0.4, 0.5
     <option value=";">Semicolon (;)</option>
 </select>
 <button id="button_generate_decmat">Generate Decision Matrix</button>
+</div>
 </fieldset>
 
 
 <fieldset>
     <legend>
+        <button class="toggle-button" id="button_showhide_step2">-</button>
         Step 2 - Enter directions of optimization for each criterion
     </legend>
+    <div id="div_step2">
     <input type = "text" id = "input_criteria_directions" value = "max,max,min,max,min" />
     <hr/>
     <button id="button_generate_directions">Generate Directions</button>
     <p>
         Directions of optimization for each criterion. Use comma between directions.
     </p>
+    </div>
 </fieldset>
 
 
 
 <fieldset>
     <legend>
+        <button class="toggle-button" id="button_showhide_step3">-</button>
         Step 3 - Enter weights
     </legend>
+    <div id="div_step3">
     <label for="select_weight_method">Select weighting method:</label>
     <select id="select_weight_method">
         <option value="0">Equal weights</option>
@@ -71,14 +79,17 @@ A3,0.1, 0.2, 0.3, 0.4, 0.5
         <option value="8">Custom weights</option>
     </select>
     <button id="button_generate_weights">Generate Weights</button>
+    </div>
 </fieldset>
 
 
 
 <fieldset>
     <legend>
+        <button class="toggle-button" id="button_showhide_step4">-</button>
         Step 4 - Select MCDM methods
     </legend>
+    <div id="div_step4">
     <table>
         <tr>
             <td>
@@ -87,7 +98,7 @@ A3,0.1, 0.2, 0.3, 0.4, 0.5
             </td>
             <td>
                 <label for="check_cocoso">Cocoso</label>
-                <input type="checkbox" id="check_cocoso" checked></input>
+                <input type="checkbox" id="check_cocoso"></input>
             </td>
             <td>
                 <label for="check_codas">Codas</label>
@@ -95,7 +106,7 @@ A3,0.1, 0.2, 0.3, 0.4, 0.5
             </td>
             <td>
                 <label for="check_copras">Copras</label>
-                <input type="checkbox" id="check_copras"></input>
+                <input type="checkbox" id="check_copras" checked></input>
             </td>
             <td>
                 <label for="check_edas">Edas</label>
@@ -169,10 +180,14 @@ A3,0.1, 0.2, 0.3, 0.4, 0.5
 
 
     <button id="button_evaluate">Generate output</button>
+    </div>
 </fieldset>
 
 <fieldset>
-    <legend>The final decision matrix</legend>
+    <legend>
+        <button class="toggle-button" id="button_showhide_finaldecmat">-</button>
+        The final decision matrix
+    </legend>
     <div id="div_final_decmat">
         The decision matrix is empty. Please 
         <ol>

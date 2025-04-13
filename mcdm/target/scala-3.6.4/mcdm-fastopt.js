@@ -3432,79 +3432,24 @@ function $asArrayOf_ju_regex_PatternCompiler$CompiledCharClass(obj, depth) {
 var $d_ju_regex_PatternCompiler$CompiledCharClass = new $TypeData().initClass($c_ju_regex_PatternCompiler$CompiledCharClass, "java.util.regex.PatternCompiler$CompiledCharClass", ({
   ju_regex_PatternCompiler$CompiledCharClass: 1
 }));
+function $p_Lorg_expr_mcdm_Main$package$__showhide$1__Lorg_scalajs_dom_HTMLDivElement__Lorg_scalajs_dom_HTMLButtonElement__V($thiz, div, button) {
+  button.onclick = ((e) => {
+    if (($as_T(div.style.display) === "none")) {
+      div.style.display = "block";
+      button.innerText = "-";
+      return (void 0);
+    } else {
+      div.style.display = "none";
+      button.innerText = "+";
+      return (void 0);
+    }
+  });
+}
 /** @constructor */
 function $c_Lorg_expr_mcdm_Main$package$() {
   this.Lorg_expr_mcdm_Main$package$__f_problem = null;
-  this.Lorg_expr_mcdm_Main$package$__f_document = null;
-  this.Lorg_expr_mcdm_Main$package$__f_window = null;
-  this.Lorg_expr_mcdm_Main$package$__f_textarea_strdecmat = null;
-  this.Lorg_expr_mcdm_Main$package$__f_button_generate_decmat = null;
-  this.Lorg_expr_mcdm_Main$package$__f_button_generate_weights = null;
-  this.Lorg_expr_mcdm_Main$package$__f_dialog_button_ok = null;
-  this.Lorg_expr_mcdm_Main$package$__f_select_separator = null;
-  this.Lorg_expr_mcdm_Main$package$__f_select_weight_method = null;
-  this.Lorg_expr_mcdm_Main$package$__f_input_criteria_directions = null;
-  this.Lorg_expr_mcdm_Main$package$__f_button_generate_directions = null;
-  this.Lorg_expr_mcdm_Main$package$__f_button_evaluate = null;
-  this.Lorg_expr_mcdm_Main$package$__f_div_output_scores = null;
-  this.Lorg_expr_mcdm_Main$package$__f_div_output_ranks = null;
-  this.Lorg_expr_mcdm_Main$package$__f_div_final_decmat = null;
-  this.Lorg_expr_mcdm_Main$package$__f_check_aras = null;
-  this.Lorg_expr_mcdm_Main$package$__f_check_cocoso = null;
-  this.Lorg_expr_mcdm_Main$package$__f_check_codas = null;
-  this.Lorg_expr_mcdm_Main$package$__f_check_copras = null;
-  this.Lorg_expr_mcdm_Main$package$__f_check_edas = null;
-  this.Lorg_expr_mcdm_Main$package$__f_check_lmaw = null;
-  this.Lorg_expr_mcdm_Main$package$__f_check_mabac = null;
-  this.Lorg_expr_mcdm_Main$package$__f_check_mairca = null;
-  this.Lorg_expr_mcdm_Main$package$__f_check_marcos = null;
-  this.Lorg_expr_mcdm_Main$package$__f_check_moosra = null;
-  this.Lorg_expr_mcdm_Main$package$__f_check_ocra = null;
-  this.Lorg_expr_mcdm_Main$package$__f_check_piv = null;
-  this.Lorg_expr_mcdm_Main$package$__f_check_psi = null;
-  this.Lorg_expr_mcdm_Main$package$__f_check_ram = null;
-  this.Lorg_expr_mcdm_Main$package$__f_check_rov = null;
-  this.Lorg_expr_mcdm_Main$package$__f_check_saw = null;
-  this.Lorg_expr_mcdm_Main$package$__f_check_topsis = null;
-  this.Lorg_expr_mcdm_Main$package$__f_check_waspas = null;
-  this.Lorg_expr_mcdm_Main$package$__f_check_wpm = null;
   $n_Lorg_expr_mcdm_Main$package$ = this;
   this.Lorg_expr_mcdm_Main$package$__f_problem = $m_Lorg_expr_mcdm_parser_Parser$().empty_mcdm_problem__Lorg_expr_mcdm_MCDMProblem();
-  this.Lorg_expr_mcdm_Main$package$__f_document = document;
-  this.Lorg_expr_mcdm_Main$package$__f_window = window;
-  this.Lorg_expr_mcdm_Main$package$__f_textarea_strdecmat = $m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_document.getElementById("textarea_strdecmat");
-  this.Lorg_expr_mcdm_Main$package$__f_button_generate_decmat = $m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_document.getElementById("button_generate_decmat");
-  this.Lorg_expr_mcdm_Main$package$__f_button_generate_weights = $m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_document.getElementById("button_generate_weights");
-  this.Lorg_expr_mcdm_Main$package$__f_dialog_button_ok = $m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_document.getElementById("dialog_button_ok");
-  $m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_document.getElementById("dialog_messenger");
-  this.Lorg_expr_mcdm_Main$package$__f_select_separator = $m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_document.getElementById("select_separator");
-  this.Lorg_expr_mcdm_Main$package$__f_select_weight_method = $m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_document.getElementById("select_weight_method");
-  this.Lorg_expr_mcdm_Main$package$__f_input_criteria_directions = $m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_document.getElementById("input_criteria_directions");
-  this.Lorg_expr_mcdm_Main$package$__f_button_generate_directions = $m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_document.getElementById("button_generate_directions");
-  this.Lorg_expr_mcdm_Main$package$__f_button_evaluate = $m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_document.getElementById("button_evaluate");
-  this.Lorg_expr_mcdm_Main$package$__f_div_output_scores = $m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_document.getElementById("div_output_scores");
-  this.Lorg_expr_mcdm_Main$package$__f_div_output_ranks = $m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_document.getElementById("div_output_ranks");
-  this.Lorg_expr_mcdm_Main$package$__f_div_final_decmat = $m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_document.getElementById("div_final_decmat");
-  this.Lorg_expr_mcdm_Main$package$__f_check_aras = $m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_document.getElementById("check_aras");
-  this.Lorg_expr_mcdm_Main$package$__f_check_cocoso = $m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_document.getElementById("check_cocoso");
-  this.Lorg_expr_mcdm_Main$package$__f_check_codas = $m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_document.getElementById("check_codas");
-  this.Lorg_expr_mcdm_Main$package$__f_check_copras = $m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_document.getElementById("check_copras");
-  this.Lorg_expr_mcdm_Main$package$__f_check_edas = $m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_document.getElementById("check_edas");
-  this.Lorg_expr_mcdm_Main$package$__f_check_lmaw = $m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_document.getElementById("check_lmaw");
-  $m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_document.getElementById("check_lopcow");
-  this.Lorg_expr_mcdm_Main$package$__f_check_mabac = $m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_document.getElementById("check_mabac");
-  this.Lorg_expr_mcdm_Main$package$__f_check_mairca = $m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_document.getElementById("check_mairca");
-  this.Lorg_expr_mcdm_Main$package$__f_check_marcos = $m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_document.getElementById("check_marcos");
-  this.Lorg_expr_mcdm_Main$package$__f_check_moosra = $m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_document.getElementById("check_moosra");
-  this.Lorg_expr_mcdm_Main$package$__f_check_ocra = $m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_document.getElementById("check_ocra");
-  this.Lorg_expr_mcdm_Main$package$__f_check_piv = $m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_document.getElementById("check_piv");
-  this.Lorg_expr_mcdm_Main$package$__f_check_psi = $m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_document.getElementById("check_psi");
-  this.Lorg_expr_mcdm_Main$package$__f_check_ram = $m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_document.getElementById("check_ram");
-  this.Lorg_expr_mcdm_Main$package$__f_check_rov = $m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_document.getElementById("check_rov");
-  this.Lorg_expr_mcdm_Main$package$__f_check_saw = $m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_document.getElementById("check_saw");
-  this.Lorg_expr_mcdm_Main$package$__f_check_topsis = $m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_document.getElementById("check_topsis");
-  this.Lorg_expr_mcdm_Main$package$__f_check_waspas = $m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_document.getElementById("check_waspas");
-  this.Lorg_expr_mcdm_Main$package$__f_check_wpm = $m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_document.getElementById("check_wpm");
 }
 $c_Lorg_expr_mcdm_Main$package$.prototype = new $h_O();
 $c_Lorg_expr_mcdm_Main$package$.prototype.constructor = $c_Lorg_expr_mcdm_Main$package$;
@@ -3513,9 +3458,9 @@ function $h_Lorg_expr_mcdm_Main$package$() {
 }
 $h_Lorg_expr_mcdm_Main$package$.prototype = $c_Lorg_expr_mcdm_Main$package$.prototype;
 $c_Lorg_expr_mcdm_Main$package$.prototype.button_generate_decmat_events__V = (function() {
-  $m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_button_generate_decmat.onclick = ((e) => {
-    var separator = $as_T($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_select_separator.value);
-    var strdecmat = $as_T($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_textarea_strdecmat.value);
+  $m_Lorg_expr_mcdm_gui_DomObjects$().Lorg_expr_mcdm_gui_DomObjects$__f_button_generate_decmat.onclick = ((e) => {
+    var separator = $as_T($m_Lorg_expr_mcdm_gui_DomObjects$().Lorg_expr_mcdm_gui_DomObjects$__f_select_separator.value);
+    var strdecmat = $as_T($m_Lorg_expr_mcdm_gui_DomObjects$().Lorg_expr_mcdm_gui_DomObjects$__f_textarea_strdecmat.value);
     var p = $m_Lorg_expr_mcdm_parser_Parser$().parseCSV__T__T__Lorg_expr_mcdm_MCDMProblem(strdecmat, separator);
     var $x_1 = $m_Lorg_expr_mcdm_Main$package$();
     $n(p);
@@ -3526,16 +3471,16 @@ $c_Lorg_expr_mcdm_Main$package$.prototype.button_generate_decmat_events__V = (fu
     var directions = $n(p).Lorg_expr_mcdm_MCDMProblem__f_directions;
     $x_1.Lorg_expr_mcdm_Main$package$__f_problem = new $c_Lorg_expr_mcdm_MCDMProblem(alternatives, criteria, data, weights, directions);
     var strdecmat_html = $m_Lorg_expr_mcdm_gui_HtmlUtils$().decmat2html__Lorg_expr_mcdm_MCDMProblem__T(p);
-    $m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_div_final_decmat.innerHTML = strdecmat_html;
-    $m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_dialog_button_ok.onclick = ((e$2) => {
+    $m_Lorg_expr_mcdm_gui_DomObjects$().Lorg_expr_mcdm_gui_DomObjects$__f_div_final_decmat.innerHTML = strdecmat_html;
+    $m_Lorg_expr_mcdm_gui_DomObjects$().Lorg_expr_mcdm_gui_DomObjects$__f_dialog_button_ok.onclick = ((e$2) => {
       $m_Lorg_expr_mcdm_gui_HtmlUtils$().Lorg_expr_mcdm_gui_HtmlUtils$__f_dialog_messenger.close();
     });
     $m_Lorg_expr_mcdm_gui_HtmlUtils$().msgbox__T__V(strdecmat_html);
   });
 });
 $c_Lorg_expr_mcdm_Main$package$.prototype.button_generate_directions_events__V = (function() {
-  $m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_button_generate_directions.onclick = ((e) => {
-    var strdirections = $as_T($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_input_criteria_directions.value);
+  $m_Lorg_expr_mcdm_gui_DomObjects$().Lorg_expr_mcdm_gui_DomObjects$__f_button_generate_directions.onclick = ((e) => {
+    var strdirections = $as_T($m_Lorg_expr_mcdm_gui_DomObjects$().Lorg_expr_mcdm_gui_DomObjects$__f_input_criteria_directions.value);
     var this$1 = $n(strdirections);
     var xs = $f_T__split__T__I__AT(this$1, ",", 0);
     var f = ((_$1) => {
@@ -3673,17 +3618,17 @@ $c_Lorg_expr_mcdm_Main$package$.prototype.button_generate_directions_events__V =
     }
     $n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_directions = directions;
     var strdirections_html = $m_Lorg_expr_mcdm_gui_HtmlUtils$().decmat2html__Lorg_expr_mcdm_MCDMProblem__T($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem);
-    $m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_div_final_decmat.innerHTML = strdirections_html;
-    $m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_dialog_button_ok.onclick = ((e$2) => {
+    $m_Lorg_expr_mcdm_gui_DomObjects$().Lorg_expr_mcdm_gui_DomObjects$__f_div_final_decmat.innerHTML = strdirections_html;
+    $m_Lorg_expr_mcdm_gui_DomObjects$().Lorg_expr_mcdm_gui_DomObjects$__f_dialog_button_ok.onclick = ((e$2) => {
       $m_Lorg_expr_mcdm_gui_HtmlUtils$().Lorg_expr_mcdm_gui_HtmlUtils$__f_dialog_messenger.close();
     });
     $m_Lorg_expr_mcdm_gui_HtmlUtils$().msgbox__T__V(strdirections_html);
   });
 });
 $c_Lorg_expr_mcdm_Main$package$.prototype.button_generate_weights_events__V = (function() {
-  $m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_button_generate_weights.onclick = ((e) => {
+  $m_Lorg_expr_mcdm_gui_DomObjects$().Lorg_expr_mcdm_gui_DomObjects$__f_button_generate_weights.onclick = ((e) => {
     var methodname;
-    var this$1 = $n($as_T($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_select_weight_method.value));
+    var this$1 = $n($as_T($m_Lorg_expr_mcdm_gui_DomObjects$().Lorg_expr_mcdm_gui_DomObjects$__f_select_weight_method.value));
     switch (this$1) {
       case "0": {
         var $x_2 = $n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem);
@@ -3778,15 +3723,22 @@ $c_Lorg_expr_mcdm_Main$package$.prototype.button_generate_weights_events__V = (f
     }
     var strproblem = $m_Lorg_expr_mcdm_gui_HtmlUtils$().decmat2html__Lorg_expr_mcdm_MCDMProblem__T($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem);
     $m_Lorg_expr_mcdm_gui_HtmlUtils$().msgbox__T__V(((("Weights generated by <b>" + methodname) + "<b><hr><br>Problem: <br>") + strproblem));
-    $m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_div_final_decmat.innerHTML = strproblem;
+    $m_Lorg_expr_mcdm_gui_DomObjects$().Lorg_expr_mcdm_gui_DomObjects$__f_div_final_decmat.innerHTML = strproblem;
   });
 });
+$c_Lorg_expr_mcdm_Main$package$.prototype.fieldset_showhide_events__V = (function() {
+  $p_Lorg_expr_mcdm_Main$package$__showhide$1__Lorg_scalajs_dom_HTMLDivElement__Lorg_scalajs_dom_HTMLButtonElement__V(this, $m_Lorg_expr_mcdm_gui_DomObjects$().Lorg_expr_mcdm_gui_DomObjects$__f_div_step1, $m_Lorg_expr_mcdm_gui_DomObjects$().Lorg_expr_mcdm_gui_DomObjects$__f_button_showhide_step1);
+  $p_Lorg_expr_mcdm_Main$package$__showhide$1__Lorg_scalajs_dom_HTMLDivElement__Lorg_scalajs_dom_HTMLButtonElement__V(this, $m_Lorg_expr_mcdm_gui_DomObjects$().Lorg_expr_mcdm_gui_DomObjects$__f_div_step2, $m_Lorg_expr_mcdm_gui_DomObjects$().Lorg_expr_mcdm_gui_DomObjects$__f_button_showhide_step2);
+  $p_Lorg_expr_mcdm_Main$package$__showhide$1__Lorg_scalajs_dom_HTMLDivElement__Lorg_scalajs_dom_HTMLButtonElement__V(this, $m_Lorg_expr_mcdm_gui_DomObjects$().Lorg_expr_mcdm_gui_DomObjects$__f_div_step3, $m_Lorg_expr_mcdm_gui_DomObjects$().Lorg_expr_mcdm_gui_DomObjects$__f_button_showhide_step3);
+  $p_Lorg_expr_mcdm_Main$package$__showhide$1__Lorg_scalajs_dom_HTMLDivElement__Lorg_scalajs_dom_HTMLButtonElement__V(this, $m_Lorg_expr_mcdm_gui_DomObjects$().Lorg_expr_mcdm_gui_DomObjects$__f_div_step4, $m_Lorg_expr_mcdm_gui_DomObjects$().Lorg_expr_mcdm_gui_DomObjects$__f_button_showhide_step4);
+  $p_Lorg_expr_mcdm_Main$package$__showhide$1__Lorg_scalajs_dom_HTMLDivElement__Lorg_scalajs_dom_HTMLButtonElement__V(this, $m_Lorg_expr_mcdm_gui_DomObjects$().Lorg_expr_mcdm_gui_DomObjects$__f_div_final_decmat, $m_Lorg_expr_mcdm_gui_DomObjects$().Lorg_expr_mcdm_gui_DomObjects$__f_button_showhide_finaldecmat);
+});
 $c_Lorg_expr_mcdm_Main$package$.prototype.button_generate_evaluate_events__V = (function() {
-  $m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_button_evaluate.onclick = ((e) => {
+  $m_Lorg_expr_mcdm_gui_DomObjects$().Lorg_expr_mcdm_gui_DomObjects$__f_button_evaluate.onclick = ((e) => {
     var methodsnames = new ($d_T.getArrayOf().constr)(0);
     var scores = $m_Lorg_expr_mcdm_Matrix$().zeros__I__I__AAD(0, $n($n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_alternatives).u.length);
     var ranks = $m_Lorg_expr_mcdm_Matrix$().zeros__I__I__AAD(0, $n($n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_alternatives).u.length);
-    if ($uZ($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_check_aras.checked)) {
+    if ($uZ($m_Lorg_expr_mcdm_gui_DomObjects$().Lorg_expr_mcdm_gui_DomObjects$__f_check_aras.checked)) {
       var arasresult = $m_Lorg_expr_mcdm_aras$package$().aras__AAD__AD__ALorg_expr_mcdm_Direction__F3__sci_Map__Lorg_expr_mcdm_ArasResult($n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_data, $n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_weights, $m_Lorg_expr_mcdm_parser_Parser$().str2directions__AT__ALorg_expr_mcdm_Direction($n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_directions), $m_Lorg_expr_mcdm_aras$package$().aras$default$4__F3(), $m_sci_Map$EmptyMap$());
       var xs = methodsnames;
       var newLength = ((1 + $n(xs).u.length) | 0);
@@ -3805,7 +3757,7 @@ $c_Lorg_expr_mcdm_Main$package$.prototype.button_generate_evaluate_events__V = (
       scores = $m_Lorg_expr_mcdm_Matrix$().appendcol__AAD__AD__AAD(scores, $n(arasresult).Lorg_expr_mcdm_ArasResult__f_scores);
       ranks = $m_Lorg_expr_mcdm_Matrix$().appendcol__AAD__AD__AAD(ranks, $n(arasresult).Lorg_expr_mcdm_ArasResult__f_ranks);
     }
-    if ($uZ($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_check_cocoso.checked)) {
+    if ($uZ($m_Lorg_expr_mcdm_gui_DomObjects$().Lorg_expr_mcdm_gui_DomObjects$__f_check_cocoso.checked)) {
       var cocosoresult = $m_Lorg_expr_mcdm_cocoso$package$().cocoso__AAD__AD__ALorg_expr_mcdm_Direction__F3__sci_Map__Lorg_expr_mcdm_CocosoResult($n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_data, $n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_weights, $m_Lorg_expr_mcdm_parser_Parser$().str2directions__AT__ALorg_expr_mcdm_Direction($n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_directions), $m_Lorg_expr_mcdm_cocoso$package$().cocoso$default$4__F3(), $m_Lorg_expr_mcdm_cocoso$package$().cocoso$default$5__sci_Map());
       var xs$1 = methodsnames;
       var newLength$1 = ((1 + $n(xs$1).u.length) | 0);
@@ -3824,7 +3776,7 @@ $c_Lorg_expr_mcdm_Main$package$.prototype.button_generate_evaluate_events__V = (
       scores = $m_Lorg_expr_mcdm_Matrix$().appendcol__AAD__AD__AAD(scores, $n(cocosoresult).Lorg_expr_mcdm_CocosoResult__f_scores);
       ranks = $m_Lorg_expr_mcdm_Matrix$().appendcol__AAD__AD__AAD(ranks, $n(cocosoresult).Lorg_expr_mcdm_CocosoResult__f_ranks);
     }
-    if ($uZ($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_check_codas.checked)) {
+    if ($uZ($m_Lorg_expr_mcdm_gui_DomObjects$().Lorg_expr_mcdm_gui_DomObjects$__f_check_codas.checked)) {
       var codasresult = $m_Lorg_expr_mcdm_codas$package$().codas__AAD__AD__ALorg_expr_mcdm_Direction__F3__sci_Map__Lorg_expr_mcdm_CodasResult($n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_data, $n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_weights, $m_Lorg_expr_mcdm_parser_Parser$().str2directions__AT__ALorg_expr_mcdm_Direction($n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_directions), $m_Lorg_expr_mcdm_codas$package$().codas$default$4__F3(), $m_Lorg_expr_mcdm_codas$package$().codas$default$5__sci_Map());
       var xs$2 = methodsnames;
       var newLength$2 = ((1 + $n(xs$2).u.length) | 0);
@@ -3843,7 +3795,7 @@ $c_Lorg_expr_mcdm_Main$package$.prototype.button_generate_evaluate_events__V = (
       scores = $m_Lorg_expr_mcdm_Matrix$().appendcol__AAD__AD__AAD(scores, $n(codasresult).Lorg_expr_mcdm_CodasResult__f_scores);
       ranks = $m_Lorg_expr_mcdm_Matrix$().appendcol__AAD__AD__AAD(ranks, $n(codasresult).Lorg_expr_mcdm_CodasResult__f_ranks);
     }
-    if ($uZ($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_check_copras.checked)) {
+    if ($uZ($m_Lorg_expr_mcdm_gui_DomObjects$().Lorg_expr_mcdm_gui_DomObjects$__f_check_copras.checked)) {
       var coprasresult = $m_Lorg_expr_mcdm_copras$package$().copras__AAD__AD__ALorg_expr_mcdm_Direction__F3__sci_Map__Lorg_expr_mcdm_CoprasResult($n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_data, $n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_weights, $m_Lorg_expr_mcdm_parser_Parser$().str2directions__AT__ALorg_expr_mcdm_Direction($n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_directions), $m_Lorg_expr_mcdm_copras$package$().copras$default$4__F3(), $m_sci_Map$EmptyMap$());
       var xs$3 = methodsnames;
       var newLength$3 = ((1 + $n(xs$3).u.length) | 0);
@@ -3862,7 +3814,7 @@ $c_Lorg_expr_mcdm_Main$package$.prototype.button_generate_evaluate_events__V = (
       scores = $m_Lorg_expr_mcdm_Matrix$().appendcol__AAD__AD__AAD(scores, $n(coprasresult).Lorg_expr_mcdm_CoprasResult__f_scores);
       ranks = $m_Lorg_expr_mcdm_Matrix$().appendcol__AAD__AD__AAD(ranks, $n(coprasresult).Lorg_expr_mcdm_CoprasResult__f_ranks);
     }
-    if ($uZ($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_check_edas.checked)) {
+    if ($uZ($m_Lorg_expr_mcdm_gui_DomObjects$().Lorg_expr_mcdm_gui_DomObjects$__f_check_edas.checked)) {
       var edasresult = $m_Lorg_expr_mcdm_edas$package$().edas__AAD__AD__ALorg_expr_mcdm_Direction__F3__sci_Map__Lorg_expr_mcdm_EdasResult($n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_data, $n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_weights, $m_Lorg_expr_mcdm_parser_Parser$().str2directions__AT__ALorg_expr_mcdm_Direction($n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_directions), $m_Lorg_expr_mcdm_edas$package$().edas$default$4__F3(), $m_sci_Map$EmptyMap$());
       var xs$4 = methodsnames;
       var newLength$4 = ((1 + $n(xs$4).u.length) | 0);
@@ -3881,7 +3833,7 @@ $c_Lorg_expr_mcdm_Main$package$.prototype.button_generate_evaluate_events__V = (
       scores = $m_Lorg_expr_mcdm_Matrix$().appendcol__AAD__AD__AAD(scores, $n(edasresult).Lorg_expr_mcdm_EdasResult__f_scores);
       ranks = $m_Lorg_expr_mcdm_Matrix$().appendcol__AAD__AD__AAD(ranks, $n(edasresult).Lorg_expr_mcdm_EdasResult__f_ranks);
     }
-    if ($uZ($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_check_lmaw.checked)) {
+    if ($uZ($m_Lorg_expr_mcdm_gui_DomObjects$().Lorg_expr_mcdm_gui_DomObjects$__f_check_lmaw.checked)) {
       var lmawresult = $m_Lorg_expr_mcdm_lmaw$package$().lmaw__AAD__AD__ALorg_expr_mcdm_Direction__F3__sci_Map__Lorg_expr_mcdm_LmawResult($n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_data, $n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_weights, $m_Lorg_expr_mcdm_parser_Parser$().str2directions__AT__ALorg_expr_mcdm_Direction($n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_directions), $m_Lorg_expr_mcdm_lmaw$package$().lmaw$default$4__F3(), $m_sci_Map$EmptyMap$());
       var xs$5 = methodsnames;
       var newLength$5 = ((1 + $n(xs$5).u.length) | 0);
@@ -3900,7 +3852,7 @@ $c_Lorg_expr_mcdm_Main$package$.prototype.button_generate_evaluate_events__V = (
       scores = $m_Lorg_expr_mcdm_Matrix$().appendcol__AAD__AD__AAD(scores, $n(lmawresult).Lorg_expr_mcdm_LmawResult__f_scores);
       ranks = $m_Lorg_expr_mcdm_Matrix$().appendcol__AAD__AD__AAD(ranks, $n(lmawresult).Lorg_expr_mcdm_LmawResult__f_ranks);
     }
-    if ($uZ($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_check_mabac.checked)) {
+    if ($uZ($m_Lorg_expr_mcdm_gui_DomObjects$().Lorg_expr_mcdm_gui_DomObjects$__f_check_mabac.checked)) {
       var mabacresult = $m_Lorg_expr_mcdm_mabac$package$().mabac__AAD__AD__ALorg_expr_mcdm_Direction__F3__sci_Map__Lorg_expr_mcdm_MabacResult($n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_data, $n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_weights, $m_Lorg_expr_mcdm_parser_Parser$().str2directions__AT__ALorg_expr_mcdm_Direction($n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_directions), $m_Lorg_expr_mcdm_mabac$package$().mabac$default$4__F3(), $m_sci_Map$EmptyMap$());
       var xs$6 = methodsnames;
       var newLength$6 = ((1 + $n(xs$6).u.length) | 0);
@@ -3919,7 +3871,7 @@ $c_Lorg_expr_mcdm_Main$package$.prototype.button_generate_evaluate_events__V = (
       scores = $m_Lorg_expr_mcdm_Matrix$().appendcol__AAD__AD__AAD(scores, $n(mabacresult).Lorg_expr_mcdm_MabacResult__f_scores);
       ranks = $m_Lorg_expr_mcdm_Matrix$().appendcol__AAD__AD__AAD(ranks, $n(mabacresult).Lorg_expr_mcdm_MabacResult__f_ranks);
     }
-    if ($uZ($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_check_mairca.checked)) {
+    if ($uZ($m_Lorg_expr_mcdm_gui_DomObjects$().Lorg_expr_mcdm_gui_DomObjects$__f_check_mairca.checked)) {
       var maircaresult = $m_Lorg_expr_mcdm_mairca$package$().mairca__AAD__AD__ALorg_expr_mcdm_Direction__F3__sci_Map__Lorg_expr_mcdm_MaircaResult($n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_data, $n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_weights, $m_Lorg_expr_mcdm_parser_Parser$().str2directions__AT__ALorg_expr_mcdm_Direction($n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_directions), $m_Lorg_expr_mcdm_mairca$package$().mairca$default$4__F3(), $m_sci_Map$EmptyMap$());
       var xs$7 = methodsnames;
       var newLength$7 = ((1 + $n(xs$7).u.length) | 0);
@@ -3938,7 +3890,7 @@ $c_Lorg_expr_mcdm_Main$package$.prototype.button_generate_evaluate_events__V = (
       scores = $m_Lorg_expr_mcdm_Matrix$().appendcol__AAD__AD__AAD(scores, $n(maircaresult).Lorg_expr_mcdm_MaircaResult__f_scores);
       ranks = $m_Lorg_expr_mcdm_Matrix$().appendcol__AAD__AD__AAD(ranks, $n(maircaresult).Lorg_expr_mcdm_MaircaResult__f_ranks);
     }
-    if ($uZ($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_check_marcos.checked)) {
+    if ($uZ($m_Lorg_expr_mcdm_gui_DomObjects$().Lorg_expr_mcdm_gui_DomObjects$__f_check_marcos.checked)) {
       var marcosresult = $m_Lorg_expr_mcdm_marcos$package$().marcos__AAD__AD__ALorg_expr_mcdm_Direction__F3__sci_Map__Lorg_expr_mcdm_MarcosResult($n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_data, $n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_weights, $m_Lorg_expr_mcdm_parser_Parser$().str2directions__AT__ALorg_expr_mcdm_Direction($n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_directions), $m_Lorg_expr_mcdm_marcos$package$().marcos$default$4__F3(), $m_sci_Map$EmptyMap$());
       var xs$8 = methodsnames;
       var newLength$8 = ((1 + $n(xs$8).u.length) | 0);
@@ -3957,7 +3909,7 @@ $c_Lorg_expr_mcdm_Main$package$.prototype.button_generate_evaluate_events__V = (
       scores = $m_Lorg_expr_mcdm_Matrix$().appendcol__AAD__AD__AAD(scores, $n(marcosresult).Lorg_expr_mcdm_MarcosResult__f_scores);
       ranks = $m_Lorg_expr_mcdm_Matrix$().appendcol__AAD__AD__AAD(ranks, $n(marcosresult).Lorg_expr_mcdm_MarcosResult__f_ranks);
     }
-    if ($uZ($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_check_moosra.checked)) {
+    if ($uZ($m_Lorg_expr_mcdm_gui_DomObjects$().Lorg_expr_mcdm_gui_DomObjects$__f_check_moosra.checked)) {
       var moosraresultLeftRight = $m_Lorg_expr_mcdm_moosra$package$().moosra__AAD__AD__ALorg_expr_mcdm_Direction__F3__sci_Map__s_util_Either($n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_data, $n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_weights, $m_Lorg_expr_mcdm_parser_Parser$().str2directions__AT__ALorg_expr_mcdm_Direction($n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_directions), $m_Lorg_expr_mcdm_moosra$package$().moosra$default$4__F3(), $m_sci_Map$EmptyMap$());
       matchResult2: {
         var moosraresult;
@@ -3991,7 +3943,7 @@ $c_Lorg_expr_mcdm_Main$package$.prototype.button_generate_evaluate_events__V = (
       scores = $m_Lorg_expr_mcdm_Matrix$().appendcol__AAD__AD__AAD(scores, $n(moosraresult).Lorg_expr_mcdm_MoosraResult__f_scores);
       ranks = $m_Lorg_expr_mcdm_Matrix$().appendcol__AAD__AD__AAD(ranks, $n(moosraresult).Lorg_expr_mcdm_MoosraResult__f_ranks);
     }
-    if ($uZ($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_check_ocra.checked)) {
+    if ($uZ($m_Lorg_expr_mcdm_gui_DomObjects$().Lorg_expr_mcdm_gui_DomObjects$__f_check_ocra.checked)) {
       var ocrarresult = $m_Lorg_expr_mcdm_ocra$package$().ocra__AAD__AD__ALorg_expr_mcdm_Direction__F3__sci_Map__Lorg_expr_mcdm_OcraResult($n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_data, $n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_weights, $m_Lorg_expr_mcdm_parser_Parser$().str2directions__AT__ALorg_expr_mcdm_Direction($n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_directions), $m_Lorg_expr_mcdm_ocra$package$().ocra$default$4__F3(), $m_sci_Map$EmptyMap$());
       var xs$10 = methodsnames;
       var newLength$10 = ((1 + $n(xs$10).u.length) | 0);
@@ -4010,7 +3962,7 @@ $c_Lorg_expr_mcdm_Main$package$.prototype.button_generate_evaluate_events__V = (
       scores = $m_Lorg_expr_mcdm_Matrix$().appendcol__AAD__AD__AAD(scores, $n(ocrarresult).Lorg_expr_mcdm_OcraResult__f_scores);
       ranks = $m_Lorg_expr_mcdm_Matrix$().appendcol__AAD__AD__AAD(ranks, $n(ocrarresult).Lorg_expr_mcdm_OcraResult__f_ranks);
     }
-    if ($uZ($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_check_piv.checked)) {
+    if ($uZ($m_Lorg_expr_mcdm_gui_DomObjects$().Lorg_expr_mcdm_gui_DomObjects$__f_check_piv.checked)) {
       var pivresult = $m_Lorg_expr_mcdm_piv$package$().piv__AAD__AD__ALorg_expr_mcdm_Direction__F3__sci_Map__Lorg_expr_mcdm_PivResult($n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_data, $n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_weights, $m_Lorg_expr_mcdm_parser_Parser$().str2directions__AT__ALorg_expr_mcdm_Direction($n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_directions), $m_Lorg_expr_mcdm_piv$package$().piv$default$4__F3(), $m_sci_Map$EmptyMap$());
       var xs$11 = methodsnames;
       var newLength$11 = ((1 + $n(xs$11).u.length) | 0);
@@ -4029,7 +3981,7 @@ $c_Lorg_expr_mcdm_Main$package$.prototype.button_generate_evaluate_events__V = (
       scores = $m_Lorg_expr_mcdm_Matrix$().appendcol__AAD__AD__AAD(scores, $n(pivresult).Lorg_expr_mcdm_PivResult__f_scores);
       ranks = $m_Lorg_expr_mcdm_Matrix$().appendcol__AAD__AD__AAD(ranks, $n(pivresult).Lorg_expr_mcdm_PivResult__f_ranks);
     }
-    if ($uZ($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_check_psi.checked)) {
+    if ($uZ($m_Lorg_expr_mcdm_gui_DomObjects$().Lorg_expr_mcdm_gui_DomObjects$__f_check_psi.checked)) {
       var psiresult = $m_Lorg_expr_mcdm_psi$package$().psi__AAD__AD__ALorg_expr_mcdm_Direction__F3__sci_Map__Lorg_expr_mcdm_PsiResult($n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_data, $n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_weights, $m_Lorg_expr_mcdm_parser_Parser$().str2directions__AT__ALorg_expr_mcdm_Direction($n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_directions), $m_Lorg_expr_mcdm_psi$package$().psi$default$4__F3(), $m_sci_Map$EmptyMap$());
       var xs$12 = methodsnames;
       var newLength$12 = ((1 + $n(xs$12).u.length) | 0);
@@ -4048,7 +4000,7 @@ $c_Lorg_expr_mcdm_Main$package$.prototype.button_generate_evaluate_events__V = (
       scores = $m_Lorg_expr_mcdm_Matrix$().appendcol__AAD__AD__AAD(scores, $n(psiresult).Lorg_expr_mcdm_PsiResult__f_scores);
       ranks = $m_Lorg_expr_mcdm_Matrix$().appendcol__AAD__AD__AAD(ranks, $n(psiresult).Lorg_expr_mcdm_PsiResult__f_ranks);
     }
-    if ($uZ($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_check_ram.checked)) {
+    if ($uZ($m_Lorg_expr_mcdm_gui_DomObjects$().Lorg_expr_mcdm_gui_DomObjects$__f_check_ram.checked)) {
       var ramresult = $m_Lorg_expr_mcdm_ram$package$().ram__AAD__AD__ALorg_expr_mcdm_Direction__F3__sci_Map__Lorg_expr_mcdm_RamResult($n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_data, $n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_weights, $m_Lorg_expr_mcdm_parser_Parser$().str2directions__AT__ALorg_expr_mcdm_Direction($n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_directions), $m_Lorg_expr_mcdm_ram$package$().ram$default$4__F3(), $m_sci_Map$EmptyMap$());
       var xs$13 = methodsnames;
       var newLength$13 = ((1 + $n(xs$13).u.length) | 0);
@@ -4067,7 +4019,7 @@ $c_Lorg_expr_mcdm_Main$package$.prototype.button_generate_evaluate_events__V = (
       scores = $m_Lorg_expr_mcdm_Matrix$().appendcol__AAD__AD__AAD(scores, $n(ramresult).Lorg_expr_mcdm_RamResult__f_scores);
       ranks = $m_Lorg_expr_mcdm_Matrix$().appendcol__AAD__AD__AAD(ranks, $n(ramresult).Lorg_expr_mcdm_RamResult__f_ranks);
     }
-    if ($uZ($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_check_rov.checked)) {
+    if ($uZ($m_Lorg_expr_mcdm_gui_DomObjects$().Lorg_expr_mcdm_gui_DomObjects$__f_check_rov.checked)) {
       var rovresult = $m_Lorg_expr_mcdm_rov$package$().rov__AAD__AD__ALorg_expr_mcdm_Direction__F3__sci_Map__Lorg_expr_mcdm_RovResult($n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_data, $n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_weights, $m_Lorg_expr_mcdm_parser_Parser$().str2directions__AT__ALorg_expr_mcdm_Direction($n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_directions), $m_Lorg_expr_mcdm_rov$package$().rov$default$4__F3(), $m_sci_Map$EmptyMap$());
       var xs$14 = methodsnames;
       var newLength$14 = ((1 + $n(xs$14).u.length) | 0);
@@ -4086,7 +4038,7 @@ $c_Lorg_expr_mcdm_Main$package$.prototype.button_generate_evaluate_events__V = (
       scores = $m_Lorg_expr_mcdm_Matrix$().appendcol__AAD__AD__AAD(scores, $n(rovresult).Lorg_expr_mcdm_RovResult__f_scores);
       ranks = $m_Lorg_expr_mcdm_Matrix$().appendcol__AAD__AD__AAD(ranks, $n(rovresult).Lorg_expr_mcdm_RovResult__f_ranks);
     }
-    if ($uZ($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_check_saw.checked)) {
+    if ($uZ($m_Lorg_expr_mcdm_gui_DomObjects$().Lorg_expr_mcdm_gui_DomObjects$__f_check_saw.checked)) {
       var sawresult = $m_Lorg_expr_mcdm_saw$package$().saw__AAD__AD__ALorg_expr_mcdm_Direction__F3__sci_Map__Lorg_expr_mcdm_SawResult($n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_data, $n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_weights, $m_Lorg_expr_mcdm_parser_Parser$().str2directions__AT__ALorg_expr_mcdm_Direction($n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_directions), $m_Lorg_expr_mcdm_saw$package$().saw$default$4__F3(), $m_sci_Map$EmptyMap$());
       var xs$15 = methodsnames;
       var newLength$15 = ((1 + $n(xs$15).u.length) | 0);
@@ -4105,7 +4057,7 @@ $c_Lorg_expr_mcdm_Main$package$.prototype.button_generate_evaluate_events__V = (
       scores = $m_Lorg_expr_mcdm_Matrix$().appendcol__AAD__AD__AAD(scores, $n(sawresult).Lorg_expr_mcdm_SawResult__f_scores);
       ranks = $m_Lorg_expr_mcdm_Matrix$().appendcol__AAD__AD__AAD(ranks, $n(sawresult).Lorg_expr_mcdm_SawResult__f_ranks);
     }
-    if ($uZ($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_check_topsis.checked)) {
+    if ($uZ($m_Lorg_expr_mcdm_gui_DomObjects$().Lorg_expr_mcdm_gui_DomObjects$__f_check_topsis.checked)) {
       var topsisresult = $m_Lorg_expr_mcdm_topsis$package$().topsis__AAD__AD__ALorg_expr_mcdm_Direction__F3__sci_Map__Lorg_expr_mcdm_TopsisResult($n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_data, $n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_weights, $m_Lorg_expr_mcdm_parser_Parser$().str2directions__AT__ALorg_expr_mcdm_Direction($n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_directions), $m_Lorg_expr_mcdm_topsis$package$().topsis$default$4__F3(), $m_sci_Map$EmptyMap$());
       var xs$16 = methodsnames;
       var newLength$16 = ((1 + $n(xs$16).u.length) | 0);
@@ -4124,7 +4076,7 @@ $c_Lorg_expr_mcdm_Main$package$.prototype.button_generate_evaluate_events__V = (
       scores = $m_Lorg_expr_mcdm_Matrix$().appendcol__AAD__AD__AAD(scores, $n(topsisresult).Lorg_expr_mcdm_TopsisResult__f_scores);
       ranks = $m_Lorg_expr_mcdm_Matrix$().appendcol__AAD__AD__AAD(ranks, $n(topsisresult).Lorg_expr_mcdm_TopsisResult__f_ranks);
     }
-    if ($uZ($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_check_waspas.checked)) {
+    if ($uZ($m_Lorg_expr_mcdm_gui_DomObjects$().Lorg_expr_mcdm_gui_DomObjects$__f_check_waspas.checked)) {
       var waspasresult = $m_Lorg_expr_mcdm_waspas$package$().waspas__AAD__AD__ALorg_expr_mcdm_Direction__F3__sci_Map__Lorg_expr_mcdm_WaspasResult($n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_data, $n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_weights, $m_Lorg_expr_mcdm_parser_Parser$().str2directions__AT__ALorg_expr_mcdm_Direction($n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_directions), $m_Lorg_expr_mcdm_waspas$package$().waspas$default$4__F3(), ($m_Lorg_expr_mcdm_waspas$package$(), $m_Lorg_expr_mcdm_waspas$package$().Lorg_expr_mcdm_waspas$package$__f_defaultWaspasOptions));
       var xs$17 = methodsnames;
       var newLength$17 = ((1 + $n(xs$17).u.length) | 0);
@@ -4143,7 +4095,7 @@ $c_Lorg_expr_mcdm_Main$package$.prototype.button_generate_evaluate_events__V = (
       scores = $m_Lorg_expr_mcdm_Matrix$().appendcol__AAD__AD__AAD(scores, $n(waspasresult).Lorg_expr_mcdm_WaspasResult__f_scores);
       ranks = $m_Lorg_expr_mcdm_Matrix$().appendcol__AAD__AD__AAD(ranks, $n(waspasresult).Lorg_expr_mcdm_WaspasResult__f_ranks);
     }
-    if ($uZ($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_check_wpm.checked)) {
+    if ($uZ($m_Lorg_expr_mcdm_gui_DomObjects$().Lorg_expr_mcdm_gui_DomObjects$__f_check_wpm.checked)) {
       var wpmresult = $m_Lorg_expr_mcdm_wpm$package$().wpm__AAD__AD__ALorg_expr_mcdm_Direction__F3__sci_Map__Lorg_expr_mcdm_WpmResult($n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_data, $n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_weights, $m_Lorg_expr_mcdm_parser_Parser$().str2directions__AT__ALorg_expr_mcdm_Direction($n($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem).Lorg_expr_mcdm_MCDMProblem__f_directions), $m_Lorg_expr_mcdm_wpm$package$().wpm$default$4__F3(), $m_sci_Map$EmptyMap$());
       var xs$18 = methodsnames;
       var newLength$18 = ((1 + $n(xs$18).u.length) | 0);
@@ -4163,9 +4115,9 @@ $c_Lorg_expr_mcdm_Main$package$.prototype.button_generate_evaluate_events__V = (
       ranks = $m_Lorg_expr_mcdm_Matrix$().appendcol__AAD__AD__AAD(ranks, $n(wpmresult).Lorg_expr_mcdm_WpmResult__f_ranks);
     }
     var resultstr = $m_Lorg_expr_mcdm_gui_HtmlUtils$().scorematrixtohtml__Lorg_expr_mcdm_MCDMProblem__AT__AAD__T($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem, methodsnames, scores);
-    $m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_div_output_scores.innerHTML = resultstr;
+    $m_Lorg_expr_mcdm_gui_DomObjects$().Lorg_expr_mcdm_gui_DomObjects$__f_div_output_scores.innerHTML = resultstr;
     var resultstr2 = $m_Lorg_expr_mcdm_gui_HtmlUtils$().scorematrixtohtml__Lorg_expr_mcdm_MCDMProblem__AT__AAD__T($m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_problem, methodsnames, ranks);
-    $m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_div_output_ranks.innerHTML = resultstr2;
+    $m_Lorg_expr_mcdm_gui_DomObjects$().Lorg_expr_mcdm_gui_DomObjects$__f_div_output_ranks.innerHTML = resultstr2;
   });
 });
 $c_Lorg_expr_mcdm_Main$package$.prototype.register_events__V = (function() {
@@ -4173,11 +4125,12 @@ $c_Lorg_expr_mcdm_Main$package$.prototype.register_events__V = (function() {
   $m_Lorg_expr_mcdm_Main$package$().button_generate_directions_events__V();
   $m_Lorg_expr_mcdm_Main$package$().button_generate_weights_events__V();
   $m_Lorg_expr_mcdm_Main$package$().button_generate_evaluate_events__V();
-  $m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_window.console.log("register_events called");
+  $m_Lorg_expr_mcdm_Main$package$().fieldset_showhide_events__V();
 });
 $c_Lorg_expr_mcdm_Main$package$.prototype.hello__V = (function() {
-  $m_Lorg_expr_mcdm_Main$package$().Lorg_expr_mcdm_Main$package$__f_window.console.log("Hello, world!");
+  $m_Lorg_expr_mcdm_gui_DomObjects$().Lorg_expr_mcdm_gui_DomObjects$__f_window.console.log("Triggered main entry point. Registering events...");
   $m_Lorg_expr_mcdm_Main$package$().register_events__V();
+  $m_Lorg_expr_mcdm_gui_DomObjects$().Lorg_expr_mcdm_gui_DomObjects$__f_window.console.log("Events registered.");
 });
 var $d_Lorg_expr_mcdm_Main$package$ = new $TypeData().initClass($c_Lorg_expr_mcdm_Main$package$, "org.expr.mcdm.Main$package$", ({
   Lorg_expr_mcdm_Main$package$: 1
@@ -10988,6 +10941,112 @@ function $m_Lorg_expr_mcdm_entropy$package$() {
     $n_Lorg_expr_mcdm_entropy$package$ = new $c_Lorg_expr_mcdm_entropy$package$();
   }
   return $n_Lorg_expr_mcdm_entropy$package$;
+}
+/** @constructor */
+function $c_Lorg_expr_mcdm_gui_DomObjects$() {
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_document = null;
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_window = null;
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_div_step1 = null;
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_div_step2 = null;
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_div_step3 = null;
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_div_step4 = null;
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_button_showhide_step1 = null;
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_button_showhide_step2 = null;
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_button_showhide_step3 = null;
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_button_showhide_step4 = null;
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_button_showhide_finaldecmat = null;
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_textarea_strdecmat = null;
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_button_generate_decmat = null;
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_button_generate_weights = null;
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_dialog_button_ok = null;
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_select_separator = null;
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_select_weight_method = null;
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_input_criteria_directions = null;
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_button_generate_directions = null;
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_button_evaluate = null;
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_div_output_scores = null;
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_div_output_ranks = null;
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_div_final_decmat = null;
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_check_aras = null;
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_check_cocoso = null;
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_check_codas = null;
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_check_copras = null;
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_check_edas = null;
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_check_lmaw = null;
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_check_mabac = null;
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_check_mairca = null;
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_check_marcos = null;
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_check_moosra = null;
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_check_ocra = null;
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_check_piv = null;
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_check_psi = null;
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_check_ram = null;
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_check_rov = null;
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_check_saw = null;
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_check_topsis = null;
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_check_waspas = null;
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_check_wpm = null;
+  $n_Lorg_expr_mcdm_gui_DomObjects$ = this;
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_document = document;
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_window = window;
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_div_step1 = this.Lorg_expr_mcdm_gui_DomObjects$__f_document.getElementById("div_step1");
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_div_step2 = this.Lorg_expr_mcdm_gui_DomObjects$__f_document.getElementById("div_step2");
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_div_step3 = this.Lorg_expr_mcdm_gui_DomObjects$__f_document.getElementById("div_step3");
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_div_step4 = this.Lorg_expr_mcdm_gui_DomObjects$__f_document.getElementById("div_step4");
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_button_showhide_step1 = this.Lorg_expr_mcdm_gui_DomObjects$__f_document.getElementById("button_showhide_step1");
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_button_showhide_step2 = this.Lorg_expr_mcdm_gui_DomObjects$__f_document.getElementById("button_showhide_step2");
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_button_showhide_step3 = this.Lorg_expr_mcdm_gui_DomObjects$__f_document.getElementById("button_showhide_step3");
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_button_showhide_step4 = this.Lorg_expr_mcdm_gui_DomObjects$__f_document.getElementById("button_showhide_step4");
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_button_showhide_finaldecmat = this.Lorg_expr_mcdm_gui_DomObjects$__f_document.getElementById("button_showhide_finaldecmat");
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_textarea_strdecmat = this.Lorg_expr_mcdm_gui_DomObjects$__f_document.getElementById("textarea_strdecmat");
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_button_generate_decmat = this.Lorg_expr_mcdm_gui_DomObjects$__f_document.getElementById("button_generate_decmat");
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_button_generate_weights = this.Lorg_expr_mcdm_gui_DomObjects$__f_document.getElementById("button_generate_weights");
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_dialog_button_ok = this.Lorg_expr_mcdm_gui_DomObjects$__f_document.getElementById("dialog_button_ok");
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_document.getElementById("dialog_messenger");
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_select_separator = this.Lorg_expr_mcdm_gui_DomObjects$__f_document.getElementById("select_separator");
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_select_weight_method = this.Lorg_expr_mcdm_gui_DomObjects$__f_document.getElementById("select_weight_method");
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_input_criteria_directions = this.Lorg_expr_mcdm_gui_DomObjects$__f_document.getElementById("input_criteria_directions");
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_button_generate_directions = this.Lorg_expr_mcdm_gui_DomObjects$__f_document.getElementById("button_generate_directions");
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_button_evaluate = this.Lorg_expr_mcdm_gui_DomObjects$__f_document.getElementById("button_evaluate");
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_div_output_scores = this.Lorg_expr_mcdm_gui_DomObjects$__f_document.getElementById("div_output_scores");
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_div_output_ranks = this.Lorg_expr_mcdm_gui_DomObjects$__f_document.getElementById("div_output_ranks");
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_div_final_decmat = this.Lorg_expr_mcdm_gui_DomObjects$__f_document.getElementById("div_final_decmat");
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_check_aras = this.Lorg_expr_mcdm_gui_DomObjects$__f_document.getElementById("check_aras");
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_check_cocoso = this.Lorg_expr_mcdm_gui_DomObjects$__f_document.getElementById("check_cocoso");
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_check_codas = this.Lorg_expr_mcdm_gui_DomObjects$__f_document.getElementById("check_codas");
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_check_copras = this.Lorg_expr_mcdm_gui_DomObjects$__f_document.getElementById("check_copras");
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_check_edas = this.Lorg_expr_mcdm_gui_DomObjects$__f_document.getElementById("check_edas");
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_check_lmaw = this.Lorg_expr_mcdm_gui_DomObjects$__f_document.getElementById("check_lmaw");
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_document.getElementById("check_lopcow");
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_check_mabac = this.Lorg_expr_mcdm_gui_DomObjects$__f_document.getElementById("check_mabac");
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_check_mairca = this.Lorg_expr_mcdm_gui_DomObjects$__f_document.getElementById("check_mairca");
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_check_marcos = this.Lorg_expr_mcdm_gui_DomObjects$__f_document.getElementById("check_marcos");
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_check_moosra = this.Lorg_expr_mcdm_gui_DomObjects$__f_document.getElementById("check_moosra");
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_check_ocra = this.Lorg_expr_mcdm_gui_DomObjects$__f_document.getElementById("check_ocra");
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_check_piv = this.Lorg_expr_mcdm_gui_DomObjects$__f_document.getElementById("check_piv");
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_check_psi = this.Lorg_expr_mcdm_gui_DomObjects$__f_document.getElementById("check_psi");
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_check_ram = this.Lorg_expr_mcdm_gui_DomObjects$__f_document.getElementById("check_ram");
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_check_rov = this.Lorg_expr_mcdm_gui_DomObjects$__f_document.getElementById("check_rov");
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_check_saw = this.Lorg_expr_mcdm_gui_DomObjects$__f_document.getElementById("check_saw");
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_check_topsis = this.Lorg_expr_mcdm_gui_DomObjects$__f_document.getElementById("check_topsis");
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_check_waspas = this.Lorg_expr_mcdm_gui_DomObjects$__f_document.getElementById("check_waspas");
+  this.Lorg_expr_mcdm_gui_DomObjects$__f_check_wpm = this.Lorg_expr_mcdm_gui_DomObjects$__f_document.getElementById("check_wpm");
+}
+$c_Lorg_expr_mcdm_gui_DomObjects$.prototype = new $h_O();
+$c_Lorg_expr_mcdm_gui_DomObjects$.prototype.constructor = $c_Lorg_expr_mcdm_gui_DomObjects$;
+/** @constructor */
+function $h_Lorg_expr_mcdm_gui_DomObjects$() {
+}
+$h_Lorg_expr_mcdm_gui_DomObjects$.prototype = $c_Lorg_expr_mcdm_gui_DomObjects$.prototype;
+var $d_Lorg_expr_mcdm_gui_DomObjects$ = new $TypeData().initClass($c_Lorg_expr_mcdm_gui_DomObjects$, "org.expr.mcdm.gui.DomObjects$", ({
+  Lorg_expr_mcdm_gui_DomObjects$: 1
+}));
+var $n_Lorg_expr_mcdm_gui_DomObjects$;
+function $m_Lorg_expr_mcdm_gui_DomObjects$() {
+  if ((!$n_Lorg_expr_mcdm_gui_DomObjects$)) {
+    $n_Lorg_expr_mcdm_gui_DomObjects$ = new $c_Lorg_expr_mcdm_gui_DomObjects$();
+  }
+  return $n_Lorg_expr_mcdm_gui_DomObjects$;
 }
 /** @constructor */
 function $c_Lorg_expr_mcdm_gui_HtmlUtils$() {
