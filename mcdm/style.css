@@ -1,0 +1,273 @@
+/* General Styles with Pastel Green and Blue */
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+    background-color: #e0f7fa; /* Pastel Light Blue */
+    color: #333;
+}
+
+.error-message-container {
+    background-color: #ffebee; /* Very Light Pastel Red */
+    color: #d32f2f; /* Pastel Dark Red */
+    border: 1px solid #ef9a9a; /* Pastel Light Red Border */
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 1em;
+    font-size: 1.1em;
+}
+
+.toggle-button {
+    background: none;
+    border: 1px solid #64b5f6; /* Pastel Blue */
+    color: #64b5f6; /* Pastel Blue */
+    font-size: 1.2em;
+    cursor: pointer;
+    margin-right: 5px;
+    padding: 0;
+    line-height: 1;
+    font-family: monospace;
+  }
+
+h1, h2, h3 {
+    color: #2e7d32; /* Pastel Dark Green */
+    margin-top: 2em;
+    margin-bottom: 1em;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.6em;
+}
+
+p {
+    margin-bottom: 1.5em;
+    padding-left: 10px; /* Add some space for the vertical line */
+    border-left: 5px solid #80cbc4; /* Pastel Teal - a blend of green and blue */
+}
+
+a {
+    color: #64b5f6; /* Pastel Blue */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #42a5f5; /* Slightly darker pastel blue on hover */
+}
+
+/* Container for the Application */
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f1f8e9; /* Pastel Light Green */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Elements */
+label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    color: #43a047; /* Pastel Green */
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="time"],
+select,
+textarea {
+    display: block;
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 1.5em;
+    border: 1px solid #a7ffeb; /* Pastel Cyan (mix of green and blue) */
+    border-radius: 4px;
+    font-size: 1.1em;
+    box-sizing: border-box;
+    background-color: #e0f2f1;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+input[type="time"]:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #64b5f6; /* Pastel Blue focus */
+    box-shadow: 0 0 5px rgba(100, 181, 246, 0.5);
+}
+
+select {
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg fill="%2364b5f6" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 1em;
+    padding-right: 30px;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Buttons */
+button {
+    background-color: #64b5f6; /* Pastel Blue */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #42a5f5; /* Slightly darker pastel blue on hover */
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(100, 181, 246, 0.5);
+}
+
+button[type="submit"] {
+    font-weight: bold;
+}
+
+/* Fieldsets and Legends */
+fieldset {
+    display: block;
+    border: 1px solid #0980b0; /* Pastel Cyan */
+    border-radius: 4px;
+    padding: 1.5em;
+    margin-bottom: 1.5em;
+    background-color: #e8f5e9; /* Very Light Pastel Green */
+}
+
+legend {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #43a047; /* Pastel Green */
+    padding: 0 10px;
+}
+
+/* Lists */
+ul, ol {
+    margin-bottom: 1.5em;
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 0.5em;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5em;
+}
+
+th, td {
+    border: 1px solid #a7ffeb; /* Pastel Cyan */
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #e0f2f7; /* Very Light Pastel Blue */
+    font-weight: bold;
+    color: #2e7d32; /* Pastel Dark Green */
+}
+
+/* Code Blocks */
+pre {
+    background-color: #f1f8e9; /* Pastel Light Green */
+    border: 1px solid #a7ffeb; /* Pastel Cyan */
+    padding: 1em;
+    border-radius: 4px;
+    overflow-x: auto;
+    font-family: monospace, monospace;
+    font-size: 0.9em;
+    line-height: 1.4;
+    margin-bottom: 1.5em;
+    color: #388e3c; /* Slightly darker pastel green for code text */
+}
+
+code {
+    font-family: monospace, monospace;
+    font-size: 0.9em;
+    color: #388e3c;
+}
+
+/* Small Text */
+small {
+    font-size: 0.8em;
+    color: #7cb342; /* Pastel Olive Green */
+}
+
+/* Error/Validation Messages */
+.error-message {
+    color: #e57373; /* Pastel Red */
+    font-size: 0.9em;
+    margin-top: 0.2em;
+}
+
+/* Success Messages */
+.success-message {
+    color: #81c784; /* Pastel Light Green */
+    font-size: 0.9em;
+    margin-top: 0.2em;
+}
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.mt-1 { margin-top: 1em; }
+.mb-1 { margin-bottom: 1em; }
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .container {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="email"],
+    input[type="password"],
+    input[type="date"],
+    input[type="time"],
+    select,
+    textarea {
+        width: calc(100% - 12px);
+        padding: 8px;
+    }
+
+    button {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+}

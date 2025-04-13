@@ -1,0 +1,212 @@
+<html>
+
+<head>
+    <title>Scala.js</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+<dialog id="dialog_messenger">
+    <div id = "dialog_div_content">
+        Message Content
+    </div>
+    <hr/>
+    <button id="dialog_button_ok">OK</button>
+</dialog>
+
+<fieldset>
+    <legend>
+        Step 1 - Generate the decision matrix content
+    </legend>
+    <p>Please copy and paste your data. The first row includes criteria names. The first column
+        includes the names of the alternatives. You can separate values using commas or semicolons.
+    </p>
+    <textarea id="textarea_strdecmat" 
+    placeholder="Enter and copy & paste the decision matrix content here"
+    rows="6" cols="40">
+  C1 , C2 , C3 , C4 , C5
+A1,0.3, 0.4, 0.5, 0.6, 0.7
+A2,0.2, 0.3, 0.4, 0.5, 0.6
+A3,0.1, 0.2, 0.3, 0.4, 0.5
+</textarea>
+<label for="select_separator">Select the value separator</label>
+<select id="select_separator">
+    <option value=",">Comma (,)</option>
+    <option value=";">Semicolon (;)</option>
+</select>
+<button id="button_generate_decmat">Generate Decision Matrix</button>
+</fieldset>
+
+
+<fieldset>
+    <legend>
+        Step 2 - Enter directions of optimization for each criterion
+    </legend>
+    <input type = "text" id = "input_criteria_directions" value = "max,max,min,max,min" />
+    <hr/>
+    <button id="button_generate_directions">Generate Directions</button>
+    <p>
+        Directions of optimization for each criterion. Use comma between directions.
+    </p>
+</fieldset>
+
+
+
+<fieldset>
+    <legend>
+        Step 3 - Enter weights
+    </legend>
+    <label for="select_weight_method">Select weighting method:</label>
+    <select id="select_weight_method">
+        <option value="0">Equal weights</option>
+        <option value="1">Entropy method</option>
+        <option value="2">Critic method</option>
+        <option value="3">Standard deviation method (SD)</option>
+        <option value="4">Merec method</option>
+        <option value="5">Cilos method</option>
+        <option value="6">Idocriw method</option>
+        <option value="7">Lopcow method</option>
+        <option value="8">Custom weights</option>
+    </select>
+    <button id="button_generate_weights">Generate Weights</button>
+</fieldset>
+
+
+
+<fieldset>
+    <legend>
+        Step 4 - Select MCDM methods
+    </legend>
+    <table>
+        <tr>
+            <td>
+                <label for="check_aras">Aras</label>
+                <input type="checkbox" id="check_aras" checked></input>
+            </td>
+            <td>
+                <label for="check_cocoso">Cocoso</label>
+                <input type="checkbox" id="check_cocoso" checked></input>
+            </td>
+            <td>
+                <label for="check_codas">Codas</label>
+                <input type="checkbox" id="check_codas" checked></input>
+            </td>
+            <td>
+                <label for="check_copras">Copras</label>
+                <input type="checkbox" id="check_copras"></input>
+            </td>
+            <td>
+                <label for="check_edas">Edas</label>
+                <input type="checkbox" id="check_edas"></input>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="check_lmaw">Lmaw</label>
+                <input type="checkbox" id="check_lmaw" checked></input>
+            </td>
+            <td>
+                <label for="check_mabac">Mabac</label>
+                <input type="checkbox" id="check_mabac" checked></input>
+            </td>
+            <td>
+                <label for="check_mairca">Mairca</label>
+                <input type="checkbox" id="check_mairca"></input>
+            </td>
+            <td>
+                <label for="check_marcos">Marcos</label>
+                <input type="checkbox" id="check_marcos"></input>
+            </td>
+            <td>
+                <label for="check_moosra">Moosra</label>
+                <input type="checkbox" id="check_moosra"></input>
+            </td>
+        </tr>
+        <tr>    
+            <td>
+                <label for="check_ocra">Ocra</label>
+                <input type="checkbox" id="check_ocra"></input>
+            </td>
+            <td>
+                <label for="check_piv">Piv</label>
+                <input type="checkbox" id="check_piv"></input>
+            </td>
+            <td>
+                <label for="check_psi">Psi</label>
+                <input type="checkbox" id="check_psi"></input>
+            </td>
+            <td>
+                <label for="check_ram">Ram</label>
+                <input type="checkbox" id="check_ram"></input>
+            </td>
+            <td>
+                <label for="check_row">Rov</label>
+                <input type="checkbox" id="check_rov"></input>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="check_saw">Saw</label>
+                <input type="checkbox" id="check_saw"></input>
+            </td>
+            <td>
+                <label for="check_topsis">Topsis</label>
+                <input type="checkbox" id="check_topsis"></input>
+            </td>
+            <td>
+                <label for="check_waspas">Waspas</label>
+                <input type="checkbox" id="check_waspas"></input>
+            </td>
+            <td>
+                <label for="check_wpm">Wpm</label>
+                <input type="checkbox" id="check_wpm"></input>
+            </td>
+            <td></td>
+        </tr>
+    </table>
+
+
+    <button id="button_evaluate">Generate output</button>
+</fieldset>
+
+<fieldset>
+    <legend>The final decision matrix</legend>
+    <div id="div_final_decmat">
+        The decision matrix is empty. Please 
+        <ol>
+            <li>Generate the content in Step 1</li>
+            <li>Generate the directions in Step 2</li>
+            <li>Generate the weights in Step 3</li>
+            <li>Select the methods to apply in Step 4</li>
+        </ol>
+    </div>
+</fieldset>
+
+<fieldset>
+    <legend>MCDM Methods' Output</legend>
+    <fieldset>
+        <legend>Scores</legend>
+        <div id="div_output_scores">
+            
+        </div>    
+    </fieldset>
+
+    <fieldset>
+        <legend>Ranks</legend>
+        <div id="div_output_ranks">
+            
+        </div>    
+    </fieldset>
+</fieldset>
+
+
+
+
+</body>
+
+
+<script src="./target/scala-3.6.4/mcdm-fastopt.js"></script>
+
+</html>
