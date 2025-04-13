@@ -57,12 +57,12 @@ A3,0.1, 0.2, 0.3, 0.4, 0.5
         <button class="toggle-button" id="button_showhide_step2">-</button>
         Step 2 - Enter directions of optimization for each criterion
     </legend>
-    <p>
-        Direction of optimization for each criterion. Use comma between directions.
-        Use "max" for maximization and "min" for minimization. Spaces can be used 
-        before and after a comma but they are not necessary.
-    </p>
     <div id="div_step2">
+        <p>
+            Direction of optimization for each criterion. Use comma between directions.
+            Use "max" for maximization and "min" for minimization. Spaces can be used 
+            before and after a comma but they are not necessary.
+        </p>
     <input type = "text" id = "input_criteria_directions" value = "max,max,min,max,min" />
     <hr/>
     <button id="button_generate_directions">Generate Directions</button>
@@ -76,11 +76,11 @@ A3,0.1, 0.2, 0.3, 0.4, 0.5
         <button class="toggle-button" id="button_showhide_step3">-</button>
         Step 3 - Enter weights
     </legend>
-    <p>
-        Please select a weighting method. Custom weights is not implemented yet but 
-        all of the automatic methods are implemented. The default method is equal weights.
-    </p>
     <div id="div_step3">
+        <p>
+            Please select a weighting method. Custom weights is not implemented yet but 
+            all of the automatic methods are implemented. The default method is equal weights.
+        </p>
     <label for="select_weight_method">Select weighting method:</label>
     <select id="select_weight_method">
         <option value="0">Equal weights</option>
@@ -104,11 +104,12 @@ A3,0.1, 0.2, 0.3, 0.4, 0.5
         <button class="toggle-button" id="button_showhide_step4">-</button>
         Step 4 - Select MCDM methods
     </legend>
-    <p>
-        Please select the MCDM methods to be applied. If more than one method is selected 
-        the results will be listed in the same order as the methods are selected.
-    </p>
+
     <div id="div_step4">
+        <p>
+            Please select the MCDM methods to be applied. If more than one method is selected 
+            the results will be listed in the same order as the methods are selected.
+        </p>
     <table>
         <tr>
             <td>
