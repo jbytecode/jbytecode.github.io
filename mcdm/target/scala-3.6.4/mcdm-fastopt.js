@@ -4040,6 +4040,7 @@ $c_Lorg_expr_mcdm_Main$package$.prototype.button_generate_evaluate_events__V = (
       if ((x2 instanceof $c_s_util_Right)) {
         var problem = $as_Lorg_expr_mcdm_MCDMProblem($n($as_s_util_Right(x2)).s_util_Right__f_value);
         $m_Lorg_expr_mcdm_Main$package$().evaluate__Lorg_expr_mcdm_MCDMProblem__V(problem);
+        $m_Lorg_expr_mcdm_gui_DomObjects$().Lorg_expr_mcdm_gui_DomObjects$__f_window.scrollTo(0, $uI($m_Lorg_expr_mcdm_gui_DomObjects$().Lorg_expr_mcdm_gui_DomObjects$__f_document.body.scrollHeight));
         break matchResult2;
       }
       throw new $c_s_MatchError(x2);
