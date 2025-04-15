@@ -9,6 +9,8 @@
 
     <h2>Easy Online MCDM</h2>
 
+    <hr/>
+
     <h3>Enter your data and go on!</h3>
 
     <dialog id="dialog_messenger">
@@ -25,15 +27,16 @@
             Step 1 - Generate the decision matrix content
         </legend>
         <div id="div_step1">
-            <p>Please enter manually or copy & paste your data.
+            <p>
+                Please enter manually or copy & paste your data.
                 The first row includes criteria names. The first column
                 includes the names of the alternatives. You can separate values using commas or semicolons.
-                The initial content represents a decision matrix with 5 criteria and 3 alternatives. Number of
-                spaces is not important, but values should be separated by the selected separator. If the
-                values are consistent then a decision matrix will be generated. The default directions
+            </p>
+            <p>The default directions
                 will set to max for all criteria. The default weights will be equal weights. The decimal
                 separator is a dot (.) for numbers.
             </p>
+
             <textarea id="textarea_strdecmat" placeholder="Enter and copy & paste the decision matrix content here"
                 rows="6" cols="40">
   C1 , C2 , C3 , C4 , C5

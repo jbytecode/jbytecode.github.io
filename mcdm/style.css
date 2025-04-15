@@ -63,16 +63,22 @@ p {
     margin-bottom: 1.5em;
     padding-left: 10px; /* Add some space for the vertical line */
     border-left: 5px solid #80cbc4; /* Pastel Teal - a blend of green and blue */
+    font-size: 14px;
+    border: 1px solid #42a5f5; 
+    border-radius: 10px;
+    background-color: #e0f7fa;
 }
 
 a {
     color: #64b5f6; /* Pastel Blue */
     text-decoration: none;
     transition: color 0.3s ease;
+    font-size: 1em;
 }
 
 a:hover {
     color: #42a5f5; /* Slightly darker pastel blue on hover */
+    font-size: 1em;
 }
 
 /* Container for the Application */
@@ -83,6 +89,7 @@ a:hover {
     background-color: #f1f8e9; /* Pastel Light Green */
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 1em;
 }
 
 /* Form Elements */
@@ -91,6 +98,7 @@ label {
     margin-bottom: 0.5em;
     font-weight: bold;
     color: #43a047; /* Pastel Green */
+    font-size: 1em;
 }
 
 input[type="text"],
@@ -107,7 +115,7 @@ textarea {
     margin-bottom: 1.5em;
     border: 1px solid #a7ffeb; /* Pastel Cyan (mix of green and blue) */
     border-radius: 4px;
-    font-size: 1.1em;
+    font-size: 1em;
     box-sizing: border-box;
     background-color: #e0f2f1;
 }
@@ -123,6 +131,7 @@ textarea:focus {
     outline: none;
     border-color: #64b5f6; /* Pastel Blue focus */
     box-shadow: 0 0 5px rgba(100, 181, 246, 0.5);
+    font-size: 1em;
 }
 
 select {
@@ -137,6 +146,7 @@ select {
 textarea {
     resize: vertical;
     min-height: 100px;
+    font-size: 1em;
 }
 
 /* Buttons */
@@ -149,19 +159,23 @@ button {
     cursor: pointer;
     font-size: 1em;
     transition: background-color 0.3s ease;
+    font-size: 1em;
 }
 
 button:hover {
     background-color: #42a5f5; /* Slightly darker pastel blue on hover */
+    font-size: 1em;
 }
 
 button:focus {
     outline: none;
     box-shadow: 0 0 5px rgba(100, 181, 246, 0.5);
+    font-size: 1em;
 }
 
 button[type="submit"] {
     font-weight: bold;
+    font-size: 1em;
 }
 
 /* Fieldsets and Legends */
@@ -172,13 +186,15 @@ fieldset {
     padding: 1.5em;
     margin-bottom: 1.5em;
     background-color: #e8f5e9; /* Very Light Pastel Green */
+    font-size: 1em;
 }
 
 legend {
-    font-size: 1.2em;
+    font-size: 1.1em;
     font-weight: bold;
     color: #43a047; /* Pastel Green */
     padding: 0 10px;
+    font-size: 1.5em;
 }
 
 /* Lists */
@@ -281,4 +297,11 @@ small {
         padding: 8px 15px;
         font-size: 0.9em;
     }
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #268871; /* Pastel Cyan */
+    margin: 2em 0;
 }
