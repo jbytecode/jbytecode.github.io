@@ -2,6 +2,7 @@
 
 <head>
     <title>Easy Online MCDM</title>
+    <script src="./target/scala-3.6.4/mcdm-opt.js" defer></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -196,7 +197,10 @@ A3,0.1, 0.2, 0.3, 0.4, 0.5
                         <label for="check_wpm">Wpm</label>
                         <input type="checkbox" id="check_wpm"></input>
                     </td>
-                    <td></td>
+                    <td>
+                        <label for="check_nds">Nds</label>
+                        <input type="checkbox" id="check_nds"></input>
+                    </td>
                 </tr>
             </table>
 
@@ -233,7 +237,7 @@ A3,0.1, 0.2, 0.3, 0.4, 0.5
         <fieldset>
             <legend>Ranks</legend>
             <div id="div_output_ranks">
-
+                <script src="./target/scala-3.6.4/mcdm-opt.js"></script>
             </div>
         </fieldset>
     </fieldset>
@@ -244,6 +248,6 @@ A3,0.1, 0.2, 0.3, 0.4, 0.5
 </body>
 
 
-<script src="./target/scala-3.6.4/mcdm-opt.js"></script>
+
 
 </html>
