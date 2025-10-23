@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simplex Solver</title>
+    <script defer src="./target/scala-3.7.3/simplex-fastopt.js"></script>
+    <style>
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin: 20px;
+        }
+        #status {
+            font-size: 1.2em;
+            color: #333;
+        }
+        fieldset {
+            margin-bottom: 20px;
+            padding: 10px;
+        }
+        legend {
+            font-weight: bold;
+            font-size: larger;
+        }
+        label {
+            margin-top: 10px;
+        }
+        textarea {
+            width: 100%;
+            font-family: monospace;
+        }
+        select {
+            font-size: 16px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>Problem Definition</legend>
+        <label for="objectivetype">Objective Function Type:</label>
+        <select id="objectivetype">
+            <option value="Maximize">Maximize</option>
+            <option value="Minimize">Minimize</option>
+        </select>
+        <br><br>
+        <label for="objectivecoefs">Objective Function Coefficients:</label>
+        <textarea id="objectivecoefs" rows="2" placeholder="e.g. 3, 4"></textarea> 
+        <br><br>
+        <label for="lhs">Coefficients of constraints (one per line, format: a1,a2,...,an):</label>
+        <textarea id="lhs" rows="6" placeholder="e.g. 2,1&#10;1,1&#10;1,0"></textarea>
+        <br><br>
+        <label for="directions">Constraint Types (Comma seperated, format: &lt;, ==, &gt;)</label>
+        <textarea id="directions" rows="3" placeholder="e.g. &lt;=, &gt;=, =="></textarea>
+        <br><br>
+        <label for ="rhs">Right-hand side values (Comma separated):</label>
+        <textarea id="rhs" rows="2" placeholder="e.g. 100, 80, 40"></textarea>
+        <br><br>
+        <button id="solveBtn">Solve</button>
+        <button id="cleanBtn">Clean</button>
+    </fieldset>
+
+    <div id="status">Loading...</div>
+    <br><br>
+
+    <fieldset>
+        <legend>Solution Output</legend>
+        <div id="solutionOutput">Solution will be displayed here after solving the problem.</div>
+    </fieldset>
+
+</body>
+</html
