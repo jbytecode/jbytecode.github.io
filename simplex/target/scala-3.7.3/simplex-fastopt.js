@@ -3337,6 +3337,8 @@ function $c_Lorg_expr_simplex_Main$package$() {
   this.Lorg_expr_simplex_Main$package$__f_directions = null;
   this.Lorg_expr_simplex_Main$package$__f_solvebutton = null;
   this.Lorg_expr_simplex_Main$package$__f_cleanbutton = null;
+  this.Lorg_expr_simplex_Main$package$__f_buildbutton = null;
+  this.Lorg_expr_simplex_Main$package$__f_mathproblemOutput = null;
   this.Lorg_expr_simplex_Main$package$__f_solutionOutput = null;
   $n_Lorg_expr_simplex_Main$package$ = this;
   var $x_1 = $m_Lorg_expr_simplex_Simplex$();
@@ -3360,6 +3362,8 @@ function $c_Lorg_expr_simplex_Main$package$() {
   this.Lorg_expr_simplex_Main$package$__f_directions = $m_Lorg_expr_simplex_Main$package$().Lorg_expr_simplex_Main$package$__f_document.getElementById("directions");
   this.Lorg_expr_simplex_Main$package$__f_solvebutton = $m_Lorg_expr_simplex_Main$package$().Lorg_expr_simplex_Main$package$__f_document.getElementById("solveBtn");
   this.Lorg_expr_simplex_Main$package$__f_cleanbutton = $m_Lorg_expr_simplex_Main$package$().Lorg_expr_simplex_Main$package$__f_document.getElementById("cleanBtn");
+  this.Lorg_expr_simplex_Main$package$__f_buildbutton = $m_Lorg_expr_simplex_Main$package$().Lorg_expr_simplex_Main$package$__f_document.getElementById("buildBtn");
+  this.Lorg_expr_simplex_Main$package$__f_mathproblemOutput = $m_Lorg_expr_simplex_Main$package$().Lorg_expr_simplex_Main$package$__f_document.getElementById("mathProblemOutput");
   this.Lorg_expr_simplex_Main$package$__f_solutionOutput = $m_Lorg_expr_simplex_Main$package$().Lorg_expr_simplex_Main$package$__f_document.getElementById("solutionOutput");
 }
 $c_Lorg_expr_simplex_Main$package$.prototype = new $h_O();
@@ -3626,6 +3630,12 @@ $c_Lorg_expr_simplex_Main$package$.prototype.cleanProblem__V = (function() {
   $m_Lorg_expr_simplex_Main$package$().Lorg_expr_simplex_Main$package$__f_directions.value = "";
   $m_Lorg_expr_simplex_Main$package$().Lorg_expr_simplex_Main$package$__f_objectivetype.value = "Maximize";
   $m_Lorg_expr_simplex_Main$package$().Lorg_expr_simplex_Main$package$__f_solutionOutput.innerHTML = "";
+  $m_Lorg_expr_simplex_Main$package$().Lorg_expr_simplex_Main$package$__f_mathproblemOutput.innerHTML = "";
+});
+$c_Lorg_expr_simplex_Main$package$.prototype.buildproblem__V = (function() {
+  var p = $m_Lorg_expr_simplex_Main$package$().createProblemFromInput__Lorg_expr_simplex_Simplex$SimplexProblem();
+  $m_Lorg_expr_simplex_Main$package$().Lorg_expr_simplex_Main$package$__f_mathproblemOutput.innerHTML = $m_Lorg_expr_simplex_Main$package$().toMathJax__Lorg_expr_simplex_Simplex$SimplexProblem__T(p);
+  MathJax.typeset();
 });
 $c_Lorg_expr_simplex_Main$package$.prototype.solveproblem__V = (function() {
   var p = $m_Lorg_expr_simplex_Main$package$().createProblemFromInput__Lorg_expr_simplex_Simplex$SimplexProblem();
@@ -3962,6 +3972,9 @@ $c_Lorg_expr_simplex_Main$package$.prototype.registerEvents__V = (function() {
   $m_Lorg_expr_simplex_Main$package$().Lorg_expr_simplex_Main$package$__f_solvebutton.onclick = ((_$2) => {
     $m_Lorg_expr_simplex_Main$package$().solveproblem__V();
   });
+  $m_Lorg_expr_simplex_Main$package$().Lorg_expr_simplex_Main$package$__f_buildbutton.onclick = ((_$3) => {
+    $m_Lorg_expr_simplex_Main$package$().buildproblem__V();
+  });
 });
 $c_Lorg_expr_simplex_Main$package$.prototype.problemToHtmlTable__Lorg_expr_simplex_Simplex$SimplexProblem__T = (function(p) {
   var sb = $ct_scm_StringBuilder__(new $c_scm_StringBuilder());
@@ -4034,9 +4047,9 @@ $c_Lorg_expr_simplex_Main$package$.prototype.status__T__V = (function(txt) {
 $c_Lorg_expr_simplex_Main$package$.prototype.createProblemFromInput__Lorg_expr_simplex_Simplex$SimplexProblem = (function() {
   var this$1 = $n($as_T($m_Lorg_expr_simplex_Main$package$().Lorg_expr_simplex_Main$package$__f_objectivecoefs.value));
   var xs = $f_T__split__T__I__AT(this$1, ",", 0);
-  var f = ((_$3) => {
-    var _$3$1 = $as_T(_$3);
-    var x = $f_T__trim__T($n(_$3$1));
+  var f = ((_$4) => {
+    var _$4$1 = $as_T(_$4);
+    var x = $f_T__trim__T($n(_$4$1));
     return $m_jl_Double$().parseDouble__T__D(x);
   });
   var len = $n(xs).u.length;
@@ -4122,9 +4135,9 @@ $c_Lorg_expr_simplex_Main$package$.prototype.createProblemFromInput__Lorg_expr_s
   }
   var this$7 = $n($as_T($m_Lorg_expr_simplex_Main$package$().Lorg_expr_simplex_Main$package$__f_lhs.value));
   var xs$1 = $f_T__split__T__I__AT(this$7, "\n", 0);
-  var f$1 = ((_$4) => {
-    var _$4$1 = $as_T(_$4);
-    return $f_T__trim__T($n(_$4$1));
+  var f$1 = ((_$5) => {
+    var _$5$1 = $as_T(_$5);
+    return $f_T__trim__T($n(_$5$1));
   });
   var len$1 = $n(xs$1).u.length;
   var ys$1 = new ($d_T.getArrayOf().constr)(len$1);
@@ -4233,9 +4246,9 @@ $c_Lorg_expr_simplex_Main$package$.prototype.createProblemFromInput__Lorg_expr_s
       var x0$16 = lhsRows.get(i$3);
       var this$29 = $n(x0$16);
       var xs$2 = $f_T__split__T__I__AT(this$29, ",", 0);
-      var f$2 = ((_$6) => {
-        var _$6$1 = $as_T(_$6);
-        var x$2 = $f_T__trim__T($n(_$6$1));
+      var f$2 = ((_$7) => {
+        var _$7$1 = $as_T(_$7);
+        var x$2 = $f_T__trim__T($n(_$7$1));
         return $m_jl_Double$().parseDouble__T__D(x$2);
       });
       var len$3 = $n(xs$2).u.length;
@@ -4325,9 +4338,9 @@ $c_Lorg_expr_simplex_Main$package$.prototype.createProblemFromInput__Lorg_expr_s
   }
   var this$35 = $n($as_T($m_Lorg_expr_simplex_Main$package$().Lorg_expr_simplex_Main$package$__f_rhs.value));
   var xs$3 = $f_T__split__T__I__AT(this$35, ",", 0);
-  var f$3 = ((_$7) => {
-    var _$7$1 = $as_T(_$7);
-    var x$3 = $f_T__trim__T($n(_$7$1));
+  var f$3 = ((_$8) => {
+    var _$8$1 = $as_T(_$8);
+    var x$3 = $f_T__trim__T($n(_$8$1));
     return $m_jl_Double$().parseDouble__T__D(x$3);
   });
   var len$4 = $n(xs$3).u.length;
@@ -4413,9 +4426,9 @@ $c_Lorg_expr_simplex_Main$package$.prototype.createProblemFromInput__Lorg_expr_s
   }
   var this$41 = $n($as_T($m_Lorg_expr_simplex_Main$package$().Lorg_expr_simplex_Main$package$__f_directions.value));
   var xs$4 = $f_T__split__T__I__AT(this$41, ",", 0);
-  var f$4 = ((_$8) => {
-    var _$8$1 = $as_T(_$8);
-    return $f_T__trim__T($n(_$8$1));
+  var f$4 = ((_$9) => {
+    var _$9$1 = $as_T(_$9);
+    return $f_T__trim__T($n(_$9$1));
   });
   var len$5 = $n(xs$4).u.length;
   var ys$5 = new ($d_T.getArrayOf().constr)(len$5);
@@ -4542,6 +4555,137 @@ $c_Lorg_expr_simplex_Main$package$.prototype.createProblemFromInput__Lorg_expr_s
   }
   return $m_Lorg_expr_simplex_Simplex$().createsimplexproblem__AD__AAD__AD__ALorg_expr_simplex_Simplex$Direction__Lorg_expr_simplex_Simplex$OptimizationType__Lorg_expr_simplex_Simplex$SimplexProblem(ys, ys$2, ys$4, ys$6, opttype);
 });
+$c_Lorg_expr_simplex_Main$package$.prototype.toMathJax__Lorg_expr_simplex_Simplex$SimplexProblem__T = (function(s) {
+  var sb = $ct_scm_StringBuilder__(new $c_scm_StringBuilder());
+  sb.append__T__scm_StringBuilder("\\(\n");
+  sb.append__T__scm_StringBuilder("\\begin{split}\n");
+  matchResult5: {
+    var x5 = $n(s).Lorg_expr_simplex_Simplex$SimplexProblem__f_opttype;
+    var x = $s_Lorg_expr_simplex_Simplex$OptimizationType$__Maximize__Lorg_expr_simplex_Simplex$OptimizationType();
+    if ((x === null)) {
+      var $x_1 = (x5 === null);
+    } else {
+      var this$1 = $n(x);
+      var $x_1 = (this$1 === x5);
+    }
+    if ($x_1) {
+      sb.append__T__scm_StringBuilder(" \\text{Maximize } Z = &");
+      break matchResult5;
+    }
+    var x$3 = $s_Lorg_expr_simplex_Simplex$OptimizationType$__Minimize__Lorg_expr_simplex_Simplex$OptimizationType();
+    if ((x$3 === null)) {
+      var $x_2 = (x5 === null);
+    } else {
+      var this$2 = $n(x$3);
+      var $x_2 = (this$2 === x5);
+    }
+    if ($x_2) {
+      sb.append__T__scm_StringBuilder(" \\text{Minimize } Z = &");
+      break matchResult5;
+    }
+    throw new $c_s_MatchError(x5);
+  }
+  var xs = $n(s).Lorg_expr_simplex_Simplex$SimplexProblem__f_z;
+  var this$4 = $n($m_sc_ArrayOps$().indices$extension__O__sci_Range(xs));
+  if ((!this$4.sci_Range__f_isEmpty)) {
+    var i = this$4.sci_Range__f_start;
+    while (true) {
+      var x0 = i;
+      var coef = $n($n(s).Lorg_expr_simplex_Simplex$SimplexProblem__f_z).get(x0);
+      var varname = ((("x_{" + "") + x0) + "}");
+      if (((x0 > 0) && (coef >= 0.0))) {
+        sb.append__T__scm_StringBuilder(" + ");
+      } else if ((coef < 0.0)) {
+        sb.append__T__scm_StringBuilder(" - ");
+      }
+      sb.append__T__scm_StringBuilder($m_sc_StringOps$().format$extension__T__sci_Seq__T("%-1.2f %s", $m_sr_ScalaRunTime$().genericWrapArray__O__sci_ArraySeq(new $ac_O([$uD(Math.abs(coef)), varname]))));
+      if ((i === this$4.sci_Range__f_scala$collection$immutable$Range$$lastElement)) {
+        break;
+      }
+      i = ((i + this$4.sci_Range__f_step) | 0);
+    }
+  }
+  sb.append__T__scm_StringBuilder(" \\\\\n");
+  sb.append__T__scm_StringBuilder("\\text{Subject to:} & \\\\\n");
+  var xs$1 = $n(s).Lorg_expr_simplex_Simplex$SimplexProblem__f_lhs;
+  var this$11 = $n($m_sc_ArrayOps$().indices$extension__O__sci_Range(xs$1));
+  if ((!this$11.sci_Range__f_isEmpty)) {
+    var i$1 = this$11.sci_Range__f_start;
+    while (true) {
+      var x0$1 = i$1;
+      sb.append__T__scm_StringBuilder(" & ");
+      var xs$2 = $n($n(s).Lorg_expr_simplex_Simplex$SimplexProblem__f_lhs).get(x0$1);
+      var this$13 = $n($m_sc_ArrayOps$().indices$extension__O__sci_Range(xs$2));
+      if ((!this$13.sci_Range__f_isEmpty)) {
+        var i$2 = this$13.sci_Range__f_start;
+        while (true) {
+          var x0$2 = i$2;
+          var coef$1 = $n($n($n(s).Lorg_expr_simplex_Simplex$SimplexProblem__f_lhs).get(x0$1)).get(x0$2);
+          var varname$1 = ((("x_{" + "") + x0$2) + "}");
+          if (((x0$2 > 0) && (coef$1 >= 0.0))) {
+            sb.append__T__scm_StringBuilder(" + ");
+          } else if ((coef$1 < 0.0)) {
+            sb.append__T__scm_StringBuilder(" - ");
+          }
+          sb.append__T__scm_StringBuilder($m_sc_StringOps$().format$extension__T__sci_Seq__T("%-1.2f %s", $m_sr_ScalaRunTime$().genericWrapArray__O__sci_ArraySeq(new $ac_O([$uD(Math.abs(coef$1)), varname$1]))));
+          if ((i$2 === this$13.sci_Range__f_scala$collection$immutable$Range$$lastElement)) {
+            break;
+          }
+          i$2 = ((i$2 + this$13.sci_Range__f_step) | 0);
+        }
+      }
+      matchResult6: {
+        var x6 = $n($n(s).Lorg_expr_simplex_Simplex$SimplexProblem__f_directions).get(x0$1);
+        var x$1 = $s_Lorg_expr_simplex_Simplex$Direction$__LE__Lorg_expr_simplex_Simplex$Direction();
+        if ((x$1 === null)) {
+          var $x_3 = (x6 === null);
+        } else {
+          var this$19 = $n(x$1);
+          var $x_3 = (this$19 === x6);
+        }
+        if ($x_3) {
+          sb.append__T__scm_StringBuilder(" \\leq ");
+          break matchResult6;
+        }
+        var x$3$1 = $s_Lorg_expr_simplex_Simplex$Direction$__GE__Lorg_expr_simplex_Simplex$Direction();
+        if ((x$3$1 === null)) {
+          var $x_4 = (x6 === null);
+        } else {
+          var this$20 = $n(x$3$1);
+          var $x_4 = (this$20 === x6);
+        }
+        if ($x_4) {
+          sb.append__T__scm_StringBuilder(" \\geq ");
+          break matchResult6;
+        }
+        var x$5 = $s_Lorg_expr_simplex_Simplex$Direction$__EQ__Lorg_expr_simplex_Simplex$Direction();
+        if ((x$5 === null)) {
+          var $x_5 = (x6 === null);
+        } else {
+          var this$21 = $n(x$5);
+          var $x_5 = (this$21 === x6);
+        }
+        if ($x_5) {
+          sb.append__T__scm_StringBuilder(" = ");
+          break matchResult6;
+        }
+        throw new $c_s_MatchError(x6);
+      }
+      sb.append__T__scm_StringBuilder($m_sc_StringOps$().format$extension__T__sci_Seq__T("%-1.2f", $m_sr_ScalaRunTime$().genericWrapArray__O__sci_ArraySeq(new $ac_O([$n($n(s).Lorg_expr_simplex_Simplex$SimplexProblem__f_rhs).get(x0$1)]))));
+      if ((x0$1 < (((-1) + $n($n(s).Lorg_expr_simplex_Simplex$SimplexProblem__f_lhs).u.length) | 0))) {
+        sb.append__T__scm_StringBuilder(" \\\\\n");
+      }
+      if ((i$1 === this$11.sci_Range__f_scala$collection$immutable$Range$$lastElement)) {
+        break;
+      }
+      i$1 = ((i$1 + this$11.sci_Range__f_step) | 0);
+    }
+  }
+  sb.append__T__scm_StringBuilder("\\\\& x_j \\geq 0 \\quad \\text{for all } j \\\\\n");
+  sb.append__T__scm_StringBuilder("\n\\end{split}\n");
+  sb.append__T__scm_StringBuilder("\\)\n");
+  return $n(sb.scm_StringBuilder__f_underlying).jl_StringBuilder__f_java$lang$StringBuilder$$content;
+});
 $c_Lorg_expr_simplex_Main$package$.prototype.hello__V = (function() {
   var this$2 = $m_s_Console$();
   var this$3 = $n(this$2.out__Ljava_io_PrintStream());
@@ -4589,125 +4733,43 @@ $c_Lorg_expr_simplex_Simplex$.prototype.createEmptySimplexProblem__Lorg_expr_sim
   var basicvariableindex = new $ac_I(0);
   return new $c_Lorg_expr_simplex_Simplex$SimplexProblem(lhs, rhs, z, opttype, directions, varnames, slackvariableindices, surplusvariableindices, artificialvariableindices, basicvariableindex, (-Infinity), false, false, 0.0);
 });
-$c_Lorg_expr_simplex_Simplex$.prototype.copySimplexProblem__Lorg_expr_simplex_Simplex$SimplexProblem__Lorg_expr_simplex_Simplex$SimplexProblem = (function(source) {
-  var xs = $n(source).Lorg_expr_simplex_Simplex$SimplexProblem__f_lhs;
-  var f = ((_$1) => {
-    var _$1$1 = $asArrayOf_D(_$1, 1);
-    var this$2 = $n(_$1$1);
-    return this$2.clone__O();
-  });
-  var len = $n(xs).u.length;
-  var ys = new ($d_D.getArrayOf().getArrayOf().constr)(len);
-  if ((len > 0)) {
-    var i = 0;
-    if ((xs !== null)) {
-      while ((i < len)) {
-        var $x_1 = i;
-        var x0 = $n(xs).get(i);
-        ys.set($x_1, $asArrayOf_D(f(x0), 1));
-        i = ((1 + i) | 0);
-      }
-    } else if ((xs instanceof $ac_I)) {
-      var x3 = $asArrayOf_I(xs, 1);
-      while ((i < len)) {
-        var $x_2 = i;
-        var x0$1 = $n(x3).get(i);
-        ys.set($x_2, $asArrayOf_D(f(x0$1), 1));
-        i = ((1 + i) | 0);
-      }
-    } else if ((xs instanceof $ac_D)) {
-      var x4 = $asArrayOf_D(xs, 1);
-      while ((i < len)) {
-        var $x_3 = i;
-        var x0$2 = $n(x4).get(i);
-        ys.set($x_3, $asArrayOf_D(f(x0$2), 1));
-        i = ((1 + i) | 0);
-      }
-    } else if ((xs instanceof $ac_J)) {
-      var x5 = $asArrayOf_J(xs, 1);
-      while ((i < len)) {
-        var $x_4 = i;
-        var t = $n(x5).get(i);
-        var lo = t.RTLong__f_lo;
-        var hi = t.RTLong__f_hi;
-        ys.set($x_4, $asArrayOf_D(f(new $c_RTLong(lo, hi)), 1));
-        i = ((1 + i) | 0);
-      }
-    } else if ((xs instanceof $ac_F)) {
-      var x6 = $asArrayOf_F(xs, 1);
-      while ((i < len)) {
-        var $x_5 = i;
-        var x0$3 = $n(x6).get(i);
-        ys.set($x_5, $asArrayOf_D(f(x0$3), 1));
-        i = ((1 + i) | 0);
-      }
-    } else if ((xs instanceof $ac_C)) {
-      var x7 = $asArrayOf_C(xs, 1);
-      while ((i < len)) {
-        var $x_6 = i;
-        var x0$4 = $n(x7).get(i);
-        ys.set($x_6, $asArrayOf_D(f($bC(x0$4)), 1));
-        i = ((1 + i) | 0);
-      }
-    } else if ((xs instanceof $ac_B)) {
-      var x8 = $asArrayOf_B(xs, 1);
-      while ((i < len)) {
-        var $x_7 = i;
-        var x0$5 = $n(x8).get(i);
-        ys.set($x_7, $asArrayOf_D(f(x0$5), 1));
-        i = ((1 + i) | 0);
-      }
-    } else if ((xs instanceof $ac_S)) {
-      var x9 = $asArrayOf_S(xs, 1);
-      while ((i < len)) {
-        var $x_8 = i;
-        var x0$6 = $n(x9).get(i);
-        ys.set($x_8, $asArrayOf_D(f(x0$6), 1));
-        i = ((1 + i) | 0);
-      }
-    } else if ((xs instanceof $ac_Z)) {
-      var x10 = $asArrayOf_Z(xs, 1);
-      while ((i < len)) {
-        var $x_9 = i;
-        var x0$7 = $n(x10).get(i);
-        ys.set($x_9, $asArrayOf_D(f(x0$7), 1));
-        i = ((1 + i) | 0);
-      }
-    } else {
-      throw new $c_s_MatchError(xs);
-    }
-  }
-  var this$10 = $n($n(source).Lorg_expr_simplex_Simplex$SimplexProblem__f_rhs);
-  var rhs = this$10.clone__O();
-  var this$11 = $n($n(source).Lorg_expr_simplex_Simplex$SimplexProblem__f_z);
-  var z = this$11.clone__O();
-  var opttype = $n(source).Lorg_expr_simplex_Simplex$SimplexProblem__f_opttype;
-  var this$12 = $n($n(source).Lorg_expr_simplex_Simplex$SimplexProblem__f_directions);
-  var directions = this$12.clone__O();
-  var this$13 = $n($n(source).Lorg_expr_simplex_Simplex$SimplexProblem__f_varnames);
-  var varnames = this$13.clone__O();
-  var this$14 = $n($n(source).Lorg_expr_simplex_Simplex$SimplexProblem__f_slackvariableindices);
-  var slackvariableindices = this$14.clone__O();
-  var this$15 = $n($n(source).Lorg_expr_simplex_Simplex$SimplexProblem__f_surplusvariableindices);
-  var surplusvariableindices = this$15.clone__O();
-  var this$16 = $n($n(source).Lorg_expr_simplex_Simplex$SimplexProblem__f_artificialvariableindices);
-  var artificialvariableindices = this$16.clone__O();
-  var this$17 = $n($n(source).Lorg_expr_simplex_Simplex$SimplexProblem__f_basicvariableindex);
-  var basicvariableindex = this$17.clone__O();
-  var biggestvalue = $n(source).Lorg_expr_simplex_Simplex$SimplexProblem__f_biggestvalue;
-  var isinstandardform = $n(source).Lorg_expr_simplex_Simplex$SimplexProblem__f_isinstandardform;
-  var converged = $n(source).Lorg_expr_simplex_Simplex$SimplexProblem__f_converged;
-  var objective_value = $n(source).Lorg_expr_simplex_Simplex$SimplexProblem__f_objective_value;
-  return new $c_Lorg_expr_simplex_Simplex$SimplexProblem(ys, rhs, z, opttype, directions, varnames, slackvariableindices, surplusvariableindices, artificialvariableindices, basicvariableindex, biggestvalue, isinstandardform, converged, objective_value);
-});
 $c_Lorg_expr_simplex_Simplex$.prototype.updatebiggestvalue__Lorg_expr_simplex_Simplex$SimplexProblem__Lorg_expr_simplex_Simplex$SimplexProblem = (function(s) {
-  var newproblem = this.copySimplexProblem__Lorg_expr_simplex_Simplex$SimplexProblem__Lorg_expr_simplex_Simplex$SimplexProblem(s);
-  var this$1 = $m_scm_ArrayBuffer$();
+  $n(s);
+  var this$1 = $n(s);
+  var lhs = this$1.Lorg_expr_simplex_Simplex$SimplexProblem__f_lhs;
+  var this$2 = $n(s);
+  var rhs = this$2.Lorg_expr_simplex_Simplex$SimplexProblem__f_rhs;
+  var this$3 = $n(s);
+  var z = this$3.Lorg_expr_simplex_Simplex$SimplexProblem__f_z;
+  var this$4 = $n(s);
+  var opttype = this$4.Lorg_expr_simplex_Simplex$SimplexProblem__f_opttype;
+  var this$5 = $n(s);
+  var directions = this$5.Lorg_expr_simplex_Simplex$SimplexProblem__f_directions;
+  var this$6 = $n(s);
+  var varnames = this$6.Lorg_expr_simplex_Simplex$SimplexProblem__f_varnames;
+  var this$7 = $n(s);
+  var slackvariableindices = this$7.Lorg_expr_simplex_Simplex$SimplexProblem__f_slackvariableindices;
+  var this$8 = $n(s);
+  var surplusvariableindices = this$8.Lorg_expr_simplex_Simplex$SimplexProblem__f_surplusvariableindices;
+  var this$9 = $n(s);
+  var artificialvariableindices = this$9.Lorg_expr_simplex_Simplex$SimplexProblem__f_artificialvariableindices;
+  var this$10 = $n(s);
+  var basicvariableindex = this$10.Lorg_expr_simplex_Simplex$SimplexProblem__f_basicvariableindex;
+  var this$11 = $n(s);
+  var biggestvalue = this$11.Lorg_expr_simplex_Simplex$SimplexProblem__f_biggestvalue;
+  var this$12 = $n(s);
+  var isinstandardform = this$12.Lorg_expr_simplex_Simplex$SimplexProblem__f_isinstandardform;
+  var this$13 = $n(s);
+  var converged = this$13.Lorg_expr_simplex_Simplex$SimplexProblem__f_converged;
+  var this$14 = $n(s);
+  var objective_value = this$14.Lorg_expr_simplex_Simplex$SimplexProblem__f_objective_value;
+  var newproblem = new $c_Lorg_expr_simplex_Simplex$SimplexProblem(lhs, rhs, z, opttype, directions, varnames, slackvariableindices, surplusvariableindices, artificialvariableindices, basicvariableindex, biggestvalue, isinstandardform, converged, objective_value);
+  var this$16 = $m_scm_ArrayBuffer$();
   var elems = $m_sr_ScalaRunTime$().wrapDoubleArray__AD__sci_ArraySeq(new $ac_D(new Float64Array([])));
-  var ms = this$1.from__sc_IterableOnce__scm_ArrayBuffer(elems);
+  var ms = this$16.from__sc_IterableOnce__scm_ArrayBuffer(elems);
   var xs = $n(s).Lorg_expr_simplex_Simplex$SimplexProblem__f_lhs;
   if (($n(xs).u.length !== 0)) {
-    var this$18 = $n(ms);
+    var this$33 = $n(ms);
     var $x_2 = $m_s_Predef$();
     var xs$1 = $n(s).Lorg_expr_simplex_Simplex$SimplexProblem__f_lhs;
     var capacity = 0;
@@ -4738,8 +4800,8 @@ $c_Lorg_expr_simplex_Simplex$.prototype.updatebiggestvalue__Lorg_expr_simplex_Si
       var x1$2 = i;
       var x0 = $n(xs$1).get(x1$2);
       var elems$1 = $m_s_Predef$().wrapDoubleArray__AD__scm_ArraySeq$ofDouble(x0);
-      var this$9 = $n(elems$1);
-      var it = new $c_sc_ArrayOps$ArrayIterator$mcD$sp(this$9.scm_ArraySeq$ofDouble__f_array);
+      var this$24 = $n(elems$1);
+      var it = new $c_sc_ArrayOps$ArrayIterator$mcD$sp(this$24.scm_ArraySeq$ofDouble__f_array);
       while (it.hasNext__Z()) {
         var elem = it.next$mcD$sp__D();
         jsElems.push(elem);
@@ -4758,19 +4820,19 @@ $c_Lorg_expr_simplex_Simplex$.prototype.updatebiggestvalue__Lorg_expr_simplex_Si
         i$1 = ((1 + i$1) | 0);
       }
     }
-    var this$17 = $n($x_2.wrapDoubleArray__AD__scm_ArraySeq$ofDouble(ys));
+    var this$32 = $n($x_2.wrapDoubleArray__AD__scm_ArraySeq$ofDouble(ys));
     var ord = $m_s_math_Ordering$DeprecatedDoubleOrdering$();
-    var elem$1 = $f_sc_IterableOnceOps__max__s_math_Ordering__O(this$17, ord);
-    this$18.addOne__O__scm_ArrayBuffer(elem$1);
+    var elem$1 = $f_sc_IterableOnceOps__max__s_math_Ordering__O(this$32, ord);
+    this$33.addOne__O__scm_ArrayBuffer(elem$1);
   }
   var xs$3 = $n(s).Lorg_expr_simplex_Simplex$SimplexProblem__f_rhs;
   if (($n(xs$3).u.length !== 0)) {
-    var this$29 = $n(ms);
+    var this$44 = $n(ms);
     var $x_12 = $m_s_Predef$();
     var xs$4 = $n(s).Lorg_expr_simplex_Simplex$SimplexProblem__f_rhs;
-    var f = ((_$3) => {
-      var _$3$1 = $uD(_$3);
-      return $uD(Math.abs(_$3$1));
+    var f = ((_$2) => {
+      var _$2$1 = $uD(_$2);
+      return $uD(Math.abs(_$2$1));
     });
     var len$2 = $n(xs$4).u.length;
     var ys$1 = new $ac_D(len$2);
@@ -4853,19 +4915,19 @@ $c_Lorg_expr_simplex_Simplex$.prototype.updatebiggestvalue__Lorg_expr_simplex_Si
         throw new $c_s_MatchError(xs$4);
       }
     }
-    var this$28 = $n($x_12.wrapDoubleArray__AD__scm_ArraySeq$ofDouble(ys$1));
+    var this$43 = $n($x_12.wrapDoubleArray__AD__scm_ArraySeq$ofDouble(ys$1));
     var ord$1 = $m_s_math_Ordering$DeprecatedDoubleOrdering$();
-    var elem$2 = $f_sc_IterableOnceOps__max__s_math_Ordering__O(this$28, ord$1);
-    this$29.addOne__O__scm_ArrayBuffer(elem$2);
+    var elem$2 = $f_sc_IterableOnceOps__max__s_math_Ordering__O(this$43, ord$1);
+    this$44.addOne__O__scm_ArrayBuffer(elem$2);
   }
   var xs$5 = $n(s).Lorg_expr_simplex_Simplex$SimplexProblem__f_z;
   if (($n(xs$5).u.length !== 0)) {
-    var this$40 = $n(ms);
+    var this$55 = $n(ms);
     var $x_22 = $m_s_Predef$();
     var xs$6 = $n(s).Lorg_expr_simplex_Simplex$SimplexProblem__f_z;
-    var f$1 = ((_$4) => {
-      var _$4$1 = $uD(_$4);
-      return $uD(Math.abs(_$4$1));
+    var f$1 = ((_$3) => {
+      var _$3$1 = $uD(_$3);
+      return $uD(Math.abs(_$3$1));
     });
     var len$3 = $n(xs$6).u.length;
     var ys$2 = new $ac_D(len$3);
@@ -4948,75 +5010,75 @@ $c_Lorg_expr_simplex_Simplex$.prototype.updatebiggestvalue__Lorg_expr_simplex_Si
         throw new $c_s_MatchError(xs$6);
       }
     }
-    var this$39 = $n($x_22.wrapDoubleArray__AD__scm_ArraySeq$ofDouble(ys$2));
+    var this$54 = $n($x_22.wrapDoubleArray__AD__scm_ArraySeq$ofDouble(ys$2));
     var ord$2 = $m_s_math_Ordering$DeprecatedDoubleOrdering$();
-    var elem$3 = $f_sc_IterableOnceOps__max__s_math_Ordering__O(this$39, ord$2);
-    this$40.addOne__O__scm_ArrayBuffer(elem$3);
+    var elem$3 = $f_sc_IterableOnceOps__max__s_math_Ordering__O(this$54, ord$2);
+    this$55.addOne__O__scm_ArrayBuffer(elem$3);
   }
-  var this$41 = $n(ms);
-  if ((!$f_sc_SeqOps__isEmpty__Z(this$41))) {
+  var this$56 = $n(ms);
+  if ((!$f_sc_SeqOps__isEmpty__Z(this$56))) {
     var \u03b41$ = newproblem;
-    var this$42 = $n(ms);
+    var this$57 = $n(ms);
     var ord$3 = $m_s_math_Ordering$DeprecatedDoubleOrdering$();
-    var biggestvalue$1 = (10.0 * $uD($f_sc_IterableOnceOps__max__s_math_Ordering__O(this$42, ord$3)));
-    var this$43 = $n(\u03b41$);
-    var lhs$1 = this$43.Lorg_expr_simplex_Simplex$SimplexProblem__f_lhs;
-    var this$44 = $n(\u03b41$);
-    var rhs$1 = this$44.Lorg_expr_simplex_Simplex$SimplexProblem__f_rhs;
-    var this$45 = $n(\u03b41$);
-    var z$1 = this$45.Lorg_expr_simplex_Simplex$SimplexProblem__f_z;
-    var this$46 = $n(\u03b41$);
-    var opttype$1 = this$46.Lorg_expr_simplex_Simplex$SimplexProblem__f_opttype;
-    var this$47 = $n(\u03b41$);
-    var directions$1 = this$47.Lorg_expr_simplex_Simplex$SimplexProblem__f_directions;
-    var this$48 = $n(\u03b41$);
-    var varnames$1 = this$48.Lorg_expr_simplex_Simplex$SimplexProblem__f_varnames;
-    var this$49 = $n(\u03b41$);
-    var slackvariableindices$1 = this$49.Lorg_expr_simplex_Simplex$SimplexProblem__f_slackvariableindices;
-    var this$50 = $n(\u03b41$);
-    var surplusvariableindices$1 = this$50.Lorg_expr_simplex_Simplex$SimplexProblem__f_surplusvariableindices;
-    var this$51 = $n(\u03b41$);
-    var artificialvariableindices$1 = this$51.Lorg_expr_simplex_Simplex$SimplexProblem__f_artificialvariableindices;
-    var this$52 = $n(\u03b41$);
-    var basicvariableindex$1 = this$52.Lorg_expr_simplex_Simplex$SimplexProblem__f_basicvariableindex;
-    var this$53 = $n(\u03b41$);
-    var isinstandardform$1 = this$53.Lorg_expr_simplex_Simplex$SimplexProblem__f_isinstandardform;
-    var this$54 = $n(\u03b41$);
-    var converged$1 = this$54.Lorg_expr_simplex_Simplex$SimplexProblem__f_converged;
-    var this$55 = $n(\u03b41$);
-    var objective_value$1 = this$55.Lorg_expr_simplex_Simplex$SimplexProblem__f_objective_value;
+    var biggestvalue$1 = (10.0 * $uD($f_sc_IterableOnceOps__max__s_math_Ordering__O(this$57, ord$3)));
+    var this$58 = $n(\u03b41$);
+    var lhs$1 = this$58.Lorg_expr_simplex_Simplex$SimplexProblem__f_lhs;
+    var this$59 = $n(\u03b41$);
+    var rhs$1 = this$59.Lorg_expr_simplex_Simplex$SimplexProblem__f_rhs;
+    var this$60 = $n(\u03b41$);
+    var z$1 = this$60.Lorg_expr_simplex_Simplex$SimplexProblem__f_z;
+    var this$61 = $n(\u03b41$);
+    var opttype$1 = this$61.Lorg_expr_simplex_Simplex$SimplexProblem__f_opttype;
+    var this$62 = $n(\u03b41$);
+    var directions$1 = this$62.Lorg_expr_simplex_Simplex$SimplexProblem__f_directions;
+    var this$63 = $n(\u03b41$);
+    var varnames$1 = this$63.Lorg_expr_simplex_Simplex$SimplexProblem__f_varnames;
+    var this$64 = $n(\u03b41$);
+    var slackvariableindices$1 = this$64.Lorg_expr_simplex_Simplex$SimplexProblem__f_slackvariableindices;
+    var this$65 = $n(\u03b41$);
+    var surplusvariableindices$1 = this$65.Lorg_expr_simplex_Simplex$SimplexProblem__f_surplusvariableindices;
+    var this$66 = $n(\u03b41$);
+    var artificialvariableindices$1 = this$66.Lorg_expr_simplex_Simplex$SimplexProblem__f_artificialvariableindices;
+    var this$67 = $n(\u03b41$);
+    var basicvariableindex$1 = this$67.Lorg_expr_simplex_Simplex$SimplexProblem__f_basicvariableindex;
+    var this$68 = $n(\u03b41$);
+    var isinstandardform$1 = this$68.Lorg_expr_simplex_Simplex$SimplexProblem__f_isinstandardform;
+    var this$69 = $n(\u03b41$);
+    var converged$1 = this$69.Lorg_expr_simplex_Simplex$SimplexProblem__f_converged;
+    var this$70 = $n(\u03b41$);
+    var objective_value$1 = this$70.Lorg_expr_simplex_Simplex$SimplexProblem__f_objective_value;
     $n(\u03b41$);
     newproblem = new $c_Lorg_expr_simplex_Simplex$SimplexProblem(lhs$1, rhs$1, z$1, opttype$1, directions$1, varnames$1, slackvariableindices$1, surplusvariableindices$1, artificialvariableindices$1, basicvariableindex$1, biggestvalue$1, isinstandardform$1, converged$1, objective_value$1);
   } else {
     var \u03b42$ = newproblem;
     $n(\u03b42$);
-    var this$57 = $n(\u03b42$);
-    var lhs = this$57.Lorg_expr_simplex_Simplex$SimplexProblem__f_lhs;
-    var this$58 = $n(\u03b42$);
-    var rhs = this$58.Lorg_expr_simplex_Simplex$SimplexProblem__f_rhs;
-    var this$59 = $n(\u03b42$);
-    var z = this$59.Lorg_expr_simplex_Simplex$SimplexProblem__f_z;
-    var this$60 = $n(\u03b42$);
-    var opttype = this$60.Lorg_expr_simplex_Simplex$SimplexProblem__f_opttype;
-    var this$61 = $n(\u03b42$);
-    var directions = this$61.Lorg_expr_simplex_Simplex$SimplexProblem__f_directions;
-    var this$62 = $n(\u03b42$);
-    var varnames = this$62.Lorg_expr_simplex_Simplex$SimplexProblem__f_varnames;
-    var this$63 = $n(\u03b42$);
-    var slackvariableindices = this$63.Lorg_expr_simplex_Simplex$SimplexProblem__f_slackvariableindices;
-    var this$64 = $n(\u03b42$);
-    var surplusvariableindices = this$64.Lorg_expr_simplex_Simplex$SimplexProblem__f_surplusvariableindices;
-    var this$65 = $n(\u03b42$);
-    var artificialvariableindices = this$65.Lorg_expr_simplex_Simplex$SimplexProblem__f_artificialvariableindices;
-    var this$66 = $n(\u03b42$);
-    var basicvariableindex = this$66.Lorg_expr_simplex_Simplex$SimplexProblem__f_basicvariableindex;
-    var this$67 = $n(\u03b42$);
-    var isinstandardform = this$67.Lorg_expr_simplex_Simplex$SimplexProblem__f_isinstandardform;
-    var this$68 = $n(\u03b42$);
-    var converged = this$68.Lorg_expr_simplex_Simplex$SimplexProblem__f_converged;
-    var this$69 = $n(\u03b42$);
-    var objective_value = this$69.Lorg_expr_simplex_Simplex$SimplexProblem__f_objective_value;
-    newproblem = new $c_Lorg_expr_simplex_Simplex$SimplexProblem(lhs, rhs, z, opttype, directions, varnames, slackvariableindices, surplusvariableindices, artificialvariableindices, basicvariableindex, 0.0, isinstandardform, converged, objective_value);
+    var this$72 = $n(\u03b42$);
+    var lhs$2 = this$72.Lorg_expr_simplex_Simplex$SimplexProblem__f_lhs;
+    var this$73 = $n(\u03b42$);
+    var rhs$2 = this$73.Lorg_expr_simplex_Simplex$SimplexProblem__f_rhs;
+    var this$74 = $n(\u03b42$);
+    var z$2 = this$74.Lorg_expr_simplex_Simplex$SimplexProblem__f_z;
+    var this$75 = $n(\u03b42$);
+    var opttype$2 = this$75.Lorg_expr_simplex_Simplex$SimplexProblem__f_opttype;
+    var this$76 = $n(\u03b42$);
+    var directions$2 = this$76.Lorg_expr_simplex_Simplex$SimplexProblem__f_directions;
+    var this$77 = $n(\u03b42$);
+    var varnames$2 = this$77.Lorg_expr_simplex_Simplex$SimplexProblem__f_varnames;
+    var this$78 = $n(\u03b42$);
+    var slackvariableindices$2 = this$78.Lorg_expr_simplex_Simplex$SimplexProblem__f_slackvariableindices;
+    var this$79 = $n(\u03b42$);
+    var surplusvariableindices$2 = this$79.Lorg_expr_simplex_Simplex$SimplexProblem__f_surplusvariableindices;
+    var this$80 = $n(\u03b42$);
+    var artificialvariableindices$2 = this$80.Lorg_expr_simplex_Simplex$SimplexProblem__f_artificialvariableindices;
+    var this$81 = $n(\u03b42$);
+    var basicvariableindex$2 = this$81.Lorg_expr_simplex_Simplex$SimplexProblem__f_basicvariableindex;
+    var this$82 = $n(\u03b42$);
+    var isinstandardform$2 = this$82.Lorg_expr_simplex_Simplex$SimplexProblem__f_isinstandardform;
+    var this$83 = $n(\u03b42$);
+    var converged$2 = this$83.Lorg_expr_simplex_Simplex$SimplexProblem__f_converged;
+    var this$84 = $n(\u03b42$);
+    var objective_value$2 = this$84.Lorg_expr_simplex_Simplex$SimplexProblem__f_objective_value;
+    newproblem = new $c_Lorg_expr_simplex_Simplex$SimplexProblem(lhs$2, rhs$2, z$2, opttype$2, directions$2, varnames$2, slackvariableindices$2, surplusvariableindices$2, artificialvariableindices$2, basicvariableindex$2, 0.0, isinstandardform$2, converged$2, objective_value$2);
   }
   return newproblem;
 });
@@ -5518,7 +5580,36 @@ $c_Lorg_expr_simplex_Simplex$.prototype.invert__Lorg_expr_simplex_Simplex$Direct
 });
 $c_Lorg_expr_simplex_Simplex$.prototype.makerhspositive__Lorg_expr_simplex_Simplex$SimplexProblem__Lorg_expr_simplex_Simplex$SimplexProblem = (function(s) {
   var n = $n($n(s).Lorg_expr_simplex_Simplex$SimplexProblem__f_rhs).u.length;
-  var elem = this.copySimplexProblem__Lorg_expr_simplex_Simplex$SimplexProblem__Lorg_expr_simplex_Simplex$SimplexProblem(s);
+  $n(s);
+  var this$1 = $n(s);
+  var lhs = this$1.Lorg_expr_simplex_Simplex$SimplexProblem__f_lhs;
+  var this$2 = $n(s);
+  var rhs = this$2.Lorg_expr_simplex_Simplex$SimplexProblem__f_rhs;
+  var this$3 = $n(s);
+  var z = this$3.Lorg_expr_simplex_Simplex$SimplexProblem__f_z;
+  var this$4 = $n(s);
+  var opttype = this$4.Lorg_expr_simplex_Simplex$SimplexProblem__f_opttype;
+  var this$5 = $n(s);
+  var directions = this$5.Lorg_expr_simplex_Simplex$SimplexProblem__f_directions;
+  var this$6 = $n(s);
+  var varnames = this$6.Lorg_expr_simplex_Simplex$SimplexProblem__f_varnames;
+  var this$7 = $n(s);
+  var slackvariableindices = this$7.Lorg_expr_simplex_Simplex$SimplexProblem__f_slackvariableindices;
+  var this$8 = $n(s);
+  var surplusvariableindices = this$8.Lorg_expr_simplex_Simplex$SimplexProblem__f_surplusvariableindices;
+  var this$9 = $n(s);
+  var artificialvariableindices = this$9.Lorg_expr_simplex_Simplex$SimplexProblem__f_artificialvariableindices;
+  var this$10 = $n(s);
+  var basicvariableindex = this$10.Lorg_expr_simplex_Simplex$SimplexProblem__f_basicvariableindex;
+  var this$11 = $n(s);
+  var biggestvalue = this$11.Lorg_expr_simplex_Simplex$SimplexProblem__f_biggestvalue;
+  var this$12 = $n(s);
+  var isinstandardform = this$12.Lorg_expr_simplex_Simplex$SimplexProblem__f_isinstandardform;
+  var this$13 = $n(s);
+  var converged = this$13.Lorg_expr_simplex_Simplex$SimplexProblem__f_converged;
+  var this$14 = $n(s);
+  var objective_value = this$14.Lorg_expr_simplex_Simplex$SimplexProblem__f_objective_value;
+  var elem = new $c_Lorg_expr_simplex_Simplex$SimplexProblem(lhs, rhs, z, opttype, directions, varnames, slackvariableindices, surplusvariableindices, artificialvariableindices, basicvariableindex, biggestvalue, isinstandardform, converged, objective_value);
   var elem$1 = null;
   elem$1 = elem;
   var isEmpty = (n <= 0);
@@ -5529,16 +5620,16 @@ $c_Lorg_expr_simplex_Simplex$.prototype.makerhspositive__Lorg_expr_simplex_Simpl
       var x0 = i;
       if (($n($n($as_Lorg_expr_simplex_Simplex$SimplexProblem(elem$1)).Lorg_expr_simplex_Simplex$SimplexProblem__f_rhs).get(x0) < 0.0)) {
         var xs = $n($n($as_Lorg_expr_simplex_Simplex$SimplexProblem(elem$1)).Lorg_expr_simplex_Simplex$SimplexProblem__f_lhs).get(x0);
-        var this$7 = $n($m_sc_ArrayOps$().indices$extension__O__sci_Range(xs));
-        if ((!this$7.sci_Range__f_isEmpty)) {
-          var i$1 = this$7.sci_Range__f_start;
+        var this$22 = $n($m_sc_ArrayOps$().indices$extension__O__sci_Range(xs));
+        if ((!this$22.sci_Range__f_isEmpty)) {
+          var i$1 = this$22.sci_Range__f_start;
           while (true) {
             var x0$1 = i$1;
             $n($n($n($as_Lorg_expr_simplex_Simplex$SimplexProblem(elem$1)).Lorg_expr_simplex_Simplex$SimplexProblem__f_lhs).get(x0)).set(x0$1, (-$n($n($n($as_Lorg_expr_simplex_Simplex$SimplexProblem(elem$1)).Lorg_expr_simplex_Simplex$SimplexProblem__f_lhs).get(x0)).get(x0$1)));
-            if ((i$1 === this$7.sci_Range__f_scala$collection$immutable$Range$$lastElement)) {
+            if ((i$1 === this$22.sci_Range__f_scala$collection$immutable$Range$$lastElement)) {
               break;
             }
-            i$1 = ((i$1 + this$7.sci_Range__f_step) | 0);
+            i$1 = ((i$1 + this$22.sci_Range__f_step) | 0);
           }
         }
         $n($n($as_Lorg_expr_simplex_Simplex$SimplexProblem(elem$1)).Lorg_expr_simplex_Simplex$SimplexProblem__f_rhs).set(x0, (-$n($n($as_Lorg_expr_simplex_Simplex$SimplexProblem(elem$1)).Lorg_expr_simplex_Simplex$SimplexProblem__f_rhs).get(x0)));
@@ -5552,32 +5643,32 @@ $c_Lorg_expr_simplex_Simplex$.prototype.makerhspositive__Lorg_expr_simplex_Simpl
         var destination = new ($d_Lorg_expr_simplex_Simplex$Direction.getArrayOf().constr)(len);
         $m_sc_ArrayOps$().copyToArray$extension__O__O__I__I__I(xs$1, destination, 0, 2147483647);
         destination.set(x0, elem$2);
-        var this$14 = $n(\u03b43$);
-        var lhs$2 = this$14.Lorg_expr_simplex_Simplex$SimplexProblem__f_lhs;
-        var this$15 = $n(\u03b43$);
-        var rhs$2 = this$15.Lorg_expr_simplex_Simplex$SimplexProblem__f_rhs;
-        var this$16 = $n(\u03b43$);
-        var z$2 = this$16.Lorg_expr_simplex_Simplex$SimplexProblem__f_z;
-        var this$17 = $n(\u03b43$);
-        var opttype$2 = this$17.Lorg_expr_simplex_Simplex$SimplexProblem__f_opttype;
-        var this$18 = $n(\u03b43$);
-        var varnames$2 = this$18.Lorg_expr_simplex_Simplex$SimplexProblem__f_varnames;
-        var this$19 = $n(\u03b43$);
-        var slackvariableindices$2 = this$19.Lorg_expr_simplex_Simplex$SimplexProblem__f_slackvariableindices;
-        var this$20 = $n(\u03b43$);
-        var surplusvariableindices$2 = this$20.Lorg_expr_simplex_Simplex$SimplexProblem__f_surplusvariableindices;
-        var this$21 = $n(\u03b43$);
-        var artificialvariableindices$2 = this$21.Lorg_expr_simplex_Simplex$SimplexProblem__f_artificialvariableindices;
-        var this$22 = $n(\u03b43$);
-        var basicvariableindex$2 = this$22.Lorg_expr_simplex_Simplex$SimplexProblem__f_basicvariableindex;
-        var this$23 = $n(\u03b43$);
-        var biggestvalue$2 = this$23.Lorg_expr_simplex_Simplex$SimplexProblem__f_biggestvalue;
-        var this$24 = $n(\u03b43$);
-        var isinstandardform$2 = this$24.Lorg_expr_simplex_Simplex$SimplexProblem__f_isinstandardform;
-        var this$25 = $n(\u03b43$);
-        var converged$2 = this$25.Lorg_expr_simplex_Simplex$SimplexProblem__f_converged;
-        var this$26 = $n(\u03b43$);
-        var objective_value$2 = this$26.Lorg_expr_simplex_Simplex$SimplexProblem__f_objective_value;
+        var this$29 = $n(\u03b43$);
+        var lhs$2 = this$29.Lorg_expr_simplex_Simplex$SimplexProblem__f_lhs;
+        var this$30 = $n(\u03b43$);
+        var rhs$2 = this$30.Lorg_expr_simplex_Simplex$SimplexProblem__f_rhs;
+        var this$31 = $n(\u03b43$);
+        var z$2 = this$31.Lorg_expr_simplex_Simplex$SimplexProblem__f_z;
+        var this$32 = $n(\u03b43$);
+        var opttype$2 = this$32.Lorg_expr_simplex_Simplex$SimplexProblem__f_opttype;
+        var this$33 = $n(\u03b43$);
+        var varnames$2 = this$33.Lorg_expr_simplex_Simplex$SimplexProblem__f_varnames;
+        var this$34 = $n(\u03b43$);
+        var slackvariableindices$2 = this$34.Lorg_expr_simplex_Simplex$SimplexProblem__f_slackvariableindices;
+        var this$35 = $n(\u03b43$);
+        var surplusvariableindices$2 = this$35.Lorg_expr_simplex_Simplex$SimplexProblem__f_surplusvariableindices;
+        var this$36 = $n(\u03b43$);
+        var artificialvariableindices$2 = this$36.Lorg_expr_simplex_Simplex$SimplexProblem__f_artificialvariableindices;
+        var this$37 = $n(\u03b43$);
+        var basicvariableindex$2 = this$37.Lorg_expr_simplex_Simplex$SimplexProblem__f_basicvariableindex;
+        var this$38 = $n(\u03b43$);
+        var biggestvalue$2 = this$38.Lorg_expr_simplex_Simplex$SimplexProblem__f_biggestvalue;
+        var this$39 = $n(\u03b43$);
+        var isinstandardform$2 = this$39.Lorg_expr_simplex_Simplex$SimplexProblem__f_isinstandardform;
+        var this$40 = $n(\u03b43$);
+        var converged$2 = this$40.Lorg_expr_simplex_Simplex$SimplexProblem__f_converged;
+        var this$41 = $n(\u03b43$);
+        var objective_value$2 = this$41.Lorg_expr_simplex_Simplex$SimplexProblem__f_objective_value;
         $n(\u03b43$);
         elem$1 = new $c_Lorg_expr_simplex_Simplex$SimplexProblem(lhs$2, rhs$2, z$2, opttype$2, destination, varnames$2, slackvariableindices$2, surplusvariableindices$2, artificialvariableindices$2, basicvariableindex$2, biggestvalue$2, isinstandardform$2, converged$2, objective_value$2);
       }
@@ -5684,7 +5775,36 @@ $c_Lorg_expr_simplex_Simplex$.prototype.standardform__Lorg_expr_simplex_Simplex$
 $c_Lorg_expr_simplex_Simplex$.prototype.mmethodcorrection__Lorg_expr_simplex_Simplex$SimplexProblem__Lorg_expr_simplex_Simplex$SimplexProblem = (function(s) {
   var M = $n(s).Lorg_expr_simplex_Simplex$SimplexProblem__f_biggestvalue;
   var n = $n($n(s).Lorg_expr_simplex_Simplex$SimplexProblem__f_lhs).u.length;
-  var elem = this.copySimplexProblem__Lorg_expr_simplex_Simplex$SimplexProblem__Lorg_expr_simplex_Simplex$SimplexProblem(s);
+  $n(s);
+  var this$1 = $n(s);
+  var lhs = this$1.Lorg_expr_simplex_Simplex$SimplexProblem__f_lhs;
+  var this$2 = $n(s);
+  var rhs = this$2.Lorg_expr_simplex_Simplex$SimplexProblem__f_rhs;
+  var this$3 = $n(s);
+  var z = this$3.Lorg_expr_simplex_Simplex$SimplexProblem__f_z;
+  var this$4 = $n(s);
+  var opttype = this$4.Lorg_expr_simplex_Simplex$SimplexProblem__f_opttype;
+  var this$5 = $n(s);
+  var directions = this$5.Lorg_expr_simplex_Simplex$SimplexProblem__f_directions;
+  var this$6 = $n(s);
+  var varnames = this$6.Lorg_expr_simplex_Simplex$SimplexProblem__f_varnames;
+  var this$7 = $n(s);
+  var slackvariableindices = this$7.Lorg_expr_simplex_Simplex$SimplexProblem__f_slackvariableindices;
+  var this$8 = $n(s);
+  var surplusvariableindices = this$8.Lorg_expr_simplex_Simplex$SimplexProblem__f_surplusvariableindices;
+  var this$9 = $n(s);
+  var artificialvariableindices = this$9.Lorg_expr_simplex_Simplex$SimplexProblem__f_artificialvariableindices;
+  var this$10 = $n(s);
+  var basicvariableindex = this$10.Lorg_expr_simplex_Simplex$SimplexProblem__f_basicvariableindex;
+  var this$11 = $n(s);
+  var biggestvalue = this$11.Lorg_expr_simplex_Simplex$SimplexProblem__f_biggestvalue;
+  var this$12 = $n(s);
+  var isinstandardform = this$12.Lorg_expr_simplex_Simplex$SimplexProblem__f_isinstandardform;
+  var this$13 = $n(s);
+  var converged = this$13.Lorg_expr_simplex_Simplex$SimplexProblem__f_converged;
+  var this$14 = $n(s);
+  var objective_value = this$14.Lorg_expr_simplex_Simplex$SimplexProblem__f_objective_value;
+  var elem = new $c_Lorg_expr_simplex_Simplex$SimplexProblem(lhs, rhs, z, opttype, directions, varnames, slackvariableindices, surplusvariableindices, artificialvariableindices, basicvariableindex, biggestvalue, isinstandardform, converged, objective_value);
   var elem$1 = null;
   elem$1 = elem;
   var isEmpty = (n <= 0);
@@ -5702,52 +5822,52 @@ $c_Lorg_expr_simplex_Simplex$.prototype.mmethodcorrection__Lorg_expr_simplex_Sim
           if ((x === null)) {
             var $x_1 = (x10 === null);
           } else {
-            var this$7 = $n(x);
-            var $x_1 = (this$7 === x10);
+            var this$22 = $n(x);
+            var $x_1 = (this$22 === x10);
           }
           if ($x_1) {
             var xs$1 = $n($as_Lorg_expr_simplex_Simplex$SimplexProblem(elem$1)).Lorg_expr_simplex_Simplex$SimplexProblem__f_z;
-            var this$9 = $n($m_sc_ArrayOps$().indices$extension__O__sci_Range(xs$1));
-            if ((!this$9.sci_Range__f_isEmpty)) {
-              var i$1 = this$9.sci_Range__f_start;
+            var this$24 = $n($m_sc_ArrayOps$().indices$extension__O__sci_Range(xs$1));
+            if ((!this$24.sci_Range__f_isEmpty)) {
+              var i$1 = this$24.sci_Range__f_start;
               while (true) {
                 var x0$1 = i$1;
                 var \u03b45$ = $n($as_Lorg_expr_simplex_Simplex$SimplexProblem(elem$1)).Lorg_expr_simplex_Simplex$SimplexProblem__f_z;
                 $n(\u03b45$).set(x0$1, ($n(\u03b45$).get(x0$1) + (M * $n($n($n($as_Lorg_expr_simplex_Simplex$SimplexProblem(elem$1)).Lorg_expr_simplex_Simplex$SimplexProblem__f_lhs).get(x0)).get(x0$1))));
-                if ((i$1 === this$9.sci_Range__f_scala$collection$immutable$Range$$lastElement)) {
+                if ((i$1 === this$24.sci_Range__f_scala$collection$immutable$Range$$lastElement)) {
                   break;
                 }
-                i$1 = ((i$1 + this$9.sci_Range__f_step) | 0);
+                i$1 = ((i$1 + this$24.sci_Range__f_step) | 0);
               }
             }
             var \u03b46$ = $as_Lorg_expr_simplex_Simplex$SimplexProblem(elem$1);
             var objective_value$3 = ($n($as_Lorg_expr_simplex_Simplex$SimplexProblem(elem$1)).Lorg_expr_simplex_Simplex$SimplexProblem__f_objective_value - (M * $n($n($as_Lorg_expr_simplex_Simplex$SimplexProblem(elem$1)).Lorg_expr_simplex_Simplex$SimplexProblem__f_rhs).get(x0)));
-            var this$10 = $n(\u03b46$);
-            var lhs$3 = this$10.Lorg_expr_simplex_Simplex$SimplexProblem__f_lhs;
-            var this$11 = $n(\u03b46$);
-            var rhs$3 = this$11.Lorg_expr_simplex_Simplex$SimplexProblem__f_rhs;
-            var this$12 = $n(\u03b46$);
-            var z$3 = this$12.Lorg_expr_simplex_Simplex$SimplexProblem__f_z;
-            var this$13 = $n(\u03b46$);
-            var opttype$3 = this$13.Lorg_expr_simplex_Simplex$SimplexProblem__f_opttype;
-            var this$14 = $n(\u03b46$);
-            var directions$3 = this$14.Lorg_expr_simplex_Simplex$SimplexProblem__f_directions;
-            var this$15 = $n(\u03b46$);
-            var varnames$3 = this$15.Lorg_expr_simplex_Simplex$SimplexProblem__f_varnames;
-            var this$16 = $n(\u03b46$);
-            var slackvariableindices$3 = this$16.Lorg_expr_simplex_Simplex$SimplexProblem__f_slackvariableindices;
-            var this$17 = $n(\u03b46$);
-            var surplusvariableindices$3 = this$17.Lorg_expr_simplex_Simplex$SimplexProblem__f_surplusvariableindices;
-            var this$18 = $n(\u03b46$);
-            var artificialvariableindices$3 = this$18.Lorg_expr_simplex_Simplex$SimplexProblem__f_artificialvariableindices;
-            var this$19 = $n(\u03b46$);
-            var basicvariableindex$3 = this$19.Lorg_expr_simplex_Simplex$SimplexProblem__f_basicvariableindex;
-            var this$20 = $n(\u03b46$);
-            var biggestvalue$3 = this$20.Lorg_expr_simplex_Simplex$SimplexProblem__f_biggestvalue;
-            var this$21 = $n(\u03b46$);
-            var isinstandardform$3 = this$21.Lorg_expr_simplex_Simplex$SimplexProblem__f_isinstandardform;
-            var this$22 = $n(\u03b46$);
-            var converged$3 = this$22.Lorg_expr_simplex_Simplex$SimplexProblem__f_converged;
+            var this$25 = $n(\u03b46$);
+            var lhs$3 = this$25.Lorg_expr_simplex_Simplex$SimplexProblem__f_lhs;
+            var this$26 = $n(\u03b46$);
+            var rhs$3 = this$26.Lorg_expr_simplex_Simplex$SimplexProblem__f_rhs;
+            var this$27 = $n(\u03b46$);
+            var z$3 = this$27.Lorg_expr_simplex_Simplex$SimplexProblem__f_z;
+            var this$28 = $n(\u03b46$);
+            var opttype$3 = this$28.Lorg_expr_simplex_Simplex$SimplexProblem__f_opttype;
+            var this$29 = $n(\u03b46$);
+            var directions$3 = this$29.Lorg_expr_simplex_Simplex$SimplexProblem__f_directions;
+            var this$30 = $n(\u03b46$);
+            var varnames$3 = this$30.Lorg_expr_simplex_Simplex$SimplexProblem__f_varnames;
+            var this$31 = $n(\u03b46$);
+            var slackvariableindices$3 = this$31.Lorg_expr_simplex_Simplex$SimplexProblem__f_slackvariableindices;
+            var this$32 = $n(\u03b46$);
+            var surplusvariableindices$3 = this$32.Lorg_expr_simplex_Simplex$SimplexProblem__f_surplusvariableindices;
+            var this$33 = $n(\u03b46$);
+            var artificialvariableindices$3 = this$33.Lorg_expr_simplex_Simplex$SimplexProblem__f_artificialvariableindices;
+            var this$34 = $n(\u03b46$);
+            var basicvariableindex$3 = this$34.Lorg_expr_simplex_Simplex$SimplexProblem__f_basicvariableindex;
+            var this$35 = $n(\u03b46$);
+            var biggestvalue$3 = this$35.Lorg_expr_simplex_Simplex$SimplexProblem__f_biggestvalue;
+            var this$36 = $n(\u03b46$);
+            var isinstandardform$3 = this$36.Lorg_expr_simplex_Simplex$SimplexProblem__f_isinstandardform;
+            var this$37 = $n(\u03b46$);
+            var converged$3 = this$37.Lorg_expr_simplex_Simplex$SimplexProblem__f_converged;
             $n(\u03b46$);
             elem$1 = new $c_Lorg_expr_simplex_Simplex$SimplexProblem(lhs$3, rhs$3, z$3, opttype$3, directions$3, varnames$3, slackvariableindices$3, surplusvariableindices$3, artificialvariableindices$3, basicvariableindex$3, biggestvalue$3, isinstandardform$3, converged$3, objective_value$3);
             break matchResult9;
@@ -5756,52 +5876,52 @@ $c_Lorg_expr_simplex_Simplex$.prototype.mmethodcorrection__Lorg_expr_simplex_Sim
           if ((x$3 === null)) {
             var $x_2 = (x10 === null);
           } else {
-            var this$24 = $n(x$3);
-            var $x_2 = (this$24 === x10);
+            var this$39 = $n(x$3);
+            var $x_2 = (this$39 === x10);
           }
           if ($x_2) {
             var xs$2 = $n($as_Lorg_expr_simplex_Simplex$SimplexProblem(elem$1)).Lorg_expr_simplex_Simplex$SimplexProblem__f_z;
-            var this$26 = $n($m_sc_ArrayOps$().indices$extension__O__sci_Range(xs$2));
-            if ((!this$26.sci_Range__f_isEmpty)) {
-              var i$2 = this$26.sci_Range__f_start;
+            var this$41 = $n($m_sc_ArrayOps$().indices$extension__O__sci_Range(xs$2));
+            if ((!this$41.sci_Range__f_isEmpty)) {
+              var i$2 = this$41.sci_Range__f_start;
               while (true) {
                 var x0$2 = i$2;
                 var \u03b47$ = $n($as_Lorg_expr_simplex_Simplex$SimplexProblem(elem$1)).Lorg_expr_simplex_Simplex$SimplexProblem__f_z;
                 $n(\u03b47$).set(x0$2, ($n(\u03b47$).get(x0$2) - (M * $n($n($n($as_Lorg_expr_simplex_Simplex$SimplexProblem(elem$1)).Lorg_expr_simplex_Simplex$SimplexProblem__f_lhs).get(x0)).get(x0$2))));
-                if ((i$2 === this$26.sci_Range__f_scala$collection$immutable$Range$$lastElement)) {
+                if ((i$2 === this$41.sci_Range__f_scala$collection$immutable$Range$$lastElement)) {
                   break;
                 }
-                i$2 = ((i$2 + this$26.sci_Range__f_step) | 0);
+                i$2 = ((i$2 + this$41.sci_Range__f_step) | 0);
               }
             }
             var \u03b48$ = $as_Lorg_expr_simplex_Simplex$SimplexProblem(elem$1);
             var objective_value$4 = ($n($as_Lorg_expr_simplex_Simplex$SimplexProblem(elem$1)).Lorg_expr_simplex_Simplex$SimplexProblem__f_objective_value + (M * $n($n($as_Lorg_expr_simplex_Simplex$SimplexProblem(elem$1)).Lorg_expr_simplex_Simplex$SimplexProblem__f_rhs).get(x0)));
-            var this$27 = $n(\u03b48$);
-            var lhs$4 = this$27.Lorg_expr_simplex_Simplex$SimplexProblem__f_lhs;
-            var this$28 = $n(\u03b48$);
-            var rhs$4 = this$28.Lorg_expr_simplex_Simplex$SimplexProblem__f_rhs;
-            var this$29 = $n(\u03b48$);
-            var z$4 = this$29.Lorg_expr_simplex_Simplex$SimplexProblem__f_z;
-            var this$30 = $n(\u03b48$);
-            var opttype$4 = this$30.Lorg_expr_simplex_Simplex$SimplexProblem__f_opttype;
-            var this$31 = $n(\u03b48$);
-            var directions$4 = this$31.Lorg_expr_simplex_Simplex$SimplexProblem__f_directions;
-            var this$32 = $n(\u03b48$);
-            var varnames$4 = this$32.Lorg_expr_simplex_Simplex$SimplexProblem__f_varnames;
-            var this$33 = $n(\u03b48$);
-            var slackvariableindices$4 = this$33.Lorg_expr_simplex_Simplex$SimplexProblem__f_slackvariableindices;
-            var this$34 = $n(\u03b48$);
-            var surplusvariableindices$4 = this$34.Lorg_expr_simplex_Simplex$SimplexProblem__f_surplusvariableindices;
-            var this$35 = $n(\u03b48$);
-            var artificialvariableindices$4 = this$35.Lorg_expr_simplex_Simplex$SimplexProblem__f_artificialvariableindices;
-            var this$36 = $n(\u03b48$);
-            var basicvariableindex$4 = this$36.Lorg_expr_simplex_Simplex$SimplexProblem__f_basicvariableindex;
-            var this$37 = $n(\u03b48$);
-            var biggestvalue$4 = this$37.Lorg_expr_simplex_Simplex$SimplexProblem__f_biggestvalue;
-            var this$38 = $n(\u03b48$);
-            var isinstandardform$4 = this$38.Lorg_expr_simplex_Simplex$SimplexProblem__f_isinstandardform;
-            var this$39 = $n(\u03b48$);
-            var converged$4 = this$39.Lorg_expr_simplex_Simplex$SimplexProblem__f_converged;
+            var this$42 = $n(\u03b48$);
+            var lhs$4 = this$42.Lorg_expr_simplex_Simplex$SimplexProblem__f_lhs;
+            var this$43 = $n(\u03b48$);
+            var rhs$4 = this$43.Lorg_expr_simplex_Simplex$SimplexProblem__f_rhs;
+            var this$44 = $n(\u03b48$);
+            var z$4 = this$44.Lorg_expr_simplex_Simplex$SimplexProblem__f_z;
+            var this$45 = $n(\u03b48$);
+            var opttype$4 = this$45.Lorg_expr_simplex_Simplex$SimplexProblem__f_opttype;
+            var this$46 = $n(\u03b48$);
+            var directions$4 = this$46.Lorg_expr_simplex_Simplex$SimplexProblem__f_directions;
+            var this$47 = $n(\u03b48$);
+            var varnames$4 = this$47.Lorg_expr_simplex_Simplex$SimplexProblem__f_varnames;
+            var this$48 = $n(\u03b48$);
+            var slackvariableindices$4 = this$48.Lorg_expr_simplex_Simplex$SimplexProblem__f_slackvariableindices;
+            var this$49 = $n(\u03b48$);
+            var surplusvariableindices$4 = this$49.Lorg_expr_simplex_Simplex$SimplexProblem__f_surplusvariableindices;
+            var this$50 = $n(\u03b48$);
+            var artificialvariableindices$4 = this$50.Lorg_expr_simplex_Simplex$SimplexProblem__f_artificialvariableindices;
+            var this$51 = $n(\u03b48$);
+            var basicvariableindex$4 = this$51.Lorg_expr_simplex_Simplex$SimplexProblem__f_basicvariableindex;
+            var this$52 = $n(\u03b48$);
+            var biggestvalue$4 = this$52.Lorg_expr_simplex_Simplex$SimplexProblem__f_biggestvalue;
+            var this$53 = $n(\u03b48$);
+            var isinstandardform$4 = this$53.Lorg_expr_simplex_Simplex$SimplexProblem__f_isinstandardform;
+            var this$54 = $n(\u03b48$);
+            var converged$4 = this$54.Lorg_expr_simplex_Simplex$SimplexProblem__f_converged;
             $n(\u03b48$);
             elem$1 = new $c_Lorg_expr_simplex_Simplex$SimplexProblem(lhs$4, rhs$4, z$4, opttype$4, directions$4, varnames$4, slackvariableindices$4, surplusvariableindices$4, artificialvariableindices$4, basicvariableindex$4, biggestvalue$4, isinstandardform$4, converged$4, objective_value$4);
             break matchResult9;
@@ -6053,26 +6173,145 @@ $c_Lorg_expr_simplex_Simplex$.prototype.simplexiterations__Lorg_expr_simplex_Sim
   var this$1 = $m_scm_ArrayBuffer$();
   var elems = $m_sr_ScalaRunTime$().wrapRefArray__AO__sci_ArraySeq(new ($d_Lorg_expr_simplex_Simplex$SimplexProblem.getArrayOf().constr)([]));
   var iterations = this$1.from__sc_IterableOnce__scm_ArrayBuffer(elems);
-  var newproblem = this.copySimplexProblem__Lorg_expr_simplex_Simplex$SimplexProblem__Lorg_expr_simplex_Simplex$SimplexProblem(s);
+  $n(s);
+  var this$2 = $n(s);
+  var lhs = this$2.Lorg_expr_simplex_Simplex$SimplexProblem__f_lhs;
+  var this$3 = $n(s);
+  var rhs = this$3.Lorg_expr_simplex_Simplex$SimplexProblem__f_rhs;
+  var this$4 = $n(s);
+  var z = this$4.Lorg_expr_simplex_Simplex$SimplexProblem__f_z;
+  var this$5 = $n(s);
+  var opttype = this$5.Lorg_expr_simplex_Simplex$SimplexProblem__f_opttype;
+  var this$6 = $n(s);
+  var directions = this$6.Lorg_expr_simplex_Simplex$SimplexProblem__f_directions;
+  var this$7 = $n(s);
+  var varnames = this$7.Lorg_expr_simplex_Simplex$SimplexProblem__f_varnames;
+  var this$8 = $n(s);
+  var slackvariableindices = this$8.Lorg_expr_simplex_Simplex$SimplexProblem__f_slackvariableindices;
+  var this$9 = $n(s);
+  var surplusvariableindices = this$9.Lorg_expr_simplex_Simplex$SimplexProblem__f_surplusvariableindices;
+  var this$10 = $n(s);
+  var artificialvariableindices = this$10.Lorg_expr_simplex_Simplex$SimplexProblem__f_artificialvariableindices;
+  var this$11 = $n(s);
+  var basicvariableindex = this$11.Lorg_expr_simplex_Simplex$SimplexProblem__f_basicvariableindex;
+  var this$12 = $n(s);
+  var biggestvalue = this$12.Lorg_expr_simplex_Simplex$SimplexProblem__f_biggestvalue;
+  var this$13 = $n(s);
+  var isinstandardform = this$13.Lorg_expr_simplex_Simplex$SimplexProblem__f_isinstandardform;
+  var this$14 = $n(s);
+  var converged = this$14.Lorg_expr_simplex_Simplex$SimplexProblem__f_converged;
+  var this$15 = $n(s);
+  var objective_value = this$15.Lorg_expr_simplex_Simplex$SimplexProblem__f_objective_value;
+  var newproblem = new $c_Lorg_expr_simplex_Simplex$SimplexProblem(lhs, rhs, z, opttype, directions, varnames, slackvariableindices, surplusvariableindices, artificialvariableindices, basicvariableindex, biggestvalue, isinstandardform, converged, objective_value);
   newproblem = this.standardform__Lorg_expr_simplex_Simplex$SimplexProblem__Lorg_expr_simplex_Simplex$SimplexProblem(newproblem);
-  var this$2 = $n(iterations);
-  var elem = this.copySimplexProblem__Lorg_expr_simplex_Simplex$SimplexProblem__Lorg_expr_simplex_Simplex$SimplexProblem(newproblem);
-  this$2.addOne__O__scm_ArrayBuffer(elem);
+  var this$32 = $n(iterations);
+  var source = newproblem;
+  $n(source);
+  var this$17 = $n(source);
+  var lhs$1 = this$17.Lorg_expr_simplex_Simplex$SimplexProblem__f_lhs;
+  var this$18 = $n(source);
+  var rhs$1 = this$18.Lorg_expr_simplex_Simplex$SimplexProblem__f_rhs;
+  var this$19 = $n(source);
+  var z$1 = this$19.Lorg_expr_simplex_Simplex$SimplexProblem__f_z;
+  var this$20 = $n(source);
+  var opttype$1 = this$20.Lorg_expr_simplex_Simplex$SimplexProblem__f_opttype;
+  var this$21 = $n(source);
+  var directions$1 = this$21.Lorg_expr_simplex_Simplex$SimplexProblem__f_directions;
+  var this$22 = $n(source);
+  var varnames$1 = this$22.Lorg_expr_simplex_Simplex$SimplexProblem__f_varnames;
+  var this$23 = $n(source);
+  var slackvariableindices$1 = this$23.Lorg_expr_simplex_Simplex$SimplexProblem__f_slackvariableindices;
+  var this$24 = $n(source);
+  var surplusvariableindices$1 = this$24.Lorg_expr_simplex_Simplex$SimplexProblem__f_surplusvariableindices;
+  var this$25 = $n(source);
+  var artificialvariableindices$1 = this$25.Lorg_expr_simplex_Simplex$SimplexProblem__f_artificialvariableindices;
+  var this$26 = $n(source);
+  var basicvariableindex$1 = this$26.Lorg_expr_simplex_Simplex$SimplexProblem__f_basicvariableindex;
+  var this$27 = $n(source);
+  var biggestvalue$1 = this$27.Lorg_expr_simplex_Simplex$SimplexProblem__f_biggestvalue;
+  var this$28 = $n(source);
+  var isinstandardform$1 = this$28.Lorg_expr_simplex_Simplex$SimplexProblem__f_isinstandardform;
+  var this$29 = $n(source);
+  var converged$1 = this$29.Lorg_expr_simplex_Simplex$SimplexProblem__f_converged;
+  var this$30 = $n(source);
+  var objective_value$1 = this$30.Lorg_expr_simplex_Simplex$SimplexProblem__f_objective_value;
+  var elem = new $c_Lorg_expr_simplex_Simplex$SimplexProblem(lhs$1, rhs$1, z$1, opttype$1, directions$1, varnames$1, slackvariableindices$1, surplusvariableindices$1, artificialvariableindices$1, basicvariableindex$1, biggestvalue$1, isinstandardform$1, converged$1, objective_value$1);
+  this$32.addOne__O__scm_ArrayBuffer(elem);
   newproblem = this.mmethodcorrection__Lorg_expr_simplex_Simplex$SimplexProblem__Lorg_expr_simplex_Simplex$SimplexProblem(newproblem);
-  var this$3 = $n(iterations);
-  var elem$1 = this.copySimplexProblem__Lorg_expr_simplex_Simplex$SimplexProblem__Lorg_expr_simplex_Simplex$SimplexProblem(newproblem);
-  this$3.addOne__O__scm_ArrayBuffer(elem$1);
+  var this$48 = $n(iterations);
+  var source$1 = newproblem;
+  $n(source$1);
+  var this$33 = $n(source$1);
+  var lhs$2 = this$33.Lorg_expr_simplex_Simplex$SimplexProblem__f_lhs;
+  var this$34 = $n(source$1);
+  var rhs$2 = this$34.Lorg_expr_simplex_Simplex$SimplexProblem__f_rhs;
+  var this$35 = $n(source$1);
+  var z$2 = this$35.Lorg_expr_simplex_Simplex$SimplexProblem__f_z;
+  var this$36 = $n(source$1);
+  var opttype$2 = this$36.Lorg_expr_simplex_Simplex$SimplexProblem__f_opttype;
+  var this$37 = $n(source$1);
+  var directions$2 = this$37.Lorg_expr_simplex_Simplex$SimplexProblem__f_directions;
+  var this$38 = $n(source$1);
+  var varnames$2 = this$38.Lorg_expr_simplex_Simplex$SimplexProblem__f_varnames;
+  var this$39 = $n(source$1);
+  var slackvariableindices$2 = this$39.Lorg_expr_simplex_Simplex$SimplexProblem__f_slackvariableindices;
+  var this$40 = $n(source$1);
+  var surplusvariableindices$2 = this$40.Lorg_expr_simplex_Simplex$SimplexProblem__f_surplusvariableindices;
+  var this$41 = $n(source$1);
+  var artificialvariableindices$2 = this$41.Lorg_expr_simplex_Simplex$SimplexProblem__f_artificialvariableindices;
+  var this$42 = $n(source$1);
+  var basicvariableindex$2 = this$42.Lorg_expr_simplex_Simplex$SimplexProblem__f_basicvariableindex;
+  var this$43 = $n(source$1);
+  var biggestvalue$2 = this$43.Lorg_expr_simplex_Simplex$SimplexProblem__f_biggestvalue;
+  var this$44 = $n(source$1);
+  var isinstandardform$2 = this$44.Lorg_expr_simplex_Simplex$SimplexProblem__f_isinstandardform;
+  var this$45 = $n(source$1);
+  var converged$2 = this$45.Lorg_expr_simplex_Simplex$SimplexProblem__f_converged;
+  var this$46 = $n(source$1);
+  var objective_value$2 = this$46.Lorg_expr_simplex_Simplex$SimplexProblem__f_objective_value;
+  var elem$1 = new $c_Lorg_expr_simplex_Simplex$SimplexProblem(lhs$2, rhs$2, z$2, opttype$2, directions$2, varnames$2, slackvariableindices$2, surplusvariableindices$2, artificialvariableindices$2, basicvariableindex$2, biggestvalue$2, isinstandardform$2, converged$2, objective_value$2);
+  this$48.addOne__O__scm_ArrayBuffer(elem$1);
   while ((!$n(newproblem).Lorg_expr_simplex_Simplex$SimplexProblem__f_converged)) {
     newproblem = this.singleiteration__Lorg_expr_simplex_Simplex$SimplexProblem__Lorg_expr_simplex_Simplex$SimplexProblem(newproblem);
-    var this$4 = $n(iterations);
-    var elem$2 = this.copySimplexProblem__Lorg_expr_simplex_Simplex$SimplexProblem__Lorg_expr_simplex_Simplex$SimplexProblem(newproblem);
-    this$4.addOne__O__scm_ArrayBuffer(elem$2);
+    var this$64 = $n(iterations);
+    var source$2 = newproblem;
+    $n(source$2);
+    var this$49 = $n(source$2);
+    var lhs$3 = this$49.Lorg_expr_simplex_Simplex$SimplexProblem__f_lhs;
+    var this$50 = $n(source$2);
+    var rhs$3 = this$50.Lorg_expr_simplex_Simplex$SimplexProblem__f_rhs;
+    var this$51 = $n(source$2);
+    var z$3 = this$51.Lorg_expr_simplex_Simplex$SimplexProblem__f_z;
+    var this$52 = $n(source$2);
+    var opttype$3 = this$52.Lorg_expr_simplex_Simplex$SimplexProblem__f_opttype;
+    var this$53 = $n(source$2);
+    var directions$3 = this$53.Lorg_expr_simplex_Simplex$SimplexProblem__f_directions;
+    var this$54 = $n(source$2);
+    var varnames$3 = this$54.Lorg_expr_simplex_Simplex$SimplexProblem__f_varnames;
+    var this$55 = $n(source$2);
+    var slackvariableindices$3 = this$55.Lorg_expr_simplex_Simplex$SimplexProblem__f_slackvariableindices;
+    var this$56 = $n(source$2);
+    var surplusvariableindices$3 = this$56.Lorg_expr_simplex_Simplex$SimplexProblem__f_surplusvariableindices;
+    var this$57 = $n(source$2);
+    var artificialvariableindices$3 = this$57.Lorg_expr_simplex_Simplex$SimplexProblem__f_artificialvariableindices;
+    var this$58 = $n(source$2);
+    var basicvariableindex$3 = this$58.Lorg_expr_simplex_Simplex$SimplexProblem__f_basicvariableindex;
+    var this$59 = $n(source$2);
+    var biggestvalue$3 = this$59.Lorg_expr_simplex_Simplex$SimplexProblem__f_biggestvalue;
+    var this$60 = $n(source$2);
+    var isinstandardform$3 = this$60.Lorg_expr_simplex_Simplex$SimplexProblem__f_isinstandardform;
+    var this$61 = $n(source$2);
+    var converged$3 = this$61.Lorg_expr_simplex_Simplex$SimplexProblem__f_converged;
+    var this$62 = $n(source$2);
+    var objective_value$3 = this$62.Lorg_expr_simplex_Simplex$SimplexProblem__f_objective_value;
+    var elem$2 = new $c_Lorg_expr_simplex_Simplex$SimplexProblem(lhs$3, rhs$3, z$3, opttype$3, directions$3, varnames$3, slackvariableindices$3, surplusvariableindices$3, artificialvariableindices$3, basicvariableindex$3, biggestvalue$3, isinstandardform$3, converged$3, objective_value$3);
+    this$64.addOne__O__scm_ArrayBuffer(elem$2);
   }
-  var this$6 = $n(iterations);
-  if ((this$6.scm_ArrayBuffer__f_size0 >= 0)) {
-    var len = this$6.scm_ArrayBuffer__f_size0;
+  var this$66 = $n(iterations);
+  if ((this$66.scm_ArrayBuffer__f_size0 >= 0)) {
+    var len = this$66.scm_ArrayBuffer__f_size0;
     var destination = new ($d_Lorg_expr_simplex_Simplex$SimplexProblem.getArrayOf().constr)(len);
-    this$6.copyToArray__O__I__I__I(destination, 0, 2147483647);
+    this$66.copyToArray__O__I__I__I(destination, 0, 2147483647);
     return destination;
   } else {
     var capacity = 0;
@@ -6081,7 +6320,7 @@ $c_Lorg_expr_simplex_Simplex$.prototype.simplexiterations__Lorg_expr_simplex_Sim
     capacity = 0;
     size = 0;
     jsElems = [];
-    var it = $n(this$6.view__scm_ArrayBufferView()).iterator__sc_Iterator();
+    var it = $n(this$66.view__scm_ArrayBufferView()).iterator__sc_Iterator();
     while ($n(it).hasNext__Z()) {
       var elem$3 = $n(it).next__O();
       var unboxedElem = ((elem$3 === null) ? null : elem$3);

@@ -5,6 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simplex Solver</title>
+
+    <!-- MathJax Configuration -->
+    <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@4.0.0/tex-mml-chtml.js">
+    </script>
+
+    <!-- Scala.js compiled code -->
     <script defer src="./target/scala-3.7.3/simplex-fastopt.js"></script>
     <style>
         body {
@@ -68,12 +75,18 @@
         <label for ="rhs">Right-hand side values (Comma separated):</label>
         <textarea id="rhs" rows="2" placeholder="e.g. 100, 80, 40"></textarea>
         <br><br>
-        <button id="solveBtn">Solve</button>
+        <button id="buildBtn">Build Mathematical Problem</button>
+        <button id="solveBtn">Solve Problem</button>
         <button id="cleanBtn">Clean</button>
     </fieldset>
 
     <div id="status">Loading...</div>
     <br><br>
+
+    <fieldset>
+        <legend>Mathematical Problem</legend>
+        <div id="mathProblemOutput">Mathematical representation will be displayed here.</div>
+    </fieldset>
 
     <fieldset>
         <legend>Solution Output</legend>
