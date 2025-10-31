@@ -3739,7 +3739,8 @@ $c_Lorg_expr_simplex_Main$package$.prototype.solveproblem__V = (function() {
   var xs$1 = $n($as_Lorg_expr_simplex_Simplex$SimplexProblem($m_sc_ArrayOps$().last$extension__O__O(result))).Lorg_expr_simplex_Simplex$SimplexProblem__f_slackvariableindices;
   var f$1 = ((i$2) => {
     var i$3 = $uI(i$2);
-    return sb.append__T__scm_StringBuilder((("Slack variable: " + $n($n($as_Lorg_expr_simplex_Simplex$SimplexProblem($m_sc_ArrayOps$().last$extension__O__O(result))).Lorg_expr_simplex_Simplex$SimplexProblem__f_varnames).get(i$3)) + "<br/>\n"));
+    var varname = (("x" + "") + i$3);
+    return sb.append__T__scm_StringBuilder((("Slack variable: " + varname) + "<br/>\n"));
   });
   var len$1 = $n(xs$1).u.length;
   var i$4 = 0;
@@ -3815,7 +3816,8 @@ $c_Lorg_expr_simplex_Main$package$.prototype.solveproblem__V = (function() {
   var xs$2 = $n($as_Lorg_expr_simplex_Simplex$SimplexProblem($m_sc_ArrayOps$().last$extension__O__O(result))).Lorg_expr_simplex_Simplex$SimplexProblem__f_surplusvariableindices;
   var f$2 = ((i$3$1) => {
     var i$5 = $uI(i$3$1);
-    return sb.append__T__scm_StringBuilder((("Surplus variable: " + $n($n($as_Lorg_expr_simplex_Simplex$SimplexProblem($m_sc_ArrayOps$().last$extension__O__O(result))).Lorg_expr_simplex_Simplex$SimplexProblem__f_varnames).get(i$5)) + "<br/>\n"));
+    var varname$1 = (("x" + "") + i$5);
+    return sb.append__T__scm_StringBuilder((("Surplus variable: " + varname$1) + "<br/>\n"));
   });
   var len$2 = $n(xs$2).u.length;
   var i$6 = 0;
@@ -3891,7 +3893,8 @@ $c_Lorg_expr_simplex_Main$package$.prototype.solveproblem__V = (function() {
   var xs$3 = $n($as_Lorg_expr_simplex_Simplex$SimplexProblem($m_sc_ArrayOps$().last$extension__O__O(result))).Lorg_expr_simplex_Simplex$SimplexProblem__f_artificialvariableindices;
   var f$3 = ((i$4$1) => {
     var i$7 = $uI(i$4$1);
-    return sb.append__T__scm_StringBuilder((("Artificial variable: " + $n($n($as_Lorg_expr_simplex_Simplex$SimplexProblem($m_sc_ArrayOps$().last$extension__O__O(result))).Lorg_expr_simplex_Simplex$SimplexProblem__f_varnames).get(i$7)) + "<br/>\n"));
+    var varname$2 = (("x" + "") + i$7);
+    return sb.append__T__scm_StringBuilder((("Artificial variable: " + varname$2) + "<br/>\n"));
   });
   var len$3 = $n(xs$3).u.length;
   var i$8 = 0;
