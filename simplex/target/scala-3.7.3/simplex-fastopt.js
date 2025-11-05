@@ -5941,27 +5941,57 @@ $c_Lorg_expr_simplex_Simplex$.prototype.mmethodcorrection__Lorg_expr_simplex_Sim
   return $as_Lorg_expr_simplex_Simplex$SimplexProblem(elem$1);
 });
 $c_Lorg_expr_simplex_Simplex$.prototype.update__Lorg_expr_simplex_Simplex$SimplexProblem__I__I__Lorg_expr_simplex_Simplex$SimplexProblem = (function(s, enteringvarindex, exitingvarindex) {
-  var n = $n($n(s).Lorg_expr_simplex_Simplex$SimplexProblem__f_lhs).u.length;
-  var xs = $n(s).Lorg_expr_simplex_Simplex$SimplexProblem__f_lhs;
+  $n(s);
+  var this$1 = $n(s);
+  var lhs = this$1.Lorg_expr_simplex_Simplex$SimplexProblem__f_lhs;
+  var this$2 = $n(s);
+  var rhs = this$2.Lorg_expr_simplex_Simplex$SimplexProblem__f_rhs;
+  var this$3 = $n(s);
+  var z = this$3.Lorg_expr_simplex_Simplex$SimplexProblem__f_z;
+  var this$4 = $n(s);
+  var opttype = this$4.Lorg_expr_simplex_Simplex$SimplexProblem__f_opttype;
+  var this$5 = $n(s);
+  var directions = this$5.Lorg_expr_simplex_Simplex$SimplexProblem__f_directions;
+  var this$6 = $n(s);
+  var varnames = this$6.Lorg_expr_simplex_Simplex$SimplexProblem__f_varnames;
+  var this$7 = $n(s);
+  var slackvariableindices = this$7.Lorg_expr_simplex_Simplex$SimplexProblem__f_slackvariableindices;
+  var this$8 = $n(s);
+  var surplusvariableindices = this$8.Lorg_expr_simplex_Simplex$SimplexProblem__f_surplusvariableindices;
+  var this$9 = $n(s);
+  var artificialvariableindices = this$9.Lorg_expr_simplex_Simplex$SimplexProblem__f_artificialvariableindices;
+  var this$10 = $n(s);
+  var basicvariableindex = this$10.Lorg_expr_simplex_Simplex$SimplexProblem__f_basicvariableindex;
+  var this$11 = $n(s);
+  var biggestvalue = this$11.Lorg_expr_simplex_Simplex$SimplexProblem__f_biggestvalue;
+  var this$12 = $n(s);
+  var isinstandardform = this$12.Lorg_expr_simplex_Simplex$SimplexProblem__f_isinstandardform;
+  var this$13 = $n(s);
+  var converged = this$13.Lorg_expr_simplex_Simplex$SimplexProblem__f_converged;
+  var this$14 = $n(s);
+  var objective_value = this$14.Lorg_expr_simplex_Simplex$SimplexProblem__f_objective_value;
+  var snew = new $c_Lorg_expr_simplex_Simplex$SimplexProblem(lhs, rhs, z, opttype, directions, varnames, slackvariableindices, surplusvariableindices, artificialvariableindices, basicvariableindex, biggestvalue, isinstandardform, converged, objective_value);
+  var n = $n(snew.Lorg_expr_simplex_Simplex$SimplexProblem__f_lhs).u.length;
+  var xs = snew.Lorg_expr_simplex_Simplex$SimplexProblem__f_lhs;
   if (($n(xs).u.length !== 0)) {
-    var p = $n($n($n(s).Lorg_expr_simplex_Simplex$SimplexProblem__f_lhs).get(0)).u.length;
+    var p = $n($n(snew.Lorg_expr_simplex_Simplex$SimplexProblem__f_lhs).get(0)).u.length;
   } else {
     var p = 0;
   }
-  var xs$1 = $n(s).Lorg_expr_simplex_Simplex$SimplexProblem__f_basicvariableindex;
+  var xs$1 = snew.Lorg_expr_simplex_Simplex$SimplexProblem__f_basicvariableindex;
   var rowindex = $m_sc_ArrayOps$().indexOf$extension__O__O__I__I(xs$1, exitingvarindex, 0);
   var requirement = (rowindex >= 0);
   if ((!requirement)) {
     throw $ct_jl_IllegalArgumentException__T__(new $c_jl_IllegalArgumentException(), "requirement failed: Exiting variable index not found in basic variable indices");
   }
-  var pivot = $n($n($n(s).Lorg_expr_simplex_Simplex$SimplexProblem__f_lhs).get(rowindex)).get(enteringvarindex);
+  var pivot = $n($n(snew.Lorg_expr_simplex_Simplex$SimplexProblem__f_lhs).get(rowindex)).get(enteringvarindex);
   var isEmpty = (p <= 0);
   var scala$collection$immutable$Range$$lastElement = (((-1) + p) | 0);
   if ((!isEmpty)) {
     var i = 0;
     while (true) {
       var x0 = i;
-      var \u03b410$ = $n($n(s).Lorg_expr_simplex_Simplex$SimplexProblem__f_lhs).get(rowindex);
+      var \u03b410$ = $n(snew.Lorg_expr_simplex_Simplex$SimplexProblem__f_lhs).get(rowindex);
       $n(\u03b410$).set(x0, ($n(\u03b410$).get(x0) / pivot));
       if ((i === scala$collection$immutable$Range$$lastElement)) {
         break;
@@ -5969,7 +5999,7 @@ $c_Lorg_expr_simplex_Simplex$.prototype.update__Lorg_expr_simplex_Simplex$Simple
       i = ((1 + i) | 0);
     }
   }
-  $n($n(s).Lorg_expr_simplex_Simplex$SimplexProblem__f_rhs).set(rowindex, ($n($n(s).Lorg_expr_simplex_Simplex$SimplexProblem__f_rhs).get(rowindex) / pivot));
+  $n(snew.Lorg_expr_simplex_Simplex$SimplexProblem__f_rhs).set(rowindex, ($n(snew.Lorg_expr_simplex_Simplex$SimplexProblem__f_rhs).get(rowindex) / pivot));
   var isEmpty$1 = (n <= 0);
   var scala$collection$immutable$Range$$lastElement$1 = (((-1) + n) | 0);
   if ((!isEmpty$1)) {
@@ -5977,22 +6007,22 @@ $c_Lorg_expr_simplex_Simplex$.prototype.update__Lorg_expr_simplex_Simplex$Simple
     while (true) {
       var x0$1 = i$1;
       if ((x0$1 !== rowindex)) {
-        var pp = $n($n($n(s).Lorg_expr_simplex_Simplex$SimplexProblem__f_lhs).get(x0$1)).get(enteringvarindex);
+        var pp = $n($n(snew.Lorg_expr_simplex_Simplex$SimplexProblem__f_lhs).get(x0$1)).get(enteringvarindex);
         var isEmpty$2 = (p <= 0);
         var scala$collection$immutable$Range$$lastElement$2 = (((-1) + p) | 0);
         if ((!isEmpty$2)) {
           var i$2 = 0;
           while (true) {
             var x0$2 = i$2;
-            var \u03b411$ = $n($n(s).Lorg_expr_simplex_Simplex$SimplexProblem__f_lhs).get(x0$1);
-            $n(\u03b411$).set(x0$2, ($n(\u03b411$).get(x0$2) - (pp * $n($n($n(s).Lorg_expr_simplex_Simplex$SimplexProblem__f_lhs).get(rowindex)).get(x0$2))));
+            var \u03b411$ = $n(snew.Lorg_expr_simplex_Simplex$SimplexProblem__f_lhs).get(x0$1);
+            $n(\u03b411$).set(x0$2, ($n(\u03b411$).get(x0$2) - (pp * $n($n(snew.Lorg_expr_simplex_Simplex$SimplexProblem__f_lhs).get(rowindex)).get(x0$2))));
             if ((i$2 === scala$collection$immutable$Range$$lastElement$2)) {
               break;
             }
             i$2 = ((1 + i$2) | 0);
           }
         }
-        $n($n(s).Lorg_expr_simplex_Simplex$SimplexProblem__f_rhs).set(x0$1, ($n($n(s).Lorg_expr_simplex_Simplex$SimplexProblem__f_rhs).get(x0$1) - (pp * $n($n(s).Lorg_expr_simplex_Simplex$SimplexProblem__f_rhs).get(rowindex))));
+        $n(snew.Lorg_expr_simplex_Simplex$SimplexProblem__f_rhs).set(x0$1, ($n(snew.Lorg_expr_simplex_Simplex$SimplexProblem__f_rhs).get(x0$1) - (pp * $n(snew.Lorg_expr_simplex_Simplex$SimplexProblem__f_rhs).get(rowindex))));
       }
       if ((i$1 === scala$collection$immutable$Range$$lastElement$1)) {
         break;
@@ -6000,22 +6030,22 @@ $c_Lorg_expr_simplex_Simplex$.prototype.update__Lorg_expr_simplex_Simplex$Simple
       i$1 = ((1 + i$1) | 0);
     }
   }
-  var pp$1 = $n($n(s).Lorg_expr_simplex_Simplex$SimplexProblem__f_z).get(enteringvarindex);
+  var pp$1 = $n(snew.Lorg_expr_simplex_Simplex$SimplexProblem__f_z).get(enteringvarindex);
   var isEmpty$3 = (p <= 0);
   var scala$collection$immutable$Range$$lastElement$3 = (((-1) + p) | 0);
   if ((!isEmpty$3)) {
     var i$3 = 0;
     while (true) {
       var x0$3 = i$3;
-      $n($n(s).Lorg_expr_simplex_Simplex$SimplexProblem__f_z).set(x0$3, ($n($n(s).Lorg_expr_simplex_Simplex$SimplexProblem__f_z).get(x0$3) - (pp$1 * $n($n($n(s).Lorg_expr_simplex_Simplex$SimplexProblem__f_lhs).get(rowindex)).get(x0$3))));
+      $n(snew.Lorg_expr_simplex_Simplex$SimplexProblem__f_z).set(x0$3, ($n(snew.Lorg_expr_simplex_Simplex$SimplexProblem__f_z).get(x0$3) - (pp$1 * $n($n(snew.Lorg_expr_simplex_Simplex$SimplexProblem__f_lhs).get(rowindex)).get(x0$3))));
       if ((i$3 === scala$collection$immutable$Range$$lastElement$3)) {
         break;
       }
       i$3 = ((1 + i$3) | 0);
     }
   }
-  var newobjectivevalue = ($n(s).Lorg_expr_simplex_Simplex$SimplexProblem__f_objective_value + (pp$1 * $n($n(s).Lorg_expr_simplex_Simplex$SimplexProblem__f_rhs).get(rowindex)));
-  var xs$2 = $n(s).Lorg_expr_simplex_Simplex$SimplexProblem__f_basicvariableindex;
+  var newobjectivevalue = (snew.Lorg_expr_simplex_Simplex$SimplexProblem__f_objective_value + (pp$1 * $n(snew.Lorg_expr_simplex_Simplex$SimplexProblem__f_rhs).get(rowindex)));
+  var xs$2 = snew.Lorg_expr_simplex_Simplex$SimplexProblem__f_basicvariableindex;
   if (((rowindex < 0) || (rowindex >= $n(xs$2).u.length))) {
     throw $n($m_scg_CommonErrors$().indexOutOfBounds__I__I__jl_IndexOutOfBoundsException(rowindex, (((-1) + $n(xs$2).u.length) | 0)));
   }
@@ -6023,32 +6053,19 @@ $c_Lorg_expr_simplex_Simplex$.prototype.update__Lorg_expr_simplex_Simplex$Simple
   var destination = new $ac_I(len);
   $m_sc_ArrayOps$().copyToArray$extension__O__O__I__I__I(xs$2, destination, 0, 2147483647);
   destination.set(rowindex, enteringvarindex);
-  $n(s);
-  var this$26 = $n(s);
-  var lhs = this$26.Lorg_expr_simplex_Simplex$SimplexProblem__f_lhs;
-  var this$27 = $n(s);
-  var rhs = this$27.Lorg_expr_simplex_Simplex$SimplexProblem__f_rhs;
-  var this$28 = $n(s);
-  var z = this$28.Lorg_expr_simplex_Simplex$SimplexProblem__f_z;
-  var this$29 = $n(s);
-  var opttype = this$29.Lorg_expr_simplex_Simplex$SimplexProblem__f_opttype;
-  var this$30 = $n(s);
-  var directions = this$30.Lorg_expr_simplex_Simplex$SimplexProblem__f_directions;
-  var this$31 = $n(s);
-  var varnames = this$31.Lorg_expr_simplex_Simplex$SimplexProblem__f_varnames;
-  var this$32 = $n(s);
-  var slackvariableindices = this$32.Lorg_expr_simplex_Simplex$SimplexProblem__f_slackvariableindices;
-  var this$33 = $n(s);
-  var surplusvariableindices = this$33.Lorg_expr_simplex_Simplex$SimplexProblem__f_surplusvariableindices;
-  var this$34 = $n(s);
-  var artificialvariableindices = this$34.Lorg_expr_simplex_Simplex$SimplexProblem__f_artificialvariableindices;
-  var this$35 = $n(s);
-  var biggestvalue = this$35.Lorg_expr_simplex_Simplex$SimplexProblem__f_biggestvalue;
-  var this$36 = $n(s);
-  var isinstandardform = this$36.Lorg_expr_simplex_Simplex$SimplexProblem__f_isinstandardform;
-  var this$37 = $n(s);
-  var converged = this$37.Lorg_expr_simplex_Simplex$SimplexProblem__f_converged;
-  return new $c_Lorg_expr_simplex_Simplex$SimplexProblem(lhs, rhs, z, opttype, directions, varnames, slackvariableindices, surplusvariableindices, artificialvariableindices, destination, biggestvalue, isinstandardform, converged, newobjectivevalue);
+  var lhs$1 = snew.Lorg_expr_simplex_Simplex$SimplexProblem__f_lhs;
+  var rhs$1 = snew.Lorg_expr_simplex_Simplex$SimplexProblem__f_rhs;
+  var z$1 = snew.Lorg_expr_simplex_Simplex$SimplexProblem__f_z;
+  var opttype$1 = snew.Lorg_expr_simplex_Simplex$SimplexProblem__f_opttype;
+  var directions$1 = snew.Lorg_expr_simplex_Simplex$SimplexProblem__f_directions;
+  var varnames$1 = snew.Lorg_expr_simplex_Simplex$SimplexProblem__f_varnames;
+  var slackvariableindices$1 = snew.Lorg_expr_simplex_Simplex$SimplexProblem__f_slackvariableindices;
+  var surplusvariableindices$1 = snew.Lorg_expr_simplex_Simplex$SimplexProblem__f_surplusvariableindices;
+  var artificialvariableindices$1 = snew.Lorg_expr_simplex_Simplex$SimplexProblem__f_artificialvariableindices;
+  var biggestvalue$1 = snew.Lorg_expr_simplex_Simplex$SimplexProblem__f_biggestvalue;
+  var isinstandardform$1 = snew.Lorg_expr_simplex_Simplex$SimplexProblem__f_isinstandardform;
+  var converged$1 = snew.Lorg_expr_simplex_Simplex$SimplexProblem__f_converged;
+  return new $c_Lorg_expr_simplex_Simplex$SimplexProblem(lhs$1, rhs$1, z$1, opttype$1, directions$1, varnames$1, slackvariableindices$1, surplusvariableindices$1, artificialvariableindices$1, destination, biggestvalue$1, isinstandardform$1, converged$1, newobjectivevalue);
 });
 $c_Lorg_expr_simplex_Simplex$.prototype.getenteringvariableindex__Lorg_expr_simplex_Simplex$SimplexProblem__s_Option = (function(s) {
   var x11 = $n(s).Lorg_expr_simplex_Simplex$SimplexProblem__f_opttype;
