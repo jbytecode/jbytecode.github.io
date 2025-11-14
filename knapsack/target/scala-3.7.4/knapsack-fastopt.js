@@ -1879,9 +1879,11 @@ function $m_Lorg_expr_Bitwise$() {
 /** @constructor */
 function $c_Lorg_expr_Main$package$() {
   this.Lorg_expr_Main$package$__f_document = null;
+  this.Lorg_expr_Main$package$__f_numitems = 0;
   $n_Lorg_expr_Main$package$ = this;
   window;
   this.Lorg_expr_Main$package$__f_document = document;
+  this.Lorg_expr_Main$package$__f_numitems = 6;
 }
 $c_Lorg_expr_Main$package$.prototype = new $h_O();
 $c_Lorg_expr_Main$package$.prototype.constructor = $c_Lorg_expr_Main$package$;
@@ -1891,8 +1893,9 @@ function $h_Lorg_expr_Main$package$() {
 $h_Lorg_expr_Main$package$.prototype = $c_Lorg_expr_Main$package$.prototype;
 $c_Lorg_expr_Main$package$.prototype.getValueHTMLObjects__sci_List = (function() {
   var this$1 = $m_sci_List$();
+  var end = ((1 + $m_Lorg_expr_Main$package$().Lorg_expr_Main$package$__f_numitems) | 0);
   var evidence$3 = $m_s_math_Numeric$IntIsIntegral$();
-  var this$2 = $n($as_sci_List($f_sc_IterableFactory__range__O__O__s_math_Integral__O(this$1, 1, 11, evidence$3)));
+  var this$2 = $n($as_sci_List($f_sc_IterableFactory__range__O__O__s_math_Integral__O(this$1, 1, end, evidence$3)));
   var f = ((i) => {
     var i$1 = $uI(i);
     return ("value" + i$1);
@@ -1936,8 +1939,9 @@ $c_Lorg_expr_Main$package$.prototype.getValueHTMLObjects__sci_List = (function()
 });
 $c_Lorg_expr_Main$package$.prototype.getWeightHTMLObjects__sci_List = (function() {
   var this$1 = $m_sci_List$();
+  var end = ((1 + $m_Lorg_expr_Main$package$().Lorg_expr_Main$package$__f_numitems) | 0);
   var evidence$3 = $m_s_math_Numeric$IntIsIntegral$();
-  var this$2 = $n($as_sci_List($f_sc_IterableFactory__range__O__O__s_math_Integral__O(this$1, 1, 11, evidence$3)));
+  var this$2 = $n($as_sci_List($f_sc_IterableFactory__range__O__O__s_math_Integral__O(this$1, 1, end, evidence$3)));
   var f = ((i) => {
     var i$1 = $uI(i);
     return ("weight" + i$1);
@@ -2051,10 +2055,6 @@ $c_Lorg_expr_Main$package$.prototype.makeHTMLTableHeader__T = (function() {
   builder.append__T__scm_StringBuilder("<th>Item 4</th>");
   builder.append__T__scm_StringBuilder("<th>Item 5</th>");
   builder.append__T__scm_StringBuilder("<th>Item 6</th>");
-  builder.append__T__scm_StringBuilder("<th>Item 7</th>");
-  builder.append__T__scm_StringBuilder("<th>Item 8</th>");
-  builder.append__T__scm_StringBuilder("<th>Item 9</th>");
-  builder.append__T__scm_StringBuilder("<th>Item 10</th>");
   builder.append__T__scm_StringBuilder("<th>Total Value</th>");
   builder.append__T__scm_StringBuilder("<th>Total Weight</th>");
   builder.append__T__scm_StringBuilder("<th>Feasible</th>");

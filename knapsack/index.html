@@ -14,7 +14,7 @@
     <legend>Knapsack Example</legend>
     <p>This is an example page for the Knapsack problem. The solver tries out all 
         possible combinations of items to find the optimal solution based on the defined values
-         and weights. Since the number of items is 10, there are 2^10 = 1024 possible 
+         and weights. Since the number of items is 6, there are 2^6 = 64 possible 
         combinations to evaluate. This brute-force approach is feasible for this small number of items, 
         but may not be efficient for larger datasets. This page is intended for demonstration and 
         educational purposes only.
@@ -33,36 +33,24 @@
             <th>Item 4</th>
             <th>Item 5</th>
             <th>Item 6</th>
-            <th>Item 7</th>
-            <th>Item 8</th>
-            <th>Item 9</th>
-            <th>Item 10</th>
         </tr>
         <tr>
             <td>Values</td>
-            <td><input type="number" id="value1" value="15" min="0" max="1000"></td>
-            <td><input type="number" id="value2" value="5" min="0" max="1000"></td>
-            <td><input type="number" id="value3" value="10" min="0" max="1000"></td>
-            <td><input type="number" id="value4" value="40" min="0" max="1000"></td>
-            <td><input type="number" id="value5" value="15" min="0" max="1000"></td>
-            <td><input type="number" id="value6" value="25" min="0" max="1000"></td>
-            <td><input type="number" id="value7" value="30" min="0" max="1000"></td>
-            <td><input type="number" id="value8" value="50" min="0" max="1000"></td>
-            <td><input type="number" id="value9" value="35" min="0" max="1000"></td>
-            <td><input type="number" id="value10" value="45" min="0" max="1000"></td>
+            <td><input style="text-align: center" type="number" id="value1" value="15" min="0" max="1000"></td>
+            <td><input style="text-align: center" type="number" id="value2" value="5" min="0" max="1000"></td>
+            <td><input style="text-align: center" type="number" id="value3" value="10" min="0" max="1000"></td>
+            <td><input style="text-align: center" type="number" id="value4" value="40" min="0" max="1000"></td>
+            <td><input style="text-align: center" type="number" id="value5" value="15" min="0" max="1000"></td>
+            <td><input style="text-align: center" type="number" id="value6" value="25" min="0" max="1000"></td>
         </tr>
         <tr>
             <td>Weights</td>
-            <td><input type="number" id="weight1" value="2" min="0" max="1000"></td>
-            <td><input type="number" id="weight2" value="3" min="0" max="1000"></td>
-            <td><input type="number" id="weight3" value="1" min="0" max="1000"></td>
-            <td><input type="number" id="weight4" value="4" min="0" max="1000"></td>
-            <td><input type="number" id="weight5" value="2" min="0" max="1000"></td>
-            <td><input type="number" id="weight6" value="3" min="0" max="1000"></td>
-            <td><input type="number" id="weight7" value="2" min="0" max="1000"></td>
-            <td><input type="number" id="weight8" value="5" min="0" max="1000"></td>
-            <td><input type="number" id="weight9" value="3" min="0" max="1000"></td>
-            <td><input type="number" id="weight10" value="4" min="0" max="1000"></td>
+            <td><input style="text-align: center" type="number" id="weight1" value="2" min="0" max="1000"></td>
+            <td><input style="text-align: center" type="number" id="weight2" value="3" min="0" max="1000"></td>
+            <td><input style="text-align: center" type="number" id="weight3" value="1" min="0" max="1000"></td>
+            <td><input style="text-align: center" type="number" id="weight4" value="4" min="0" max="1000"></td>
+            <td><input style="text-align: center" type="number" id="weight5" value="2" min="0" max="1000"></td>
+            <td><input style="text-align: center" type="number" id="weight6" value="3" min="0" max="1000"></td>
         </tr>
     </table>
 </fieldset>
@@ -70,7 +58,7 @@
 <fieldset>
     <legend>Knapsack Capacity</legend>
     <p>Define the capacity of the knapsack.</p>
-    <input type="number" id="capacity" value="15" min="0" max="1000">
+    <input type="number" id="capacity" value="6" min="0" max="1000">
 </fieldset>
 
 <input type ="button" id="solve-button" value="Solve Knapsack Problem">
