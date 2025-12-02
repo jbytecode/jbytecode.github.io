@@ -44,20 +44,22 @@
         const upperinput = input.toUpperCase();
 
         output.innerHTML = "";
+        var stringcontent = "";
 
         if (language == "en") {
             for (let i = 0; i < window.wordpairs.length; i++) {
                 if (window.wordpairs[i].word1.indexOf(upperinput) > -1) {
-                    output.innerHTML += window.wordpairs[i].makereport(true) + "<br>";
+                    stringcontent += window.wordpairs[i].makereport(true) + "<br>";
                 }
             }
         } else if (language == "tr") {
             for (let i = 0; i < window.wordpairs.length; i++) {
                 if (window.wordpairs[i].word2.indexOf(upperinput) > -1) {
-                    output.innerHTML += window.wordpairs[i].makereport(false) + "<br>";
+                    stringcontent += window.wordpairs[i].makereport(false) + "<br>";
                 }
             }
         }
+        output.innerHTML = stringcontent;
     }
 
     class WordPairs {
