@@ -6,6 +6,135 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Knapsack Example Page</title>
     <script defer src="./target/scala-3.7.4/knapsack-fastopt.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #e8f5f0 0%, #e0f7f4 100%);
+            color: #2c5f5a;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        fieldset {
+            background: linear-gradient(135deg, #f0f9f7 0%, #e8f5f0 100%);
+            border: 2px solid #a8d5ce;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 15px rgba(168, 213, 206, 0.2);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        fieldset:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(168, 213, 206, 0.3);
+        }
+
+        legend {
+            color: #1b7a73;
+            font-size: 1.3em;
+            font-weight: 600;
+            padding: 0 12px;
+            margin-bottom: 16px;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 16px;
+            color: #2c5f5a;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 16px;
+        }
+
+        th {
+            background: linear-gradient(135deg, #b3e5db 0%, #a8d5ce 100%);
+            color: #0f4d47;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid #7ec9be;
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #d4ebe8;
+        }
+
+        tr:hover {
+            background-color: #f0faf8;
+        }
+
+        input[type="number"] {
+            padding: 8px 12px;
+            border: 2px solid #a8d5ce;
+            border-radius: 6px;
+            background-color: #ffffff;
+            color: #2c5f5a;
+            font-size: 0.95em;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            width: 70px;
+        }
+
+        input[type="number"]:focus {
+            outline: none;
+            border-color: #7ec9be;
+            box-shadow: 0 0 8px rgba(126, 201, 190, 0.3);
+        }
+
+        button {
+            background: linear-gradient(135deg, #6ba3d4 0%, #4a8ec7 100%);
+            color: white;
+            padding: 10px 24px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1em;
+            font-weight: 500;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            margin-top: 8px;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(74, 142, 199, 0.4);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        input[type="button"] {
+            background: linear-gradient(135deg, #6ba3d4 0%, #4a8ec7 100%);
+            color: white;
+            padding: 10px 24px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1em;
+            font-weight: 500;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            margin-top: 8px;
+        }
+
+        input[type="button"]:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(74, 142, 199, 0.4);
+        }
+
+        input[type="button"]:active {
+            transform: translateY(0);
+        }
+    </style>
 </head>
 
 
