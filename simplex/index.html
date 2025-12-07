@@ -14,43 +14,152 @@
     <!-- Scala.js compiled code -->
     <script defer src="./target/scala-3.7.3/simplex-fastopt.js"></script>
     <style>
+        * {
+            box-sizing: border-box;
+        }
+        
         body {
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            margin: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 30px;
+            background: linear-gradient(135deg, #d4e8f0 0%, #c8e6d9 100%);
+            min-height: 100vh;
+            color: #555;
         }
+        
         #status {
-            font-size: 1.2em;
-            color: #333;
+            font-size: 1.4em;
+            color: #2b5f7f;
+            font-weight: 500;
+            padding: 12px;
+            background: rgba(196, 232, 245, 0.6);
+            border-radius: 8px;
+            border-left: 4px solid #5da3d5;
         }
+        
         fieldset {
-            margin-bottom: 20px;
-            padding: 10px;
+            margin-bottom: 30px;
+            padding: 25px;
+            border: 2px solid #5da3d5;
+            border-radius: 12px;
+            background: white;
+            box-shadow: 0 4px 15px rgba(93, 163, 213, 0.15);
         }
+        
         legend {
-            font-weight: bold;
-            font-size: larger;
+            font-weight: 600;
+            font-size: 1.4em;
+            color: #2b5f7f;
+            padding: 0 10px;
         }
+        
         label {
-            margin-top: 10px;
+            display: block;
+            margin-top: 16px;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #2b5f7f;
+            font-size: 1.05em;
         }
+        
         textarea {
             width: 100%;
-            font-family: monospace;
-        }
-        select {
+            padding: 12px;
+            font-family: 'Courier New', monospace;
             font-size: 16px;
+            border: 2px solid #b3dde6;
+            border-radius: 8px;
+            background-color: #f0f7fa;
+            color: #555;
+            resize: vertical;
+            transition: border-color 0.3s, box-shadow 0.3s;
         }
+        
+        textarea:focus {
+            outline: none;
+            border-color: #5da3d5;
+            box-shadow: 0 0 0 3px rgba(93, 163, 213, 0.1);
+        }
+        
+        select {
+            padding: 10px 12px;
+            font-size: 16px;
+            border: 2px solid #b3dde6;
+            border-radius: 8px;
+            background-color: #f0f7fa;
+            color: #555;
+            cursor: pointer;
+            transition: border-color 0.3s;
+        }
+        
+        select:focus {
+            outline: none;
+            border-color: #5da3d5;
+        }
+        
+        button {
+            padding: 14px 28px;
+            margin-right: 10px;
+            margin-top: 20px;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        #buildBtn {
+            background: linear-gradient(135deg, #5da3d5 0%, #4a8ec0 100%);
+            color: white;
+        }
+        
+        #buildBtn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(93, 163, 213, 0.4);
+        }
+        
+        #solveBtn {
+            background: linear-gradient(135deg, #6fb383 0%, #5fa373 100%);
+            color: white;
+        }
+        
+        #solveBtn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(111, 179, 131, 0.4);
+        }
+        
+        #cleanBtn {
+            background: linear-gradient(135deg, #a8d5ba 0%, #99c9ae 100%);
+            color: white;
+        }
+        
+        #cleanBtn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(168, 213, 186, 0.6);
+        }
+        
         table {
             border-collapse: collapse;
             width: 100%;
+            margin-top: 15px;
         }
+        
         th, td {
-            border: 1px solid #ccc;
-            padding: 8px;
+            border: 1px solid #b3dde6;
+            padding: 12px;
             text-align: center;
+            color: #555;
         }
+        
         th {
-            background-color: #f2f2f2;
+            background: linear-gradient(135deg, #e0f2f7 0%, #d4e8f0 100%);
+            font-weight: 600;
+            color: #2b5f7f;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f0f7fa;
         }
     </style>
 </head>
