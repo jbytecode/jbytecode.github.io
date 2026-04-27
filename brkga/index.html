@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Traveling Salesman with Biased Random Key Genetic Algorithms</title>
+    <script type="text/javascript" src="./target/scala-3.8.3/brkga-fastopt.js" async></script>
+    <style>
+        .divstatus {
+            margin-top: 10px;
+            font-weight: bold;
+            border: 1px solid #ccc;
+            padding: 5px;
+            border-radius: 5px;
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+
+<body>
+    <fieldset>
+        <legend>How to use</legend>
+        Put random points by clicking on the canvas below. Then click the Calculate 
+    button to compute a solution to the Traveling Salesman Problem.
+    </fieldset>
+    <table>
+        <tr>
+            <td>
+                <!--canvas id="canvas" height="280" style="border: 1px solid grey; display: block; width: 100%;">
+                </canvas-->
+                 <canvas id="canvas" height=300 width=400 style="border: 1px solid grey;"></canvas>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" id="buttonreset" value="Reset" />
+                <input type="button" id="buttoncalculate" value="Calculate" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div id="status" class="divstatus"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <fieldset>
+                    <legend>Information</legend>
+                    <p>
+                        This single page application allows you to 
+                        interactively add points on the canvas 
+                        by clicking in the rectangle. Once a set of 
+                        points is defined, you can click the Calculate
+                        button to compute a solution to the Traveling 
+                        Salesman Problem. 
+                    </p>
+                    <p>
+                        The solver implements a Biased Random Key Genetic Algorithm. 
+                        Algoritm parameters are hardcoded in the source code. The population 
+                        size is 100, the elite set size is 20, the mutant (random) set is 10,
+                        uniform crossover with bias 0.7 is used. The number of generations 
+                        is set to 1000. 
+                    </p>
+                </fieldset>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                This single page application was implemented 
+                in Scala 3 and compiled to JavaScript using Scala.js. The source code 
+                is available on <a href="https://github.com/jbytecode/brkga.scalajs">
+                    https://github.com/jbytecode/brkga.scalajs
+                </a>
+                
+                , by Mehmet Hakan Satman, April 2026.
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
