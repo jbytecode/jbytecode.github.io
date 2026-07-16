@@ -1,0 +1,91 @@
+<html>
+<head>
+<title>The Machine-coded Compact Genetic Algorithm - WASM</title>
+<script defer id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+    <fieldset>
+        <legend>Select Function</legend>
+        <select id="function-select">
+            <option value="Ackley">Ackley</option>
+            <option value="Bohacevsky">Bohacevsky</option>
+            <option value="Rastrigin">Rastrigin</option>
+            <option value="Rosenbrock">Rosenbrock</option>
+            <option value="Sphere">Sphere</option>
+        </select>
+        <button id="run-button">Re-calculate</button>
+    </fieldset>
+
+    <fieldset>
+        <legend id="function-name"></legend>
+        <div id="function-latex"></div>
+        <div id="function-np"></div>
+        <div id="function-lower"></div>
+        <div id="function-upper"></div>
+        <div id="function-result"></div>
+    </fieldset>
+</body>
+
+<script type="module">
+  // Initialize the WASM module and call the greet function
+  import init, { greet, ackley, bohachevsky, rastrigin, rosenbrock, sphere } from "./pkg/mccga_wasm.js";
+  await init();
+  greet();
+
+  // Get references to the HTML elements
+  const functionSelect = document.getElementById("function-select");
+  const functionName = document.getElementById("function-name");
+  const functionLatex = document.getElementById("function-latex");
+  const functionNp = document.getElementById("function-np");
+  const functionLower = document.getElementById("function-lower");
+  const functionUpper = document.getElementById("function-upper");
+  const functionResult = document.getElementById("function-result");
+  const runbutton = document.getElementById("run-button");
+
+  runbutton.addEventListener("click", () => {
+    functionSelect.dispatchEvent(new Event("change"));
+  });
+
+  // Add an event listener to the function select dropdown
+  functionSelect.addEventListener("change", async (event) => {
+    const selectedFunction = event.target.value;
+    let testFunction;
+    switch (selectedFunction) {
+      case "Ackley":
+        testFunction = ackley();
+        break;
+      case "Bohacevsky":
+        testFunction = bohachevsky();
+        break;
+      case "Rastrigin":
+        testFunction = rastrigin();
+        break;
+      case "Rosenbrock":
+        testFunction = rosenbrock();
+        break;
+      case "Sphere":
+        testFunction = sphere();
+        break;
+      default:
+        console.error("Unknown function selected");
+        return;
+    }
+    functionName.textContent = testFunction.name;
+    functionLatex.innerHTML = "$$" + testFunction.latexstring + "$$";
+    functionNp.textContent = `Number of Parameters: ${testFunction.lowerbounds.length}`;
+    functionLower.innerHTML = `Lower Bounds: $$[${testFunction.lowerbounds.join(", ")}]$$`;
+    functionUpper.innerHTML = `Upper Bounds: $$[${testFunction.upperbounds.join(", ")}]$$`;
+    const result = testFunction.optimize();
+    functionResult.innerHTML = `Result: <br>${result.join("<br>")}`;
+    MathJax.typeset();
+  });
+  functionSelect.dispatchEvent(new Event("change"));
+  MathJax.typeset();
+</script>
+
+<br>
+This calculator is written in Rust and compiled to WebAssembly (WASM). The calculations 
+are performed by the Rust crate <a href="https://crates.io/crates/mccga">mccga</a> (Machine-coded Compact Genetic Algorithm).
+</body>
+</html>
