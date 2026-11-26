@@ -274,8 +274,36 @@ small {
 .mt-1 { margin-top: 1em; }
 .mb-1 { margin-bottom: 1em; }
 
+/* Wide result tables scroll inside their own box instead of widening the page.
+   A fieldset is as wide as its content by default, so it must be allowed to shrink. */
+fieldset {
+    min-width: 0;
+}
+
+#div_final_decmat,
+#div_output_scores,
+#div_output_ranks {
+    overflow-x: auto;
+}
+
 /* Responsive Adjustments */
 @media (max-width: 768px) {
+    /* The method check boxes flow into as many columns as fit the screen */
+    #div_step4 table,
+    #div_step4 tbody {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #div_step4 tr {
+        display: contents;
+    }
+
+    #div_step4 td {
+        flex: 0 0 auto;
+        min-width: 5.5em;
+    }
+
     .container {
         margin: 10px;
         padding: 15px;
